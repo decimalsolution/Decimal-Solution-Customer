@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
-	],
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        xl: "1.375rem",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -65,12 +68,24 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        slider: {
+          "0%": { transform: "translateX(0)" },
+          "24%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(calc(-100vw))" },
+          "49%": { transform: "translateX(calc(-100vw))" },
+          "50%": { transform: "translateX(calc(-200vw))" },
+          "74%": { transform: "translateX(calc(-200vw))" },
+          "75%": { transform: "translateX(calc(-300vw))" },
+          "99%": { transform: "translateX(calc(-300vw))" },
+          "100%": { transform: "translateX(calc(-400vw))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "home-carousel": "slider 20s linear infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
