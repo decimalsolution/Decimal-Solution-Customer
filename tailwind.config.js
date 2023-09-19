@@ -68,6 +68,14 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "our-technologies": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(calc(12*-372px))",
+          },
+        },
         slider: {
           "0%": { transform: "translateX(0)" },
           "24%": { transform: "translateX(0)" },
@@ -84,6 +92,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "home-carousel": "slider 20s linear infinite",
+        "our-technologies": "our-technologies 20s linear infinite",
       },
     },
   },
