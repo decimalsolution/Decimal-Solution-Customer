@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <div className="flex flex-col p-12">
+    <div className="flex flex-col p-12 gap-16">
       <div className="">
         <p className="text-2xl text-primary before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
           Why Choose Us

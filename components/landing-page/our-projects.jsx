@@ -54,7 +54,7 @@ export default function OurProjects() {
   const [selected, setSelected] = useState("");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 flex-wrap ">
+    <div className="flex flex-col items-center justify-center gap-16 flex-wrap ">
       <div className="flex flex-col items-center">
         <div>
           <p className="text-2xl text-primary before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
