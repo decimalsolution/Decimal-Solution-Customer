@@ -31,7 +31,7 @@ export default function OurProjects() {
           </h2>
         </div>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-center gap-4 flex-wrap">
         {buttons.map((buttonText) => (
           <button
             className={cn(
@@ -52,7 +52,7 @@ export default function OurProjects() {
           .fill(0)
           .map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8">
+              <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
                 <div>
                   <Image
                     src={`/Projects/Project-${i + 1}.png`}
@@ -61,6 +61,7 @@ export default function OurProjects() {
                     objectFit="cover"
                   />
                 </div>
+                <div className="absolute inset-0 bg-primary/75 flex-col items-center justify-center opacity-0 group-hover:opacity-100 duration-500 transition-all"></div>
               </div>
             </SwiperSlide>
           ))}

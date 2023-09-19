@@ -2,6 +2,7 @@ import NumberOfAchievements from "@/components/landing-page/number-of-achievemen
 import OurProjects from "@/components/landing-page/our-projects";
 import OurServices from "@/components/landing-page/our-services";
 import Slider from "@/components/landing-page/slider";
+import WhyChooseUs from "@/components/landing-page/why-choose-us";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <NumberOfAchievements />
 
       <OurProjects />
+
+      <WhyChooseUs />
     </main>
   );
 }
