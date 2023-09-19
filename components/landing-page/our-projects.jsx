@@ -5,6 +5,7 @@ import { useState } from "react";
 import Carousel from "../generic/carousel";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import { Link } from "lucide-react";
 
 const buttons = [
   "All",
@@ -14,6 +15,39 @@ const buttons = [
   "Digital Marketing",
   "ERP & Business Solutions",
   "AR/VR",
+];
+
+const projects = [
+  {
+    title: "Kaiya",
+    description: "A platform for the people who want to learn new skills.",
+    image: "/Projects/Project-1.png",
+  },
+  {
+    title: "Satoshi VR",
+    description: "A platform for the people who want to learn new skills.",
+    image: "/Projects/Project-2.png",
+  },
+  {
+    title: "Plant Care",
+    description: "A platform for the people who want to learn new skills.",
+    image: "/Projects/Project-3.png",
+  },
+  {
+    title: "Phot-ock",
+    description: "A platform for the people who want to learn new skills.",
+    image: "/Projects/Project-4.png",
+  },
+  {
+    title: "Inbox ERP Solution",
+    description: "A platform for the people who want to learn new skills.",
+    image: "/Projects/Project-5.png",
+  },
+  {
+    title: "Nexen Marketing",
+    description: "A platform for the people who want to learn new skills.",
+    image: "/Projects/Project-6.png",
+  },
 ];
 
 export default function OurProjects() {
@@ -48,26 +82,34 @@ export default function OurProjects() {
       </div>
 
       <Carousel>
-        {Array(6)
-          .fill(0)
-          .map((item, i) => (
-            <SwiperSlide key={i}>
-              <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
-                <div>
-                  <Image
-                    src={`/Projects/Project-${i + 1}.png`}
-                    alt={item.title}
-                    fill
-                    objectFit="cover"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-primary/75 flex-col items-center justify-center opacity-0 group-hover:opacity-100 duration-500 transition-all"></div>
+        {projects.map((item, i) => (
+          <SwiperSlide key={i}>
+            <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
+              <div>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  objectFit="cover"
+                />
               </div>
-            </SwiperSlide>
-          ))}
+              <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
+                <h4 className="text-center text-white text-3xl font-bold uppercase">
+                  {item.title}
+                </h4>
+                <p className="text-center text-white text-xl">
+                  {item.description}
+                </p>
+                <div className="w-16 h-16 bg-white grid place-items-center rounded-full text-primary">
+                  <Link size={36} strokeWidth={3} />
+                </div>
+              </div>{" "}
+            </div>
+          </SwiperSlide>
+        ))}
       </Carousel>
 
-      <button className="bg-primary block w-32 py-4 text-white text-2xl rounded-xl">
+      <button className="bg-primary block w-72 py-4 text-white font-medium text-2xl rounded-xl">
         View All
       </button>
     </div>

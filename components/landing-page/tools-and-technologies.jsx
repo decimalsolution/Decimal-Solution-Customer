@@ -17,7 +17,7 @@ export default function ToolsAndTechnologies() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-8">
+    <div className="flex flex-col items-center justify-center w-full h-full gap-16 py-24">
       <div>
         <p className="text-2xl text-primary before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
           Tools and Technologies
@@ -30,9 +30,9 @@ export default function ToolsAndTechnologies() {
       </div>
 
       <div class="w-full h-full overflow-hidden relative before:content-[''] before:absolute before:left-0 before:block before:h-full before:w-40 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:top-0 after:right-0 after:block after:h-full after:w-40 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
-        <div className="flex gap-32 w-[calc(372px*24)] animate-our-technologies">
+        <div className="flex h-32 gap-32 w-[calc(372px*24)] animate-our-technologies">
           {data.map((item, index) => (
-            <div key={index} className="h-24 w-[372px] relative">
+            <div key={index} className="h-full w-[372px] relative">
               <Image
                 src={item}
                 alt="Tools and Technologies"
@@ -42,7 +42,7 @@ export default function ToolsAndTechnologies() {
             </div>
           ))}
           {data.map((item, index) => (
-            <div key={index} className="h-24 w-[372px] relative">
+            <div key={index} className="h-full w-[372px] relative">
               <Image
                 src={item}
                 alt="Tools and Technologies"

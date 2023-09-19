@@ -5,7 +5,7 @@ import "swiper/css";
 import "./styles.css";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export default function Carousel({ children }) {
+export default function Carousel({ children, ...props }) {
   const [swiperRef, setSwiperRef] = useState(null);
 
   const goNext = () => {
@@ -45,6 +45,7 @@ export default function Carousel({ children }) {
             slidesPerView: 3,
           },
         }}
+        {...props}
       >
         {children}
       </Swiper>
