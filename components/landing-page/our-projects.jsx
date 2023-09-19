@@ -2,6 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import Carousel from "../generic/carousel";
+import { SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 const buttons = [
   "All",
@@ -43,6 +46,29 @@ export default function OurProjects() {
           </button>
         ))}
       </div>
+
+      <Carousel>
+        {Array(6)
+          .fill(0)
+          .map((item, i) => (
+            <SwiperSlide key={i}>
+              <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8">
+                <div>
+                  <Image
+                    src={`/Projects/Project-${i + 1}.png`}
+                    alt={item.title}
+                    fill
+                    objectFit="cover"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+      </Carousel>
+
+      <button className="bg-primary block w-32 py-4 text-white text-2xl rounded-xl">
+        View All
+      </button>
     </div>
   );
 }

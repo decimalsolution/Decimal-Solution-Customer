@@ -43,7 +43,10 @@ export default function Slider() {
         ref={sliderRef}
       >
         {new Array(5).fill(0).map((_, i) => (
-          <div className="w-screen  aspect-video relative" key={i}>
+          <div
+            className="w-screen  aspect-video relative"
+            key={"slider-" + i + "-key"}
+          >
             <Image
               src={`/Slider Images/Slider-${(i % 4) + 1}.png`}
               alt={`Slider images ${(i % 4) + 1}`}
@@ -75,6 +78,7 @@ export default function Slider() {
           .fill(0)
           .map((_, i) => (
             <button
+              key={"slider-button-" + i + "-key"}
               onClick={() => {
                 setCurrent(i);
               }}
