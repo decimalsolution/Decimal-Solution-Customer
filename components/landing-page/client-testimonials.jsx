@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ClientTestimonials() {
   return (
-    <div className="h-[900px] bg-[url('/testimonial-bg.png')] flex flex-col items-center justify-center gap-8">
+    <div className="h-[900px] bg-[url('/testimonial-bg.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center gap-8">
       <div>
         <p className="text-2xl text-primary before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
           Testimonials
