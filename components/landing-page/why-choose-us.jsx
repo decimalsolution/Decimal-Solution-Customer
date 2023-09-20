@@ -19,8 +19,7 @@ export default function WhyChooseUs() {
           src={"/why-choose-us.png"}
           alt="Why Choose Us"
           fill
-          objectFit="contain"
-          className="col-span-2 col-start-1"
+          className="object-contain col-span-2 col-start-1"
         />
         <div className="h-full col-start-3 relative my-8 grid grid-rows-4 ">
           <div className="absolute w-[calc(100%+34%)] p-8 rounded-lg shadow-xl row-start-1 -top-4 -left-[34%] z-10 bg-white">

@@ -90,7 +90,7 @@ export default function OurProjects() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  objectFit="cover"
+                  className="object-cover"
                 />
               </div>
               <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">

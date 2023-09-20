@@ -16,25 +16,25 @@ export default function Slider() {
   const [current, setCurrent] = useState(0);
   const sliderRef = useRef(null);
 
-  // useEffect(() => {
-  //   let interval;
-  //   if (sliderRef) {
-  //     interval = setInterval(() => {
-  //       console.log("Here");
-  //       setCurrent((prev) => {
-  //         if (prev === 3) {
-  //           return 0;
-  //         } else {
-  //           return prev + 1;
-  //         }
-  //       });
-  //     }, 1000);
-  //   } else {
-  //     console.log("Nope");
-  //   }
+  useEffect(() => {
+    let interval;
+    if (sliderRef) {
+      interval = setInterval(() => {
+        console.log("Here");
+        setCurrent((prev) => {
+          if (prev === 3) {
+            return 0;
+          } else {
+            return prev + 1;
+          }
+        });
+      }, 1000);
+    } else {
+      console.log("Nope");
+    }
 
-  //   clearInterval(interval);
-  // }, [sliderRef]);
+    clearInterval(interval);
+  }, [sliderRef]);
 
   return (
     <div className="relative max-h-[650px] h-full w-full overflow-hidden aspect-video xl-aspect-[1920/700]  2xl:aspect-[1920/700] ">
