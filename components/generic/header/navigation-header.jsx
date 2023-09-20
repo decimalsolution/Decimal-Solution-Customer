@@ -1,5 +1,6 @@
 "use client";
 
+import { ServiceModal } from "@/components/landing-page/services-modal";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +14,7 @@ const navigationLinks = [
   {
     name: "Services",
     href: "/services",
+    Custom: ServiceModal,
   },
   {
     name: "Portfolio",
@@ -46,18 +48,29 @@ export default function NavigationHeader() {
       </div>
 
       <nav className="hidden lg:flex items-center justify-between gap-8 xl:gap-10 2xl:gap-14">
-        {navigationLinks.map((link, index) => (
-          <Link
-            href={link.href}
-            key={index}
-            className={clsx(
-              "text-lg 2xl:text-xl text-gray-700 duration-300 transition-colors hover:text-primary",
-              link.href === pathname && "text-primary"
-            )}
-          >
-            {link.name}
-          </Link>
-        ))}
+        {navigationLinks.map((NavLink, index) =>
+          NavLink.Custom ? (
+            <NavLink.Custom
+              href={NavLink.href}
+              key={index}
+              className={clsx(
+                "navbar-link",
+                NavLink.href === pathname && "text-primary"
+              )}
+            />
+          ) : (
+            <Link
+              href={NavLink.href}
+              key={index}
+              className={clsx(
+                "navbar-link",
+                NavLink.href === pathname && "text-primary"
+              )}
+            >
+              {NavLink.name}
+            </Link>
+          )
+        )}
       </nav>
     </div>
   );

@@ -1,3 +1,4 @@
+import { ServiceModal } from "@/components/landing-page/services-modal";
 import InfoHeader from "./info-header";
 import NavigationHeader from "./navigation-header";
 

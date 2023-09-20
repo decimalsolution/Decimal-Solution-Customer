@@ -86,3 +86,7 @@
 .landing-page-paragraph {
   @apply text-3xl text-gray-500 mt-4;
 }
+
+.navbar-link {
+  @apply text-lg 2xl:text-xl text-gray-700 duration-300 transition-colors hover:text-primary;
+}
