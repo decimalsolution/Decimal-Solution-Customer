@@ -22,7 +22,7 @@ const navigationLinks = [
   },
   {
     name: "Our Products",
-    href: "/our-products",
+    href: "/products",
   },
   {
     name: "Careers",
