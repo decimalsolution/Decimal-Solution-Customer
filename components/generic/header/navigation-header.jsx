@@ -42,7 +42,7 @@ export default function NavigationHeader() {
   return (
     <div className="flex items-stretch justify-between ">
       <div className="w-40 xl:w-48 2xl:w-56 relative aspect-[200/100]">
-        <Image src="/logo.png" fill />
+        <Image src="/logo.png" alt="Decimal Solution Logo" fill />
       </div>
 
       <nav className="hidden lg:flex items-center justify-between gap-8 xl:gap-10 2xl:gap-14">

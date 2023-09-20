@@ -56,13 +56,14 @@ export default function Slider() {
             />
             <Image
               src="/slider-overlay.png"
+              alt="Slider Overlay"
               fill
               priority={true}
               className="absolute inset-0"
             />
 
-            <div className="absolute inset-0 flex flex-col justify-center items-start mx-16">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white uppercase max-w-xs md:max-w-xs lg:max-w-md xl:max-w-xl leading-tight">
+            <div className="absolute inset-0 flex flex-col justify-center items-start mx-20">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white uppercase max-w-xs md:max-w-xs lg:max-w-md xl:max-w-xl leading-none">
                 {headings[i]}
               </h1>
               <button className="bg-white px-4 sm:px-6 lg:px-12 xl:px-16 py-2 sm:py-3 lg:py-4 xl:py-6 rounded-sm sm:rounded-md lg:rounded-xl mt-8 text-md sm:text-lg xl:text-xl 2xl:text-2xl text-primary font-semibold flex gap-4 items-center ">

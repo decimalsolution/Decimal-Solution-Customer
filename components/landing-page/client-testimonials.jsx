@@ -1,13 +1,14 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function ClientTestimonials() {
   return (
     <div className="h-[900px] bg-[url('/testimonial-bg.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center gap-8">
       <div>
-        <p className="text-2xl text-primary before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
+        <p className={cn("landing-page-subheading", "!normal-case")}>
           Testimonials
         </p>
-        <h2 className="text-4xl font-semibold">Client Testimonials</h2>
+        <h2 className="landing-page-heading">Client Testimonials</h2>
       </div>
 
       <div className="flex flex-col items-center">
@@ -29,11 +30,11 @@ export default function ClientTestimonials() {
         </div>
 
         <h5 className="text-2xl font-semibold mt-8">Jennifer Markelin</h5>
-        <p className="text-center text-lg text-primary font-medium mt-2">
+        <p className="text-center text-xl text-primary font-medium mt-2">
           Amazon Assistant Head
         </p>
 
-        <p className="text-center text-2xl mt-8 max-w-[1000px]">
+        <p className="text-center text-2xl mt-8 max-w-7xl leading-relaxed">
           I would highly recommend them and would love to work with them in the
           future. Very professional work. Strongly recommended.
         </p>

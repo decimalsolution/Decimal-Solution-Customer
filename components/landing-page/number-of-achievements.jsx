@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function NumberOfAchievements() {
@@ -6,10 +7,15 @@ export default function NumberOfAchievements() {
       <div className="absolute inset-0 bg-primary/80"></div>
       <div className="flex flex-col items-center z-10">
         <div>
-          <p className="text-2xl text-white before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
-            Our Facts
+          <p
+            className={cn(
+              "landing-page-subheading",
+              "!text-white !normal-case"
+            )}
+          >
+            Some Facts
           </p>
-          <h2 className="text-4xl text-white font-semibold">
+          <h2 className={cn("landing-page-heading", "!text-white")}>
             Number of Achievements
           </h2>
         </div>

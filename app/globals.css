@@ -71,6 +71,18 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-gray-700;
   }
+}
+
+.landing-page-heading {
+  @apply text-[40px] font-semibold;
+}
+
+.landing-page-subheading {
+  @apply text-[26px] text-primary before:content-['<'] before:inline-block mb-1 before:mr-1  after:content-['>'] after:inline-block after:ml-1 uppercase;
+}
+
+.landing-page-paragraph {
+  @apply text-3xl text-gray-500 mt-4;
 }

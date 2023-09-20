@@ -1,14 +1,15 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
     <div className="flex flex-col p-12 gap-16">
-      <div className="">
-        <p className="text-2xl text-primary before:content-['<'] before:inline-block before:mr-1  after:content-['>'] after:inline-block after:ml-1">
+      <div className="px-24">
+        <p className={cn("landing-page-subheading", "!normal-case")}>
           Why Choose Us
         </p>
-        <h2 className="text-4xl font-semibold">Our Working Process</h2>
-        <p className="text-2xl text-gray-700">
+        <h2 className="landing-page-heading">Our Working Process</h2>
+        <p className="landing-page-paragraph">
           We ensure that all your digital needs are met at an affordable price
           and in promised time.
         </p>
