@@ -4,7 +4,7 @@ import NavigationHeader from "./navigation-header";
 
 export default function MainNav() {
   return (
-    <header className="flex flex-col items-center ">
+    <header className="flex flex-col items-center bg-white">
       <div className="max-w-[1720px] w-full px-4 xl:px-8">
         <InfoHeader />
       </div>
