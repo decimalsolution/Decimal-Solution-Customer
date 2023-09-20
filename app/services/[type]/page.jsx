@@ -39,7 +39,7 @@ export default function SpecificService({ params }) {
     <div>
       <PageIntroduction title={data?.title} image={data?.image} />
 
-      <div className="p-24 flex flex-col gap-32">
+      <div className=" flex flex-col gap-8">
         {data?.sections.map((item, index) => (
           <>
             <ServiceCard

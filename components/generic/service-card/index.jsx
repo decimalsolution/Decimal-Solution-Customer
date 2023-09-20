@@ -1,12 +1,20 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export default function ServiceCard({ reverse, title, description, image }) {
+export default function ServiceCard({
+  reverse,
+  title,
+  description,
+  image,
+  showButton,
+  showBackground,
+}) {
   return (
     <div
       className={cn(
-        "flex items-stretch justify-between gap-8",
-        reverse && "flex-row-reverse"
+        "flex items-stretch justify-between gap-8 p-24",
+        reverse && "flex-row-reverse",
+        showBackground && "bg-primary/[0.15]"
       )}
     >
       <div
@@ -15,6 +23,16 @@ export default function ServiceCard({ reverse, title, description, image }) {
         <div className="w-32 h-2 bg-primary"></div>
         <h2 className="text-[40px] uppercase font-semibold">{title}</h2>
         <p className="text-2xl leading-loose text-justify">{description}</p>
+        {showButton && (
+          <button
+            className={cn(
+              "text-xl text-white  bg-primary px-16 py-4 rounded-xl",
+              reverse ? "self-end" : "self-start"
+            )}
+          >
+            View Demo
+          </button>
+        )}
       </div>
       <div
         className={cn(
