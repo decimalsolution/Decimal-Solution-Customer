@@ -8,7 +8,7 @@ import WhyChooseUs from "@/components/landing-page/why-choose-us";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-stretch gap-16">
+    <main className="flex flex-col items-stretch gap-2 md:gap-4 lg:gap-8 xl:gap-16">
       <Slider />
 
       <OurServices />

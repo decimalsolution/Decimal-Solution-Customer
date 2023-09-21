@@ -54,19 +54,19 @@ export default function OurProjects() {
   const [selected, setSelected] = useState("");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-16 flex-wrap ">
+    <div className="flex flex-col items-center justify-center gap-4 sm:gap-8 lg:gap-16 flex-wrap py-8 lg:py-12">
       <div className="flex flex-col items-center">
         <div>
           <p className="landing-page-subheading">Our Projects</p>
           <h2 className="landing-page-heading">Some Latest Client Projects</h2>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-4 flex-wrap">
+      <div className="flex items-center justify-center  gap-2 sm:gap-4 flex-wrap">
         {buttons.map((buttonText, index) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
             className={cn(
-              "text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
+              "text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
               selected === buttonText && "bg-primary text-white"
             )}
             onClick={() => {
@@ -91,22 +91,22 @@ export default function OurProjects() {
                 />
               </div>
               <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
-                <h4 className="text-center text-white text-3xl font-bold uppercase">
+                <h4 className="text-center text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase">
                   {item.title}
                 </h4>
-                <p className="text-center text-white text-xl">
+                <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
                   {item.description}
                 </p>
-                <div className="w-16 h-16 bg-white grid place-items-center rounded-full text-primary">
-                  <Link size={36} strokeWidth={3} />
+                <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
+                  <Link strokeWidth={3} className="w-1/2 h-1/2" />
                 </div>
-              </div>{" "}
+              </div>
             </div>
           </SwiperSlide>
         ))}
       </Carousel>
 
-      <button className="bg-primary block w-72 py-4 text-white font-medium text-2xl rounded-xl">
+      <button className="bg-primary block sm:w-36 md:w-40 lg:w-56 xl:w-64 2xl:w-72 px-4 py-2 lg:py-4 text-white font-medium text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl rounded-xl">
         View All
       </button>
     </div>

@@ -19,7 +19,7 @@ export default function ToolsAndTechnologies() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full gap-16 py-24">
-      <div className="grid grid-cols-3 px-24">
+      <div className="block lg:grid grid-cols-3 px-4 2xl:px-24">
         <div className="col-start-2 col-span-2">
           <p className={cn("landing-page-subheading", "!normal-case")}>
             Tools and Technologies

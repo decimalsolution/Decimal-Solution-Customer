@@ -36,13 +36,14 @@ const navigationLinks = [
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center text-white py-32 bg-[url('/footer-bg.png')] bg-cover gap-8">
-      <div className=" flex items-center justify-center gap-8 ">
+    <div className="flex flex-col items-center text-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-[url('/footer-bg.png')] bg-cover gap-8">
+      <div className=" flex items-center justify-center gap-2 md:gap-4 lg:gap-8 flex-wrap ">
         {navigationLinks.map((link, i) => (
           <Link
             className={cn(
-              "text-white text-2xl font-medium hover:text-primary transition-colors",
-              i !== navigationLinks.length - 1 && "border-r border-white pr-8"
+              "text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors",
+              i !== navigationLinks.length - 1 &&
+                "border-r border-white pr-2 md:pr-4 lg:pr-8"
             )}
             href={link.href}
           >
@@ -51,11 +52,13 @@ export default function Footer() {
         ))}
       </div>
 
-      <h2 className="text-white text-2xl font-bold text-center">Contact Us</h2>
+      <h2 className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-center">
+        Contact Us
+      </h2>
 
       <Link
         href="mailto:info@decimalsolution.com"
-        className="text-white text-2xl font-medium hover:text-primary transition-colors"
+        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
       >
         info@decimalsolution.com
       </Link>
@@ -63,14 +66,14 @@ export default function Footer() {
       <div className="flex items-center justify-center gap-8">
         <Link
           href="tel:+923455893337"
-          className="text-white text-2xl font-medium hover:text-primary transition-colors"
+          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
         >
           +92 345 5893337
         </Link>
 
         <Link
           href="tel:+923004257414"
-          className="text-white text-2xl font-medium hover:text-primary transition-colors"
+          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
         >
           +92 300 4257414
         </Link>
@@ -78,7 +81,7 @@ export default function Footer() {
 
       <Link
         href={"/"}
-        className="text-white text-2xl font-medium hover:text-primary transition-colors"
+        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium hover:text-primary transition-colors"
       >
         Office No# 17, 2rd Floor, Zaki Centre, I-8 Markaz Islamabad, 44000
       </Link>
@@ -108,7 +111,7 @@ export default function Footer() {
 
       <div className="w-full h-[1px] bg-white/50 mx-32"></div>
 
-      <p className="text-white text-center text-lg font-medium">
+      <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium">
         CopyRight © 2021 Decimal Solutions. All Rights Reserved.{" "}
       </p>
     </div>

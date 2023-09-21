@@ -47,7 +47,7 @@ const data = [
 
 export default function OurServices() {
   return (
-    <div className="flex flex-col items-center gap-8 py-20 bg-[url('/our-services-bg.png')] bg-cover bg-no-repeatC">
+    <div className="flex flex-col items-center gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20 bg-[url('/our-services-bg.png')] bg-cover bg-no-repeatC">
       <div className="flex flex-col items-center">
         <div>
           <p className="landing-page-subheading">Our Services</p>
@@ -61,8 +61,8 @@ export default function OurServices() {
         {data.map((item, i) => (
           <SwiperSlide key={i}>
             <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group">
-              <div className="absolute w-32 h-32 bg-primary rounded-full -top-8 -left-7 grid place-items-center">
-                <p className="text-white text-4xl font-semibold mt-3">
+              <div className="absolute w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 2xl:w-32 2xl:h-32 bg-primary rounded-full -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-left-5 lg:-top-5 xl:-top-6 xl:-left-6 2xl:-top-8 2xl:-left-7 grid place-items-center">
+                <p className="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold mt-2 lg:mt-3">
                   0{i + 1}
                 </p>
               </div>
@@ -74,13 +74,15 @@ export default function OurServices() {
                   height={100}
                 />
               </div>
-              <h3 className="text-3xl font-semibold">{item.title}</h3>
+              <h3 className="text-lg 2xl:text-3xl font-semibold">
+                {item.title}
+              </h3>
               <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
-                <p className="text-center text-white text-xl">
+                <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
                   {item.description}
                 </p>
-                <div className="w-16 h-16 bg-white grid place-items-center rounded-full text-primary">
-                  <Link size={36} strokeWidth={3} />
+                <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
+                  <Link strokeWidth={3} className="w-1/2 h-1/2" />
                 </div>
               </div>
             </div>

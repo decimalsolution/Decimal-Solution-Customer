@@ -76,15 +76,15 @@
 }
 
 .landing-page-heading {
-  @apply text-[40px] font-semibold;
+  @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[40px] font-semibold;
 }
 
 .landing-page-subheading {
-  @apply text-[26px] text-primary before:content-['<'] before:inline-block mb-1 before:mr-1  after:content-['>'] after:inline-block after:ml-1 uppercase;
+  @apply text-base md:text-[17px] lg:text-lg xl:text-xl 2xl:text-[26px] text-primary before:content-['<'] before:inline-block mb-1 before:mr-1  after:content-['>'] after:inline-block after:ml-1 uppercase;
 }
 
 .landing-page-paragraph {
-  @apply text-3xl text-gray-500 mt-4;
+  @apply text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-500 mt-2 md:mt-4;
 }
 
 .navbar-link {

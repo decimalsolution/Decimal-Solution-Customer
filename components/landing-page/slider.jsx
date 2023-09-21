@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { SendHorizonal } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const headings = [
@@ -62,19 +63,21 @@ export default function Slider() {
               className="absolute inset-0"
             />
 
-            <div className="absolute inset-0 flex flex-col justify-center items-start mx-20">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white uppercase max-w-xs md:max-w-xs lg:max-w-md xl:max-w-xl leading-none">
+            <div className="absolute inset-0 flex flex-col justify-center items-start mx-4 md:mx-8 lg:mx-12 xl:mx-16 2xl:mx-20">
+              <h1 className="text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white uppercase max-w-[150px] md:max-w-xs lg:max-w-md xl:max-w-xl leading-none">
                 {headings[i]}
               </h1>
-              <button className="bg-white px-4 sm:px-6 lg:px-12 xl:px-16 py-2 sm:py-3 lg:py-4 xl:py-6 rounded-sm sm:rounded-md lg:rounded-xl mt-8 text-md sm:text-lg xl:text-xl 2xl:text-2xl text-primary font-semibold flex gap-4 items-center ">
-                <span>Contact Us</span>
-                <SendHorizonal className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8" />
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white px-2 sm:px-6 lg:px-12 xl:px-16 py-2 sm:py-3 lg:py-4 xl:py-6 rounded-sm sm:rounded-md lg:rounded-xl mt-2 sm:mt-4 lg:mt-8 text-xs sm:text-lg xl:text-xl 2xl:text-2xl text-primary font-semibold flex gap-2 md:gap-4 items-center ">
+                  <span>Contact Us</span>
+                  <SendHorizonal className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8" />
+                </button>
+              </Link>
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute bottom-8 right-8 flex gap-8">
+      <div className="hidden md:flex absolute bottom-8 right-8 gap-8">
         {Array(4)
           .fill(0)
           .map((_, i) => (

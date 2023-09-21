@@ -1,9 +1,32 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+const data = [
+  {
+    title: "Years of Operation",
+    icon: "/icons/years-of-operation.svg",
+    amount: "04",
+  },
+  {
+    title: "Completed Projects",
+    icon: "/icons/completed-projects.svg",
+    amount: "112",
+  },
+  {
+    title: "Loyal Clients",
+    icon: "/icons/loyal-clients.svg",
+    amount: "57",
+  },
+  {
+    title: "New Projects",
+    icon: "/icons/new-projects.svg",
+    amount: "04",
+  },
+];
+
 export default function NumberOfAchievements() {
   return (
-    <div className="p-16 flex flex-col items-center gap-16 relative bg-[url('/our-achievements-bg.jpg')] bg-cover bg-center">
+    <div className="p-12  lg:p-16 flex flex-col items-center gap-16 relative bg-[url('/our-achievements-bg.jpg')] bg-cover bg-center">
       <div className="absolute inset-0 bg-primary/80"></div>
       <div className="flex flex-col items-center z-10">
         <div>
@@ -21,47 +44,20 @@ export default function NumberOfAchievements() {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 max-w-[1600px] w-full">
-        <div className="w-full h-full border flex flex-col items-center justify-center border-white aspect-square relative before:absolute before:content-[''] before:top-[calc((50%+25%)/2)] before:-left-1 before:bg-primary before:w-2 before:h-[25%] after:absolute after:content-[''] after:top-[calc((50%+25%)/2)] after:-right-1 after:bg-primary after:w-2 after:h-[25%]">
-          <Image
-            src="/icons/years-of-operation.svg"
-            width={75}
-            height={75}
-            className="mb-4"
-          />
-          <h3 className="font-bold text-7xl text-white">04</h3>
-          <p className="text-3xl text-white">Years of Operation</p>
-        </div>
-        <div className="w-full h-full  flex flex-col items-center justify-center border border-white aspect-square relative before:absolute before:content-[''] before:top-[calc((50%+25%)/2)] before:-left-1 before:bg-primary before:w-2 before:h-[25%] after:absolute after:content-[''] after:top-[calc((50%+25%)/2)] after:-right-1 after:bg-primary after:w-2 after:h-[25%]">
-          <Image
-            src="/icons/completed-projects.svg"
-            width={75}
-            height={75}
-            className="mb-4"
-          />
-          <h3 className="font-bold text-7xl text-white">112</h3>
-          <p className="text-3xl text-white">Completed Projects</p>
-        </div>
-        <div className="w-full h-full  flex flex-col items-center justify-center border border-white aspect-square relative before:absolute before:content-[''] before:top-[calc((50%+25%)/2)] before:-left-1 before:bg-primary before:w-2 before:h-[25%] after:absolute after:content-[''] after:top-[calc((50%+25%)/2)] after:-right-1 after:bg-primary after:w-2 after:h-[25%]">
-          <Image
-            src="/icons/loyal-clients.svg"
-            width={75}
-            height={75}
-            className="mb-4"
-          />
-          <h3 className="font-bold text-7xl text-white">57</h3>
-          <p className="text-3xl text-white">Loyal Clients</p>
-        </div>
-        <div className="w-full h-full  flex flex-col items-center justify-center border border-white aspect-square relative before:absolute before:content-[''] before:top-[calc((50%+25%)/2)] before:-left-1 before:bg-primary before:w-2 before:h-[25%] after:absolute after:content-[''] after:top-[calc((50%+25%)/2)] after:-right-1 after:bg-primary after:w-2 after:h-[25%]">
-          <Image
-            src="/icons/new-projects.svg"
-            width={75}
-            height={75}
-            className="mb-4"
-          />
-          <h3 className="font-bold text-7xl text-white">04</h3>
-          <p className="text-3xl text-white">New Projects</p>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-16 max-w-[1600px] w-full">
+        {data.map((item, i) => (
+          <div className="w-full h-full border flex flex-col items-center justify-center border-white aspect-square relative before:absolute before:content-[''] before:top-[calc((50%+25%)/2)] before:-left-1 before:bg-primary before:w-2 before:h-[25%] after:absolute after:content-[''] after:top-[calc((50%+25%)/2)] after:-right-1 after:bg-primary after:w-2 after:h-[25%]">
+            <div className="w-[75px] h-[75px] relative mb-4">
+              <Image src={item.icon} fill />
+            </div>
+            <h3 className="font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-white">
+              {item.amount}
+            </h3>
+            <p className="text-xl lg:text-2xl 2xl:text-3xl text-white text-center">
+              {item.title}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
