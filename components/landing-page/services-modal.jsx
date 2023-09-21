@@ -72,11 +72,14 @@ export function ServiceModal({ className, href }) {
           Services
         </Link>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[700px]  ">
-        <div className="grid grid-cols-3 gap-8">
+      <DialogContent className="sm:max-w-[700px] ">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {data.map((item, index) => (
             <Link
               href={item.href}
+              onClick={(e) => {
+                setOpen(false);
+              }}
               key={index}
               className="flex flex-col items-center gap-4 justify-center cursor-pointer group"
             >

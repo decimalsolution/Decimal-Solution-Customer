@@ -8,9 +8,9 @@ export default function ContactUs() {
   return (
     <div>
       <PageIntroduction title="Contact Us" image={"/contact-us.png"} />
-      <div className="flex items-stretch justify-center mb-4 gap-16">
-        <div className="flex-1 flex flex-col gap-8 bg-gray-100 pl-36 py-24 relative pr-[60px]">
-          <div className="absolute right-0 top-0 w-[50px] h-full py-24">
+      <div className="flex flex-col lg:flex-row items-stretch justify-center mb-4 gap-4 xl:gap-16">
+        <div className="flex-1 flex flex-col gap-8 bg-gray-100 p-4  py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24 relative xl:pr-[60px]">
+          <div className="hidden xl:block absolute right-0 top-0 w-[50px] h-full py-24">
             <div className="w-full h-full bg-primary/70"></div>
           </div>
           <div>
@@ -54,26 +54,29 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex flex-col gap-8 pr-36 py-24">
+        <div className="flex-1 flex flex-col gap-4 lg:gap-8 p-4 xl:pr-36 py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24">
           <div>
             <p className="landing-page-subheading">Get Pure Estimate</p>
             <h2 className="landing-page-heading">Fill up the Form</h2>
           </div>
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid xl:grid-cols-2 gap-4 lg:gap-8">
             <CustomInput placeholder="Full Name" />
             <CustomInput placeholder="Email" type="email" />
-            <CustomInput placeholder="Interested In" className="col-span-2" />
+            <CustomInput
+              placeholder="Interested In"
+              className="xl:col-span-2"
+            />
             <CustomTextArea
               placeholder="Write your Message"
-              className="col-span-2"
+              className="xl:col-span-2"
             />
           </div>
-          <button className="bg-primary text-white text-2xl px-16 py-4 rounded-lg self-end">
+          <button className="bg-primary text-white text-base md:text-lg lg:text-xl xl:text-2xl px-6 md:px-8 lg:px-12 xl:px-16 py-2 md:py-3 lg:py-4 rounded-lg self-center xl:self-end">
             Get Quote
           </button>
         </div>
       </div>
-      <div className="aspect-[3] relative">
+      <div className="aspect-square md:aspect-[2] lg:aspect-[3] relative">
         <Image
           src="/location.png"
           fill
