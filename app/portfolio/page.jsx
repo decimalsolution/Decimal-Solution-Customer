@@ -66,12 +66,12 @@ export default function Portfolio() {
     <div>
       <PageIntroduction title={"Our Projects"} image={"/portfolio.jpg"} />
       <div className="pt-24 flex flex-col gap-5 items-center">
-        <div className="flex items-center justify-center gap-4 flex-wrap">
+        <div className="flex items-center justify-center gap-4 flex-wrap mb-16">
           {buttons.map((buttonText, index) => (
             <button
               key={"our-projects-buttons-" + index + "-key"}
               className={cn(
-                "text-xl text-gray-500 px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
+                "text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
                 selected === buttonText && "bg-primary text-white"
               )}
               onClick={() => {
@@ -84,8 +84,13 @@ export default function Portfolio() {
         </div>
 
         {headings.map((heading, index) => (
-          <div>
-            <p className={cn("landing-page-subheading", "ml-8 !mb-8")}>
+          <div className="w-full flex flex-col items-center mb-16">
+            <p
+              className={cn(
+                "landing-page-subheading",
+                "ml-8 !mb-8 w-full px-24"
+              )}
+            >
               {heading}
             </p>
             <Carousel>
@@ -101,16 +106,16 @@ export default function Portfolio() {
                       />
                     </div>
                     <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
-                      <h4 className="text-center text-white text-3xl font-bold uppercase">
+                      <h4 className="text-center text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase">
                         {item.title}
                       </h4>
-                      <p className="text-center text-white text-xl">
+                      <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
                         {item.description}
                       </p>
-                      <div className="w-16 h-16 bg-white grid place-items-center rounded-full text-primary">
-                        <Link size={36} strokeWidth={3} />
+                      <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
+                        <Link strokeWidth={3} className="w-1/2 h-1/2" />
                       </div>
-                    </div>{" "}
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}
