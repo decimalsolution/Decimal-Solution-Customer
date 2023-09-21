@@ -60,13 +60,13 @@ export default function Careers() {
     <div>
       <PageIntroduction title={"Careers"} image={"/careers.png"} />
 
-      <div className="p-24 flex flex-col gap-8 bg-gray-100">
+      <div className="p-12 md:p-16 lg:p-20 xl:p-24 flex flex-col gap-8 bg-gray-100">
         <div>
           <p className="landing-page-subheading">Hiring Steps</p>
           <h2 className="landing-page-heading">Our Recruitment Process</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 xl:grid-cols-5  min-h-[400px] h-full gap-8 items-center ">
+        <div className="grid grid-cols-2  md:grid-cols-3 xl:grid-cols-5  min-h-[400px] h-full gap-8 items-center ">
           {steps.map((step, index) => (
             <div className="flex flex-col items-center justify-between h-full ">
               <div className="relative flex-1 h-full w-full">
@@ -77,34 +77,35 @@ export default function Careers() {
                   className="object-contain w-full h-full"
                 />
               </div>
-              <h3 className="text-[22px] font-semibold text-center">
+              <h3 className="text-sm md:text-base lg:text-lg xl:text-[22px] font-semibold text-center">
                 {step.title}
               </h3>
             </div>
           ))}
-          <div className="-rotate-90 ">
-            <h3 className="text-[5vw] font-semibold text-primary/30 text-center ">
+          <div className="col-span-2 xl:col-span-1 xl:-rotate-90 ">
+            <h3 className="text-4xl md:text-[5vw] mt-8 md:mt-0 font-semibold text-primary/30 text-center ">
               JOIN
             </h3>
           </div>
         </div>
       </div>
-      <div className="py-24 px-36 flex gap-16">
+
+      <div className="py-24 px-8 sm:px-12 md:px-20 lg:px-28 xl:px-32 2xl:px-36 flex  flex-col-reverse xl:flex-row gap-8 2xl:gap-16">
         <div className="flex-[3]">
           <p className="landing-page-subheading">Job Positions</p>
           <h2 className="landing-page-heading mb-8">Start Work with Us!</h2>
 
-          <p className="text-[25px] leading-loose">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] leading-loose">
             If you are passionate about providing solutions to IT needs then
             Decimal Solutions is a perfect place for you to work. We believe in
             serving our customers with the best by using the right tools. If you
             have it in you to contribute to the digital world; submit your
             resume today and we'll get back to you.
           </p>
-          <h3 className="text-[25px] font-semibold mt-12 mb-8">
+          <h3 className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] font-semibold  mt-6 md:mt-8 lg:mt-10 xl:mt-12 mb-4 md:mb-5 lg:mb-6 xl:mb-8">
             Why Work with Us?
           </h3>
-          <p className="text-[25px] leading-loose">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] leading-loose">
             Decimal Solutions provide a challenging yet innovative platform for
             all the enthusiasts looking to leave a mark in the digital world. We
             provide a comfortable and friendly working environment,
@@ -141,7 +142,7 @@ export default function Careers() {
         </div>
       </div>
 
-      <div className="bg-primary px-24 py-8">
+      <div className="bg-primary px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8">
         <p className={cn("landing-page-subheading", "!text-white")}>
           Job Filter
         </p>
@@ -149,7 +150,7 @@ export default function Careers() {
           Find your desired job & get recruited
         </h2>
 
-        <div className="flex gap-8 mt-12">
+        <div className="flex gap-8 mt-12 flex-wrap">
           <SelectMenu
             items={[
               { value: "Development", label: "Development" },
@@ -185,13 +186,13 @@ export default function Careers() {
             placeholder={"Location"}
           />
 
-          <button className="text-2xl bg-white text-primary px-12 py-2 rounded-lg">
+          <button className="flex-1 lg:flex-0 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-white text-primary px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 rounded-lg">
             Filter Jobs
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 px-24 py-8 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 gap-8">
         {positions.map((position, index) => (
           <JobListing {...position} key={"job-listing-" + index} />
         ))}

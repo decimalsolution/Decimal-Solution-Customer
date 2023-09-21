@@ -2,6 +2,7 @@
 
 import { ServiceModal } from "@/components/landing-page/services-modal";
 import clsx from "clsx";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -74,6 +75,7 @@ export default function NavigationHeader() {
           )
         )}
       </nav>
+      <Menu className="my-auto lg:hidden" size={30} />
     </div>
   );
 }
