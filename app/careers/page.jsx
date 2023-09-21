@@ -1,8 +1,9 @@
+"use client";
+
 import JobListing from "@/components/generic/job-listing";
 import PageIntroduction from "@/components/generic/page-introduction";
 import SelectMenu from "@/components/generic/select-menu";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const steps = [
   {
@@ -152,7 +153,6 @@ export default function Careers() {
 
         <div className="flex gap-8 mt-12">
           <SelectMenu
-            className="flex-1 p-8 text-2xl"
             items={[
               { value: "Development", label: "Development" },
               {
@@ -166,7 +166,6 @@ export default function Careers() {
             placeholder={"Category"}
           />
           <SelectMenu
-            className="flex-1 p-8 text-2xl"
             items={[
               { value: "Full Time", label: "Full Time" },
               { value: "Part Time", label: "Part Time" },
@@ -178,7 +177,6 @@ export default function Careers() {
             placeholder={"Type"}
           />
           <SelectMenu
-            className="flex-1 p-8 text-2xl"
             items={[
               { value: "Islamabad", label: "Islamabad" },
               { value: "Rawalpindi", label: "Rawalpindi" },
@@ -197,7 +195,7 @@ export default function Careers() {
 
       <div className="grid grid-cols-3 px-24 py-8 gap-8">
         {positions.map((position, index) => (
-          <JobListing {...position} />
+          <JobListing {...position} key={"job-listing-" + index} />
         ))}
       </div>
     </div>

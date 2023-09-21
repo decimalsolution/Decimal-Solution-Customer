@@ -7,22 +7,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function SelectMenu({ className, items, placeholder }) {
+export default function SelectMenu({ items = [], placeholder = "" }) {
   return (
     <Select>
-      <SelectTrigger className={className}>
+      <SelectTrigger className="flex-1 p-8 text-2xl">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <>
             <SelectItem
               className={"text-2xl py-4 !text-gray-500 font-medium"}
-              value={item.value}
+              value={item?.value}
             >
-              {item.label}
+              {item?.label}
             </SelectItem>
-            {index !== items.length - 1 && <SelectSeparator />}
+            {index !== items?.length - 1 && <SelectSeparator />}
           </>
         ))}
       </SelectContent>
