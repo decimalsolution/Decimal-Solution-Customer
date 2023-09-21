@@ -1,5 +1,3 @@
-"use client";
-
 import JobListing from "@/components/generic/job-listing";
 import PageIntroduction from "@/components/generic/page-introduction";
 import SelectMenu from "@/components/generic/select-menu";
