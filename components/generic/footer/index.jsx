@@ -84,7 +84,6 @@ export default function Footer() {
       </Link>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
-        <div className="w-[1px] h-full bg-gray-400"></div>
         <div className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
           <Facebook
             className="text-white"

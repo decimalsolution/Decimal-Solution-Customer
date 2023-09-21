@@ -45,9 +45,11 @@ export default function InfoHeader() {
             strokeWidth={0}
           />
         </div>
-        <button className="h-12 w-56 xl:h-16 2xl:h-20 xl:w-64 2xl:w-80 text-white bg-primary xl:text-xl 2xl:text-2xl font-500">
-          Contact Us
-        </button>
+        <Link href="/contact-us">
+          <button className="h-12 w-56 xl:h-16 2xl:h-20 xl:w-64 2xl:w-80 text-white bg-primary xl:text-xl 2xl:text-2xl font-500">
+            Contact Us
+          </button>
+        </Link>
       </div>
     </div>
   );

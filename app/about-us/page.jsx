@@ -130,26 +130,42 @@ export default function AboutUs() {
         <div className="flex flex-col items-center justify-center gap-4">
           <CircularProgress progress={100} />
           <p className="text-center text-2xl font-medium">
-            Mobile App Development
+            Mobile App
+            <br />
+            Development
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
           <CircularProgress progress={100} />
           <p className="text-center text-2xl font-medium">
-            Website Development
+            Website
+            <br />
+            Development
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
           <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">AR/VR Game</p>
+          <p className="text-center text-2xl font-medium">
+            AR/VR
+            <br />
+            Game
+          </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
           <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">UI/UI Design</p>
+          <p className="text-center text-2xl font-medium">
+            UI/UI
+            <br />
+            Design
+          </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
           <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">Digital Marketing</p>
+          <p className="text-center text-2xl font-medium">
+            Digital
+            <br />
+            Marketing
+          </p>
         </div>
       </div>
 
