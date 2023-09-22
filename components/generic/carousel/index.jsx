@@ -29,7 +29,6 @@ export default function Carousel({ children, ...props }) {
       </button>
       <Swiper
         spaceBetween={30}
-        onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => setSwiperRef(swiper)}
         navigation
         loop

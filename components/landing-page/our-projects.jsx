@@ -6,6 +6,7 @@ import Carousel from "../generic/carousel";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { Link } from "lucide-react";
+import NextLink from "next/link";
 
 const buttons = [
   "All",
@@ -50,8 +51,16 @@ const projects = [
   },
 ];
 
-export default function OurProjects() {
+export default async function OurProjects() {
   const [selected, setSelected] = useState("");
+
+  const res = await fetch(
+    "https://backend.decimalsolution.com/api/v1/web/homeScreenProjects/all"
+  );
+
+  const data = await res.json();
+
+  const projects = data.data;
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 sm:gap-8 lg:gap-16 flex-wrap py-8 lg:py-12">
@@ -84,7 +93,7 @@ export default function OurProjects() {
             <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
               <div>
                 <Image
-                  src={item.image}
+                  src={item.coverImage}
                   alt={item.title}
                   fill
                   className="object-cover"
@@ -94,12 +103,18 @@ export default function OurProjects() {
                 <h4 className="text-center text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase">
                   {item.title}
                 </h4>
-                <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
-                  {item.description}
+                <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl line-clamp-6">
+                  {item.shortDescription}
                 </p>
-                <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
-                  <Link strokeWidth={3} className="w-1/2 h-1/2" />
-                </div>
+                <NextLink
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
+                    <Link strokeWidth={3} className="w-1/2 h-1/2" />
+                  </div>
+                </NextLink>
               </div>
             </div>
           </SwiperSlide>

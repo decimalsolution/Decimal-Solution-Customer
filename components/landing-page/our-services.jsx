@@ -45,7 +45,15 @@ const data = [
   },
 ];
 
-export default function OurServices() {
+export default async function OurServices() {
+  const res = await fetch(
+    "https://backend.decimalsolution.com/api/v1/web/services  "
+  );
+
+  const data = await res.json();
+
+  const services = data.data;
+
   return (
     <div className="flex flex-col items-center gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20 bg-[url('/our-services-bg.png')] bg-cover bg-no-repeatC">
       <div className="flex flex-col items-center">
@@ -58,7 +66,7 @@ export default function OurServices() {
       </div>
 
       <Carousel>
-        {data.map((item, i) => (
+        {services.map((item, i) => (
           <SwiperSlide key={i}>
             <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group">
               <div className="absolute w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 2xl:w-32 2xl:h-32 bg-primary rounded-full -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-left-5 lg:-top-5 xl:-top-6 xl:-left-6 2xl:-top-8 2xl:-left-7 grid place-items-center">
@@ -68,10 +76,11 @@ export default function OurServices() {
               </div>
               <div>
                 <Image
-                  src={item.icon}
+                  src={item.homeImage}
                   alt={item.title}
                   width={100}
                   height={100}
+                  className="object-cover"
                 />
               </div>
               <h3 className="text-lg 2xl:text-3xl font-semibold">
@@ -79,7 +88,7 @@ export default function OurServices() {
               </h3>
               <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
                 <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
-                  {item.description}
+                  {item.shortDescription}
                 </p>
                 <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
                   <Link strokeWidth={3} className="w-1/2 h-1/2" />
