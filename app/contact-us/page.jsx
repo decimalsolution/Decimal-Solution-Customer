@@ -14,7 +14,6 @@ export default function ContactUs() {
             <div className="w-full h-full bg-primary/70"></div>
           </div>
           <div>
-            <p className="landing-page-subheading">Contact Us</p>
             <h2 className="landing-page-heading">Get in Touch with Us</h2>
           </div>
           <div className="border-l-4 border-primary pl-8">
@@ -56,7 +55,6 @@ export default function ContactUs() {
         </div>
         <div className="flex-1 flex flex-col gap-4 lg:gap-8 p-4 xl:pr-36 py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24">
           <div>
-            <p className="landing-page-subheading">Get Pure Estimate</p>
             <h2 className="landing-page-heading">Fill up the Form</h2>
           </div>
           <div className="grid xl:grid-cols-2 gap-4 lg:gap-8">

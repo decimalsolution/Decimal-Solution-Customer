@@ -44,9 +44,14 @@ export default function NavigationHeader() {
 
   return (
     <div className="flex items-stretch justify-between py-2 lg:py-0">
-      <div className="w-28 xl:w-48 2xl:w-56 relative aspect-[200/100]">
+      <div className="w-28 xl:w-40 2xl:w-48 relative aspect-[194/109]">
         <Link href={"/"}>
-          <Image src="/logo.png" alt="Decimal Solution Logo" fill />
+          <Image
+            src="/logo.png"
+            alt="Decimal Solution Logo"
+            fill
+            quality={100}
+          />
         </Link>
       </div>
 
