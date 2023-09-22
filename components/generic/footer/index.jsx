@@ -34,7 +34,7 @@ const navigationLinks = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({ contactInfo }) {
   return (
     <div className="flex flex-col items-center text-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-[url('/footer-bg.png')] bg-cover gap-8">
       <div className=" flex items-center justify-center gap-2 md:gap-4 lg:gap-8 flex-wrap ">
@@ -57,62 +57,83 @@ export default function Footer() {
       </h2>
 
       <Link
-        href="mailto:info@decimalsolution.com"
+        href={`mailto:${contactInfo.primaryEmail}`}
         className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
       >
-        info@decimalsolution.com
+        {contactInfo.primaryEmail}
       </Link>
 
       <div className="flex items-center justify-center gap-8">
         <Link
-          href="tel:+923455893337"
+          href={`tel:${contactInfo.primaryContact}`}
           className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
         >
-          +92 345 5893337
+          {contactInfo.primaryContact}
         </Link>
 
-        <Link
-          href="tel:+923004257414"
-          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
-        >
-          +92 300 4257414
-        </Link>
+        {contactInfo.whatsapp ? (
+          <Link
+            href={`https://wa.me/${contactInfo.whatsapp}`}
+            className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
+          >
+            {contactInfo.whatsapp}
+          </Link>
+        ) : null}
       </div>
 
       <Link
-        href={"/"}
+        href={contactInfo.googleMapLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium hover:text-primary transition-colors"
       >
-        Office No# 17, 2rd Floor, Zaki Centre, I-8 Markaz Islamabad, 44000
+        {contactInfo.primaryAddress}
       </Link>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
-        <div className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
-          <Facebook
-            className="text-white"
-            fill="currentColor"
-            strokeWidth={0}
-          />
-        </div>
+        <Link
+          href={contactInfo.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
+            <Facebook
+              className="text-white"
+              fill="currentColor"
+              strokeWidth={0}
+            />
+          </div>
+        </Link>
 
-        <Instagram
-          className="text-white w-10 h-10 xl:w-9 xl:h-9"
-          strokeWidth={1.5}
-        />
-
-        <div className=" w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
-          <Linkedin
-            className="text-white"
-            fill="currentColor"
-            strokeWidth={0}
+        <Link
+          href={contactInfo.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Instagram
+            className="text-white w-10 h-10 xl:w-9 xl:h-9"
+            strokeWidth={1.5}
           />
-        </div>
+        </Link>
+        <Link
+          href={contactInfo.linkedIn}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className=" w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
+            <Linkedin
+              className="text-white"
+              fill="currentColor"
+              strokeWidth={0}
+            />
+          </div>
+        </Link>
       </div>
 
       <div className="w-full h-[1px] bg-white/50 mx-32"></div>
 
       <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium">
-        CopyRight © 2021 Decimal Solutions. All Rights Reserved.{" "}
+        CopyRight © 2023 Decimal Solutions. All Rights Reserved.{" "}
       </p>
     </div>
   );
