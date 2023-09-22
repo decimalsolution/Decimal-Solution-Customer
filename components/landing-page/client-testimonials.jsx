@@ -9,7 +9,6 @@ export default async function ClientTestimonials() {
   const data = await res.json();
 
   const testimonials = data.data;
-  console.log(testimonials);
 
   return (
     <div className="lg:h-[900px] px-4 py-8 bg-[url('/testimonial-bg.png')] bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center gap-8">
