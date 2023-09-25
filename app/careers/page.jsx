@@ -16,7 +16,7 @@ export default async function Careers() {
           <p className="landing-page-subheading">Job Positions</p>
           <h2 className="landing-page-heading mb-8">Start Work with Us!</h2>
 
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] leading-loose">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] !leading-loose">
             If you are passionate about providing solutions to IT needs then
             Decimal Solutions is a perfect place for you to work. We believe in
             serving our customers with the best by using the right tools. If you
@@ -26,7 +26,7 @@ export default async function Careers() {
           <h3 className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] font-semibold  mt-6 md:mt-8 lg:mt-10 xl:mt-12 mb-4 md:mb-5 lg:mb-6 xl:mb-8">
             Why Work with Us?
           </h3>
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] leading-loose">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] !leading-loose">
             Decimal Solutions provide a challenging yet innovative platform for
             all the enthusiasts looking to leave a mark in the digital world. We
             provide a comfortable and friendly working environment,

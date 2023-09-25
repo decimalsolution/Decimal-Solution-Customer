@@ -7,9 +7,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function SelectMenu({ items = [], placeholder = "" }) {
+export default function SelectMenu({
+  items = [],
+  placeholder = "",
+  state,
+  setState,
+}) {
   return (
-    <Select>
+    <Select value={state} onValueChange={(value) => setState(value)}>
       <SelectTrigger className="min-w-[180px]  flex-1 lg:p-5 xl:p-7 2xl:p-8 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>

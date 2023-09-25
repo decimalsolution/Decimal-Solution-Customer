@@ -14,7 +14,7 @@ export default function AvailableJobs({ jobs }) {
     return jobs.filter((job) => {
       return (
         job.category.title.includes(category) &&
-        // job.type.includes(type) &&
+        job.type.includes(type) &&
         job.location.includes(location)
       );
     });
@@ -33,6 +33,7 @@ export default function AvailableJobs({ jobs }) {
         <div className="flex gap-8 mt-12 flex-wrap">
           <SelectMenu
             items={[
+              { value: "", label: "Category" },
               { value: "Development", label: "Development" },
               {
                 value: "Designing",
@@ -43,13 +44,12 @@ export default function AvailableJobs({ jobs }) {
               { value: "Management", label: "Management" },
             ]}
             placeholder={"Category"}
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-            }}
+            state={category}
+            setState={setCategory}
           />
           <SelectMenu
             items={[
+              { value: "", label: "Type" },
               { value: "Full Time", label: "Full Time" },
               { value: "Part Time", label: "Part Time" },
               { value: "Internship", label: "Internship" },
@@ -58,9 +58,12 @@ export default function AvailableJobs({ jobs }) {
               { value: "Work From Home", label: "Work From Home" },
             ]}
             placeholder={"Type"}
+            state={type}
+            setState={setType}
           />
           <SelectMenu
             items={[
+              { value: "", label: "Location" },
               { value: "Islamabad", label: "Islamabad" },
               { value: "Rawalpindi", label: "Rawalpindi" },
               { value: "Lahore", label: "Lahore" },
@@ -68,18 +71,33 @@ export default function AvailableJobs({ jobs }) {
               { value: "Karachi", label: "Karachi" },
             ]}
             placeholder={"Location"}
+            state={location}
+            setState={setLocation}
           />
 
-          <button className="flex-1 lg:flex-0 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-white text-primary px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 rounded-lg">
-            Filter Jobs
+          <button
+            className="flex-1 lg:flex-0 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-white text-primary px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 rounded-lg hover:brightness-90 transition-all"
+            onClick={() => {
+              setCategory("");
+              setType("");
+              setLocation("");
+            }}
+          >
+            Clear Filters
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 gap-8">
-        {filteredJobs.map((position, index) => (
-          <JobListing {...position} key={"job-listing-" + index} />
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 p-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 gap-8">
+        {filteredJobs.length ? (
+          filteredJobs.map((position, index) => (
+            <JobListing {...position} key={"job-listing-" + index} />
+          ))
+        ) : (
+          <p className="col-span-full text-center text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
+            No jobs found
+          </p>
+        )}
       </div>
     </>
   );
