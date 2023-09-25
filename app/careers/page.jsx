@@ -2,46 +2,15 @@ import JobListing from "@/components/generic/job-listing";
 import SelectMenu from "@/components/generic/select-menu";
 import { cn } from "@/lib/utils";
 
-const positions = [
-  {
-    id: 1,
-    title: "Data Scientist",
-    type: "Full Time, Part Time",
-    seats: 4,
-  },
-  {
-    id: 2,
-    title: "Unity Developer",
-    type: "Full Time, Part Time",
-    seats: 4,
-  },
-  {
-    id: 3,
-    title: "Web Developer",
-    type: "Full Time, Part Time",
-    seats: 4,
-  },
-  {
-    id: 4,
-    title: "SEO Executive",
-    type: "Full Time, Part Time",
-    seats: 4,
-  },
-  {
-    id: 5,
-    title: "Graphic Designer",
-    type: "Full Time, Part Time",
-    seats: 4,
-  },
-  {
-    id: 6,
-    title: "Project Manager",
-    type: "Full Time, Part Time",
-    seats: 4,
-  },
-];
+export default async function Careers() {
+  const res = await fetch(
+    "https://backend.decimalsolution.com/api/v1/web/jobs"
+  );
 
-export default function Careers() {
+  const data = await res.json();
+
+  const jobs = data.data;
+
   return (
     <div>
       <div className="py-24 px-8 sm:px-12 md:px-20 lg:px-28 xl:px-32 2xl:px-36 flex  flex-col-reverse xl:flex-row gap-8 2xl:gap-16">
@@ -147,7 +116,7 @@ export default function Careers() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 gap-8">
-        {positions.map((position, index) => (
+        {jobs.map((position, index) => (
           <JobListing {...position} key={"job-listing-" + index} />
         ))}
       </div>

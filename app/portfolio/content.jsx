@@ -21,6 +21,7 @@ const buttons = [
 
 export default function PortfolioContent({ groups }) {
   const [selected, setSelected] = useState("");
+
   return (
     <div className="pt-24 flex flex-col gap-5 items-center">
       <div className="flex items-center justify-center gap-4 flex-wrap mb-16">
@@ -67,7 +68,7 @@ export default function PortfolioContent({ groups }) {
                       {item.shortDescription}
                     </p>
                     <NextLink
-                      href={item.link}
+                      href={"/"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -101,6 +102,7 @@ export default function PortfolioContent({ groups }) {
             showBackground
             showButton
             reverse={index % 2 !== 0}
+            link={"/"}
           />
         ))}
     </div>

@@ -3,83 +3,42 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const blogs = [
-  {
-    id: 1,
-    title: "Lorem Ipsum",
-    headline:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin",
-    image: "/blogs/image-1.png",
-    date: "2021-12-23",
-  },
-  {
-    id: 2,
-    title: "Lorem Ipsum",
-    headline:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin",
-    image: "/blogs/image-2.png",
-    date: "2021-12-28",
-  },
-  {
-    id: 3,
-    title: "Lorem Ipsum",
-    headline:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin",
-    image: "/blogs/image-3.png",
-    date: "2022-01-05",
-  },
-  {
-    id: 4,
-    title: "Lorem Ipsum",
-    headline:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin",
-    image: "/blogs/image-4.png",
-    date: "2021-12-23",
-  },
-  {
-    id: 5,
-    title: "Lorem Ipsum",
-    headline:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin",
-    image: "/blogs/image-5.png",
-    date: "2021-12-28",
-  },
-  {
-    id: 6,
-    title: "Lorem Ipsum",
-    headline:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin",
-    image: "/blogs/image-6.png",
-    date: "2022-01-05",
-  },
-];
+export default async function Blogs() {
+  const res = await fetch(
+    "https://backend.decimalsolution.com/api/v1/web/blogs"
+  );
 
-export default function Blogs() {
+  if (!res.ok) throw new Error("Something went wrong");
+  const data = await res.json();
+
+  const blogs = data.data;
+
   return (
     <div className="mb-16">
       <PageIntroduction title="Blogs" image={"/blogs.png"} />
 
       <div className="p-8 sm:p-12 md:p-20 lg:p-28 xl:p-32 2xl:p-36 grid-cols-1 md:grid-cols-2 grid 2xl:grid-cols-3 gap-8 lg:gap-16">
         {blogs.map((blog, index) => (
-          <Link key={"blog-" + index + "-link"} href={`/blogs/${blog.id}`}>
+          <Link key={"blog-" + index + "-link"} href={`/blogs/${blog._id}`}>
             <div className="flex flex-col justify-between cursor-pointer">
               <div className="relative w-full aspect-[1.1]">
                 <Image
-                  src={blog.image}
-                  alt={blog.title}
+                  src={blog.blogImage}
+                  alt={blog.blogTitle}
                   fill
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
                 <div className=" w-36 h-16  sm:w-44 sm:h-20 lg:w-52 lg:h-24 xl:w-60 xl:h-28 absolute bottom-0 left-0 bg-primary/80 flex items-center justify-center px-4 py-2">
                   <p className="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold p-2 mr-4 lg:p-4 border-t-2 lg:border-t-4">
-                    {new Date(blog.date).toLocaleDateString("default", {
+                    {new Date(blog.createdAt).toLocaleDateString("default", {
                       day: "2-digit",
                     })}
                   </p>
                   <div className="text-sm md:text-base lg:text-lg xl:text-xl text-white leading-6">
-                    <p>{new Date(blog.date).getFullYear()}</p>
+                    <p>{new Date(blog.createdAt).getFullYear()}</p>
                     <p>
-                      {new Date(blog.date).toLocaleString("default", {
+                      {new Date(blog.createdAt).toLocaleString("default", {
                         month: "long",
                       })}
                     </p>
@@ -88,10 +47,10 @@ export default function Blogs() {
               </div>
               <div className="mt-4">
                 <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-[33px] font-bold">
-                  {blog.title}
+                  {blog.blogTitle}
                 </h3>
-                <p className="mt-2 text-base md:text-lg lg:text-xl xl:text-2xl">
-                  {blog.headline}
+                <p className="mt-2 text-base md:text-lg lg:text-xl xl:text-2xl line-clamp-4">
+                  {blog.blogData}
                 </p>
               </div>
             </div>
