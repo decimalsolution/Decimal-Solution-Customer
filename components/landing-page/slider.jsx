@@ -21,7 +21,6 @@ export default function Slider() {
     let interval;
     if (sliderRef) {
       interval = setInterval(() => {
-        console.log("Here");
         setCurrent((prev) => {
           if (prev === 3) {
             return 0;
@@ -31,7 +30,6 @@ export default function Slider() {
         });
       }, 1000);
     } else {
-      console.log("Nope");
     }
 
     clearInterval(interval);

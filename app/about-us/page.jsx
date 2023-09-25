@@ -88,7 +88,6 @@ export default async function AboutUs() {
 
   const team = data.data;
 
-  console.log(team);
 
   return (
     <div className="flex flex-col items-center">

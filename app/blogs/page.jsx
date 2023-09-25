@@ -14,6 +14,8 @@ export default async function Blogs() {
 
   const blogs = data.data;
 
+  const totalPages = Math.ceil(blogs.length / 6);
+
   return (
     <div className="mb-16">
       <PageIntroduction title="Blogs" image={"/blogs.png"} />
@@ -28,8 +30,8 @@ export default async function Blogs() {
         <div className="h-10 w-10 md:h-12 md:w-12 lg:w-14 lg:h-14 xl:h-16 xl:w-16 grid place-items-center cursor-pointer rounded-full border border-gray-500/50 group hover:bg-gray-800">
           <ChevronLeft className="group-hover:text-white h-3/4 w-3/4" />
         </div>
-        {Array(4)
-          .fill(0)
+        {Array(totalPages)
+          .fill()
           .map((_, index) => (
             <div
               key={index}

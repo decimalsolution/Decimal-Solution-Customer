@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MobileNav from "./mobile-nav";
 
 const navigationLinks = [
   {
@@ -43,7 +44,7 @@ export default function NavigationHeader() {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-stretch justify-between py-2 lg:py-0">
+    <div className="flex items-stretch justify-between py-2 lg:py-0 relative ">
       <div className="w-28 xl:w-40 2xl:w-48 relative aspect-[194/109]">
         <Link href={"/"}>
           <Image
@@ -80,7 +81,7 @@ export default function NavigationHeader() {
           )
         )}
       </nav>
-      <Menu className="my-auto lg:hidden" size={30} />
+      <MobileNav links={navigationLinks} />
     </div>
   );
 }

@@ -4,16 +4,15 @@ import Link from "next/link";
 
 export default function EmployeeCard({ member }) {
   return (
-    <div className="flex flex-col items-stretch justify-center  gap-4">
-      <div className="relative w-[350px] h-[350px] md:w-[500px] md:h-[500px]">
-        <Image
-          src={member.teamMemberImage}
-          alt={member.teamMemberName}
-          fill
-          quality={100}
-          className="rounded-xl object-cover object-center w-full h-full"
-        />
-      </div>
+    <div className="flex flex-col items-stretch justify-center  gap-4 ">
+      <Image
+        src={member.teamMemberImage}
+        alt={member.teamMemberName}
+        width={500}
+        height={500}
+        quality={100}
+        className="rounded-xl object-cover object-center w-full h-full aspect-square"
+      />
       <div className="flex flex-col gap-1 xl:gap-2">
         <p className="text-xl lg:text-2xl xl:text-3xl font-semibold">
           {member.teamMemberName}

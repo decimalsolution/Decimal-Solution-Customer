@@ -9,7 +9,7 @@ export default function ContactUs() {
     <div>
       <PageIntroduction title="Contact Us" image={"/contact-us.png"} />
       <div className="flex flex-col lg:flex-row items-stretch justify-center mb-4 gap-4 xl:gap-16">
-        <div className="flex-1 flex flex-col gap-8 bg-gray-100 p-4  py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24 relative xl:pr-[60px]">
+        <div className="flex-1 flex flex-col gap-8 bg-gray-100 p-4  py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24 px-16 lg:px-8 xl:!px-[60px]  relative ">
           <div className="hidden xl:block absolute right-0 top-0 w-[50px] h-full py-24">
             <div className="w-full h-full bg-primary/70"></div>
           </div>
@@ -17,16 +17,27 @@ export default function ContactUs() {
             <h2 className="landing-page-heading">Get in Touch with Us</h2>
           </div>
           <div className="border-l-4 border-primary pl-8">
-            <h3 className="text-primary text-[25px] mb-2">Contact Number:</h3>
-            <p className="text-[25px]"> +92 300 7171197, +92 335 4749732</p>
+            <h3 className="text-primary  md:text-lg lg:text-xl xl:text-[25px] mb-2">
+              Contact Number:
+            </h3>
+            <p className=" md:text-lg lg:text-xl xl:text-[25px]">
+              {" "}
+              +92 300 7171197, +92 335 4749732
+            </p>
           </div>
           <div className="border-l-4 border-primary pl-8">
-            <h3 className="text-primary text-[25px] mb-2">Email:</h3>
-            <p className="text-[25px]">info@decimalsolution.com</p>
+            <h3 className="text-primary  md:text-lg lg:text-xl xl:text-[25px] mb-2">
+              Email:
+            </h3>
+            <p className=" md:text-lg lg:text-xl xl:text-[25px]">
+              info@decimalsolution.com
+            </p>
           </div>
           <div className="border-l-4 border-primary pl-8">
-            <h3 className="text-primary text-[25px] mb-2">Office Address:</h3>
-            <p className="text-[25px]">
+            <h3 className="text-primary  md:text-lg lg:text-xl xl:text-[25px] mb-2">
+              Office Address:
+            </h3>
+            <p className=" md:text-lg lg:text-xl xl:text-[25px]">
               Office No# 17, 2rd Floor, Zaki Centre, I-8 Markaz Islamabad, 44000
             </p>
           </div>
@@ -53,7 +64,7 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex flex-col gap-4 lg:gap-8 p-4 xl:pr-36 py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24">
+        <div className="flex-1 flex flex-col gap-4 px-16 lg:px-8 lg:gap-8 p-4 xl:pr-36 py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24">
           <div>
             <h2 className="landing-page-heading">Fill up the Form</h2>
           </div>
@@ -74,7 +85,7 @@ export default function ContactUs() {
           </button>
         </div>
       </div>
-      <div className="aspect-square md:aspect-[2] lg:aspect-[3] relative">
+      <div className="aspect-[1.5] md:aspect-[2.5] lg:aspect-[3] relative">
         <Image
           src="/location.png"
           fill
