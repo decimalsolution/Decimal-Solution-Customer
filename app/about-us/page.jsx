@@ -3,6 +3,7 @@ import PageIntroduction from "@/components/generic/page-introduction";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import EmployeeCard from "./employee-card";
 
 const team = [
   {
@@ -55,17 +56,50 @@ const team = [
   },
 ];
 
-export default function AboutUs() {
+const stats = [
+  {
+    title: "Mobile App Development",
+    progress: 100,
+  },
+  {
+    title: "Website Development",
+    progress: 95,
+  },
+  {
+    title: "AR/VR Game",
+    progress: 90,
+  },
+  {
+    title: "UI/UI Design",
+    progress: 75,
+  },
+  {
+    title: "Digital Marketing",
+    progress: 65,
+  },
+];
+
+export default async function AboutUs() {
+  const res = await fetch(
+    "https://backend.decimalsolution.com/api/v1/web/teamMembers"
+  );
+
+  const data = await res.json();
+
+  const team = data.data;
+
+  console.log(team);
+
   return (
     <div className="flex flex-col items-center">
       <PageIntroduction title={"About Us"} image={"/about-us.png"} />
 
       <div className="py-36 px-24 flex flex-col items-center">
-        <h2 className="text-[40px] font-semibold uppercase text-center mb-8">
+        <h2 className="text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] font-semibold uppercase text-center mb-2 lg:mb-8">
           Our Mission
         </h2>
 
-        <div className="text-2xl text-center max-w-7xl flex flex-col items-center gap-8 justify-center">
+        <div className="text-base lg:text-lg xl:text-2xl text-center max-w-7xl flex flex-col items-center gap-8 justify-center">
           <div className="relative">
             <img src="/icons/quote.png" className="absolute -top-20 -left-16" />
             <p>
@@ -84,19 +118,21 @@ export default function AboutUs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 mt-24 max-w-7xl w-full gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 max-w-7xl w-full gap-8 lg:gap-16">
           <div className="flex flex-col items-center ">
-            <Image
-              src="/icons/account-search.png"
-              alt="About Us 1"
-              width={150}
-              height={150}
-              quality={100}
-            />
-            <h3 className="text-[40px] font-semibold uppercase text-center mt-8">
+            <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative">
+              <Image
+                src="/icons/account-search.png"
+                alt="About Us 1"
+                quality={100}
+                fill
+                className="w-full h-full"
+              />
+            </div>
+            <h3 className="text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] font-semibold uppercase text-center mt-8">
               Who We Are
             </h3>
-            <p className="text-2xl text-center mt-8 leading-loose">
+            <p className="text-base lg:text-lg xl:text-2xl text-center mt-2 lg:mt-8 !leading-loose">
               We are a team of software development and testing enthusiasts,
               working tirelessly on software quality assurance. The last 2 years
               were the time we founded, developed, grew, and amazed. And we are
@@ -105,17 +141,19 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="flex flex-col items-center ">
-            <Image
-              src="/icons/diamond.png"
-              alt="About Us 2"
-              width={150}
-              height={150}
-              quality={100}
-            />
-            <h3 className="text-[40px] font-semibold uppercase text-center mt-8">
+            <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative">
+              <Image
+                src="/icons/diamond.png"
+                alt="About Us 1"
+                quality={100}
+                fill
+                className="w-full h-full"
+              />
+            </div>
+            <h3 className="text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] font-semibold uppercase text-center mt-8">
               What We Do
             </h3>
-            <p className="text-2xl text-center mt-8 leading-loose">
+            <p className="text-base lg:text-lg xl:text-2xl text-center mt-2 lg:mt-8 !leading-loose">
               We help set up and maintain a digital presence of your brand or
               product. Our creative team makes sure that you have the most
               updated and innovative technology at your hands to boost your
@@ -126,110 +164,25 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-4 bg-gray-100 w-full px-36 py-24">
-        <div className="flex flex-col items-center justify-center gap-4">
-          <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">
-            Mobile App
-            <br />
-            Development
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">
-            Website
-            <br />
-            Development
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">
-            AR/VR
-            <br />
-            Game
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">
-            UI/UI
-            <br />
-            Design
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <CircularProgress progress={100} />
-          <p className="text-center text-2xl font-medium">
-            Digital
-            <br />
-            Marketing
-          </p>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 bg-gray-100 w-full px-36 py-24">
+        {stats.map((stat, index) => (
+          <div className="flex flex-col items-center justify-center gap-4">
+            <CircularProgress progress={stat.progress} />
+            <p className="text-center text-lg xl:text-2xl font-medium">
+              {stat.title}
+            </p>
+          </div>
+        ))}
       </div>
 
-      <div className="py-36 px-24 flex flex-col items-center w-full gap-16">
+      <div className="py-36 px-8 xs:px-12 md:px-24 flex flex-col items-center w-full gap-16">
         <div>
           <p className="landing-page-subheading">Our Team</p>
           <h2 className="landing-page-heading">We are a Team of Experts</h2>
         </div>
-        <div className="grid grid-cols-3 w-full gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-8">
           {team.map((member, index) => (
-            <div
-              className="flex flex-col items-stretch justify-center  gap-4"
-              key={index}
-            >
-              <div className="relative">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={500}
-                  height={500}
-                  quality={100}
-                  className="rounded-xl"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-3xl font-semibold">{member.name}</p>
-                <p className="text-xl ">{member.designation}</p>
-                <div className="flex gap-4">
-                  {member.facebook && (
-                    <Link href={member.facebook} target="_blank">
-                      <div className="w-6 h-6 bg-gray-300 rounded-full grid place-items-center hover:bg-[#3b5998] transition-all duration-300">
-                        <Facebook
-                          size={20}
-                          strokeWidth={0}
-                          className="text-white fill-white"
-                        />
-                      </div>
-                    </Link>
-                  )}
-                  {member.twitter && (
-                    <Link href={member.twitter} target="_blank">
-                      <div className="w-6 h-6 bg-gray-300 rounded-full grid place-items-center hover:bg-[#00acee] transition-all duration-300">
-                        <Twitter
-                          size={18}
-                          strokeWidth={0}
-                          className="text-white fill-white"
-                        />
-                      </div>
-                    </Link>
-                  )}
-                  {member.linkedin && (
-                    <Link href={member.linkedin} target="_blank">
-                      <div className="w-6 h-6 bg-gray-300 rounded-full grid place-items-center hover:bg-[#0072b1] transition-all duration-300">
-                        <Linkedin
-                          size={16}
-                          strokeWidth={0}
-                          className="text-white fill-white"
-                        />
-                      </div>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
+            <EmployeeCard member={member} key={"employee-card-" + index} />
           ))}
         </div>
       </div>

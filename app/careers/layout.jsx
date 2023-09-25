@@ -1,7 +1,4 @@
-"use client";
-
 import PageIntroduction from "@/components/generic/page-introduction";
-import { useSelectedLayoutSegment } from "next/navigation";
 
 const steps = [
   {
@@ -23,9 +20,6 @@ const steps = [
 ];
 
 export default function Careers({ children }) {
-  const segment = useSelectedLayoutSegment();
-
-  console.log(segment);
   return (
     <div>
       <PageIntroduction title={"Careers"} image={"/careers.png"} />
