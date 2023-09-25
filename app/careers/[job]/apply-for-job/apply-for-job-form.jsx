@@ -8,9 +8,15 @@ import { Form } from "@/components/ui/form";
 import SelectMenuFromControlled from "@/components/form-controlled/select-menu-controlled";
 import { useState } from "react";
 import { uploadImage } from "@/lib/firebase";
+import DropZone from "@/components/generic/dropzone";
+import TextAreaFormControlled from "@/components/form-controlled/text-area-controlled";
+import Link from "next/link";
+import { Check, XCircle } from "lucide-react";
 
-export default function ApplyForJobForm() {
+export default function ApplyForJobForm({ job }) {
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const formSchema = z.object({
     name: z.string().nonempty({ message: "Name is required" }),
@@ -30,9 +36,21 @@ export default function ApplyForJobForm() {
     experience: z.string().nonempty({
       message: "Experience is required",
     }),
-    resume: z.string().nonempty({
-      message: "Resume is required",
-    }),
+    comments: z.string().optional(),
+    resume: z.any().refine(
+      (file) => {
+        if (file == null) {
+          return false;
+        }
+        if (file.type !== "application/pdf") {
+          return false;
+        }
+        return true;
+      },
+      {
+        message: "Invalid Resume. Only PDF files are allowed",
+      }
+    ),
   });
 
   const form = useForm({
@@ -46,38 +64,100 @@ export default function ApplyForJobForm() {
       cellNumber: "",
       whatsappNumber: "",
       experience: "0-1",
-      resume: "",
+      resume: null,
+      comments: "",
+      applyingFor: job.title,
     },
   });
 
-  console.log(form.getValues());
-
   async function onSubmit(values) {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    console.log(values);
-    const resume = values.resume;
+      const resume = values.resume;
 
-    console.log(resume);
+      const url = await uploadImage(resume, "resume");
 
-    const url = await uploadImage(resume, "resume");
+      const submissionData = {
+        fullName: values.name,
+        email: values.email,
+        gender: values.gender,
+        address: values.city,
+        contactNumber: values.cellNumber,
+        whatsappNumber: values.whatsappNumber,
+        yearsOfExperience: values.experience,
+        job: job._id,
+        resume: url,
+        applicantComments: values.comments,
+      };
 
-    console.log(url);
+      const res = await fetch(
+        "https://backend.decimalsolution.com/api/v1/web/jobApplications",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submissionData),
+        }
+      );
 
-    // const res = await fetch(
-    //   "https://backend.decimalsolution.com/api/v1/web/jobApplications",
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(values),
-    //   }
-    // );
+      const data = await res.json();
+      console.log(data);
 
-    // const data = await res.json();
-    // console.log(data);
+      if (data.success) {
+        setSuccess(true);
+      }
+    } catch (e) {
+      console.log(e);
+      setError(e);
+    } finally {
+      setLoading(false);
+    }
   }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 my-16">
+        <div className="flex items-center gap-4">
+          <XCircle className=" w-6 md:w-8 lg:w-12 h-full text-primary" />
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold">
+            Error Occured
+          </p>
+        </div>
+        <p className="text-sm md:text-base lg:text-lg xl:text-xl text-center">
+          Please try again later. Sorry for the inconvenience caused.
+        </p>
+
+        <Link
+          href={"/careers/${job._id}/apply-for-job"}
+          className="text-sm md:text-base lg:text-lg xl:text-xl bg-primary px-4 md:px-8 lg:px-16 py-2 md:py-3 lg:py-4 text-white rounded-full"
+        >
+          Retry Now
+        </Link>
+      </div>
+    );
+  }
+
+  if (success) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 my-16">
+        <div className="flex items-center gap-4">
+          <Check className=" w-6 md:w-8 lg:w-12 h-full text-primary" />
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold">
+            Application Submitted
+          </p>
+        </div>
+        <Link
+          href="/"
+          className="text-sm md:text-base lg:text-lg xl:text-xl bg-primary px-4 md:px-8 lg:px-16 py-2 md:py-3 lg:py-4 text-white rounded-full"
+        >
+          Go Back to Home
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="relative">
@@ -87,7 +167,9 @@ export default function ApplyForJobForm() {
               placeholder={"Full Name"}
               control={form.control}
               name={"name"}
+              className={"lg:col-span-2"}
             />
+
             <TextInputFormControlled
               placeholder={"Email"}
               control={form.control}
@@ -145,12 +227,22 @@ export default function ApplyForJobForm() {
               ]}
             />
 
-            <TextInputFormControlled
-              placeholder={"Resume"}
+            <TextAreaFormControlled
+              placeholder={"Comments"}
               control={form.control}
+              name={"comments"}
+              className={"lg:col-span-2 h-48"}
+            />
+
+            <DropZone
+              getValues={form.getValues}
               name={"resume"}
-              type="file"
-              accept=".pdf"
+              setValue={form.setValue}
+              onChange={(file) => {
+                form.setValue("resume", file);
+              }}
+              className={"lg:col-span-2 h-[300px]"}
+              error={form.formState.errors.resume}
             />
 
             <div className="lg:col-span-2">

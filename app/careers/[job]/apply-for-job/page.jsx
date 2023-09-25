@@ -17,7 +17,7 @@ export default async function SpecificJob({ params }) {
           Apply Online for {jobListing.title} at {jobListing.location}
         </h2>
         <p className="landing-page-paragraph">Please Fill the form to apply.</p>
-        <ApplyForJobForm />
+        <ApplyForJobForm job={jobListing} />
       </div>
     </div>
   );
