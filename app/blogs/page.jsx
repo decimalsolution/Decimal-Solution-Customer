@@ -19,7 +19,7 @@ export default async function Blogs() {
       <PageIntroduction title="Blogs" image={"/blogs.png"} />
 
       <div className="p-8 sm:p-12 md:p-20 lg:p-28 xl:p-32 2xl:p-36 grid-cols-1 md:grid-cols-2 grid 2xl:grid-cols-3 gap-8 lg:gap-16">
-        {blogs.map((blog, index) => (
+        {blogs?.map((blog, index) => (
           <BlogView key={"blog-" + index} blog={blog} />
         ))}
       </div>

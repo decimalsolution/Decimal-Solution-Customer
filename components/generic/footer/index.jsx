@@ -36,12 +36,12 @@ const navigationLinks = [
 
 export default function Footer({ contactInfo }) {
   return (
-    <div className="flex flex-col items-center text-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-[url('/footer-bg.png')] bg-cover gap-8">
+    <div className="flex flex-col items-center text-white pb-8 pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-28 2xl:pt-32 bg-[url('/footer-bg.png')] bg-cover gap-8">
       <div className=" flex items-center justify-center gap-2 md:gap-4 lg:gap-8 flex-wrap ">
         {navigationLinks.map((link, i) => (
           <Link
             className={cn(
-              "text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors",
+              "text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-all",
               i !== navigationLinks.length - 1 &&
                 "border-r border-white pr-2 md:pr-4 lg:pr-8"
             )}
@@ -58,7 +58,7 @@ export default function Footer({ contactInfo }) {
 
       <Link
         href={`mailto:${contactInfo.primaryEmail}`}
-        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
+        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
       >
         {contactInfo.primaryEmail}
       </Link>
@@ -66,7 +66,7 @@ export default function Footer({ contactInfo }) {
       <div className="flex items-center justify-center gap-8">
         <Link
           href={`tel:${contactInfo.primaryContact}`}
-          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
+          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
         >
           {contactInfo.primaryContact}
         </Link>
@@ -74,7 +74,7 @@ export default function Footer({ contactInfo }) {
         {contactInfo.whatsapp ? (
           <Link
             href={`https://wa.me/${contactInfo.whatsapp}`}
-            className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium hover:text-primary transition-colors"
+            className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
           >
             {contactInfo.whatsapp}
           </Link>
@@ -85,7 +85,7 @@ export default function Footer({ contactInfo }) {
         href={contactInfo.googleMapLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium hover:text-primary transition-colors"
+        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium transition-colors"
       >
         {contactInfo.primaryAddress}
       </Link>

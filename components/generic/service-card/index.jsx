@@ -14,7 +14,7 @@ export default function ServiceCard({
   return (
     <div
       className={cn(
-        "flex flex-col xl:flex-row items-stretch justify-between gap-8 p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24",
+        "flex flex-col xl:flex-row items-stretch justify-between gap-8 p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24 w-full",
         reverse && "xl:flex-row-reverse",
         showBackground && "bg-primary/[0.15]"
       )}

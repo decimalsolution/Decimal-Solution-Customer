@@ -19,7 +19,7 @@ const buttons = [
   "AR/VR",
 ];
 
-export default function PortfolioContent({ groups }) {
+export default function PortfolioContent({ groups, recentProjects }) {
   const [selected, setSelected] = useState("");
 
   return (
@@ -43,9 +43,7 @@ export default function PortfolioContent({ groups }) {
 
       {groups.map((group, index) => (
         <div className="w-full flex flex-col items-center mb-16">
-          <p
-            className={cn("landing-page-subheading", "ml-8 !mb-8 w-full px-24")}
-          >
+          <p className={cn("landing-page-subheading", "!mb-8 w-full px-24")}>
             {group.category}
           </p>
           <Carousel>
@@ -89,22 +87,18 @@ export default function PortfolioContent({ groups }) {
         <h2 className="landing-page-heading">Some Latest Client Projects</h2>
       </div>
 
-      {Array(4)
-        .fill(0)
-        .map((_, index) => (
-          <ServiceCard
-            key={"our-projects-card-" + index + "-key"}
-            title={"Project Title"}
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley"
-            }
-            image={`/digital-marketing/image-${index + 1}.png`}
-            showBackground
-            showButton
-            reverse={index % 2 !== 0}
-            link={"/"}
-          />
-        ))}
+      {recentProjects?.map((project, index) => (
+        <ServiceCard
+          key={"our-projects-card-" + index + "-key"}
+          title={project.title}
+          description={project.description}
+          image={project.coverImage}
+          showBackground
+          showButton
+          reverse={index % 2 !== 0}
+          link={project.link}
+        />
+      ))}
     </div>
   );
 }

@@ -11,11 +11,13 @@ export default async function Portfolio() {
 
   const groups = data.data;
 
+  const recentProjects = data.recentProjects;
+
   return (
     <div>
       <PageIntroduction title={"Our Projects"} image={"/portfolio.jpg"} />
 
-      <PortfolioContent groups={groups} />
+      <PortfolioContent groups={groups} recentProjects={recentProjects} />
     </div>
   );
 }
