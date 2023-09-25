@@ -43,21 +43,54 @@ export default async function SpecificBlog({ params }) {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#3b5998] transition-all duration-300">
-              <Facebook
-                strokeWidth={0}
-                className="text-white fill-white w-3/4 h-3/4"
-              />
-            </div>
-            <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#00acee] transition-all duration-300">
-              <Twitter
-                strokeWidth={0}
-                className="text-white fill-white w-3/4 h-3/4"
-              />
-            </div>
-            <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#d62976] transition-all duration-300">
-              <Instagram strokeWidth={2} className="text-white w-3/4 h-3/4" />
-            </div>
+            <Link
+              href={
+                // Write the link to to share the link of the blog on Facebook
+                "https://www.facebook.com/sharer/sharer.php?u=" +
+                "https://decimalsolution.com/blogs/" +
+                blogId
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#3b5998] transition-all duration-300">
+                <Facebook
+                  strokeWidth={0}
+                  className="text-white fill-white w-3/4 h-3/4"
+                />
+              </div>
+            </Link>
+            <Link
+              // Write the link to to share the link of the blog on Twitter
+              href={
+                "https://twitter.com/intent/tweet?url=" +
+                "https://decimalsolution.com/blogs/" +
+                blogId
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#00acee] transition-all duration-300">
+                <Twitter
+                  strokeWidth={0}
+                  className="text-white fill-white w-3/4 h-3/4"
+                />
+              </div>
+            </Link>
+            <Link
+              // Write the link to to share the link of the blog on LinkedIn
+              href={
+                "https://www.linkedin.com/shareArticle?mini=true&url=" +
+                "https://decimalsolution.com/blogs/" +
+                blogId
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#0072b1] transition-all duration-300">
+                <Linkedin strokeWidth={2} className="text-white w-3/4 h-3/4" />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col gap-4 text-base md:text-lg lg:text-xl xl:text-2xl !leading-loose my-8">
