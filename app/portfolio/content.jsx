@@ -4,7 +4,7 @@ import Carousel from "@/components/generic/carousel";
 import { cn } from "@/lib/utils";
 import { Link } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { SwiperSlide } from "swiper/react";
 import NextLink from "next/link";
 import ServiceCard from "@/components/generic/service-card";
@@ -19,29 +19,39 @@ const buttons = [
   "AR/VR",
 ];
 
-export default function PortfolioContent({ groups, recentProjects }) {
-  const [selected, setSelected] = useState("");
+export default function PortfolioContent({
+  groups,
+  recentProjects,
+  categories,
+}) {
+  const [selected, setSelected] = useState("All");
+
+  const filteredGroups = useMemo(() => {
+    return groups.filter(
+      (group) => group.category === selected || selected === "All"
+    );
+  }, [selected, groups]);
 
   return (
     <div className="pt-24 flex flex-col gap-5 items-center">
       <div className="flex items-center justify-center gap-4 flex-wrap mb-16">
-        {buttons.map((buttonText, index) => (
+        {categories.map((category, index) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
             className={cn(
               "text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
-              selected === buttonText && "bg-primary text-white"
+              selected === category && "bg-primary text-white"
             )}
             onClick={() => {
-              setSelected(buttonText);
+              setSelected(category);
             }}
           >
-            {buttonText}
+            {category}
           </button>
         ))}
       </div>
 
-      {groups.map((group, index) => (
+      {filteredGroups.map((group, index) => (
         <div className="w-full flex flex-col items-center mb-16">
           <p className={cn("landing-page-subheading", "!mb-8 w-full px-24")}>
             {group.category}

@@ -11,13 +11,20 @@ export default async function Portfolio() {
 
   const groups = data.data;
 
+  const categories = groups.map((group) => group.category);
+  categories.unshift("All");
+
   const recentProjects = data.recentProjects;
 
   return (
     <div>
       <PageIntroduction title={"Our Projects"} image={"/portfolio.jpg"} />
 
-      <PortfolioContent groups={groups} recentProjects={recentProjects} />
+      <PortfolioContent
+        groups={groups}
+        recentProjects={recentProjects}
+        categories={categories}
+      />
     </div>
   );
 }
