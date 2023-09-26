@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Carousel from "../generic/carousel";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -11,37 +11,49 @@ import NextLink from "next/link";
 const buttons = [
   "All",
   "Web Development",
-  "Mobile App Development",
-  "Graphics Designing",
+  "Mobile Development",
+  "Graphic Designing",
   "Digital Marketing",
   "ERP & Business Solutions",
-  "AR/VR",
+  "AR/VR Games",
 ];
 
-export default function OurProjectsContent({projects}) {
-  const [selected, setSelected] = useState("");
+export default function OurProjectsContent({ projects, services }) {
+  const [selected, setSelected] = useState("All");
+
+  const filteredProjects = useMemo(() => {
+    if (selected === "All") {
+      return projects;
+    } else {
+      return projects.filter(
+        (item) => item.category?.title?.toLowerCase() === selected.toLowerCase()
+      );
+    }
+  }, [selected, projects]);
+
+  console.log(filteredProjects);
 
   return (
     <>
       <div className="flex items-center justify-center  gap-2 sm:gap-4 flex-wrap">
-        {buttons.map((buttonText, index) => (
+        {services.map((service, index) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
             className={cn(
               "text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
-              selected === buttonText && "bg-primary text-white"
+              selected === service.title && "bg-primary text-white"
             )}
             onClick={() => {
-              setSelected(buttonText);
+              setSelected(service.title);
             }}
           >
-            {buttonText}
+            {service.title}
           </button>
         ))}
       </div>
 
       <Carousel>
-        {projects.map((item, i) => (
+        {filteredProjects.map((item, i) => (
           <SwiperSlide key={"our-projects-" + i + "-key"}>
             <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
               <div>
