@@ -16,7 +16,7 @@ export default function ServiceCard({
   return (
     <div
       className={cn(
-        "flex flex-col xl:flex-row items-stretch justify-between gap-8 p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24 w-full",
+        "flex flex-col xl:flex-row items-stretch justify-between xl:gap-16 2xl:gap-20 p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24 w-full",
         reverse && "xl:flex-row-reverse",
         showBackground && "bg-primary/[0.15]"
       )}
@@ -28,7 +28,12 @@ export default function ServiceCard({
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-[40px] uppercase font-semibold">
           {title}
         </h2>
-        <p className="text-base md:text-lg lg:text-xl xl:text-2xl md:!leading-normal lg:!leading-relaxed xl:!leading-loose text-justify">
+        <p
+          className={cn(
+            "text-base md:text-lg lg:text-xl 2xl:text-2xl md:!leading-normal lg:!leading-relaxed xl:!leading-loose",
+            reverse && "text-right"
+          )}
+        >
           {description}
         </p>
         {showButton && (
@@ -50,7 +55,7 @@ export default function ServiceCard({
       </div>
       <div
         className={cn(
-          "hidden xl:block flex-1 relative xl:min-h-[200px]  before:content-[''] before:absolute before:w-3/4 before:h-3/4 before:bg-primary before:-bottom-8 mb-8",
+          "hidden xl:block flex-1 relative xl:h-[330px] xl:w-[500px] 2xl:h-[400px] 2xl:w-[600px]  before:content-[''] before:absolute before:w-3/4 before:h-3/4 before:bg-primary before:-bottom-8 mb-8 before:blur-[1px]",
           reverse ? "before:-right-8 mr-8" : "before:-left-8 ml-8"
         )}
       >
