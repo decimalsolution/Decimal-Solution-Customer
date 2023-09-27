@@ -42,8 +42,8 @@ export default function OurServicesContent({ services }) {
               <Image
                 src={item.homeImage}
                 alt={item.title}
-                width={100}
-                height={100}
+                width={130}
+                height={130}
                 className="object-cover"
               />
             </div>
