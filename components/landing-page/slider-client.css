@@ -1,9 +1,11 @@
-.slider-client {
-  .swiper-pagination-bullet {
-    @apply w-5 h-2 bg-primary rounded-md transition-all duration-200;
-  }
+#slider .swiper-pagination-bullet {
+  @apply w-8 h-8 bg-primary rounded-full transition-all duration-200 relative  before:absolute before:content-[''] before:top-1.5 before:left-1.5 before:block before:w-5 before:h-5 before:bg-white before:rounded-full before:transition-all before:duration-200;
+}
 
-  .swiper-pagination-bullet-active {
-    @apply bg-primary w-10;
-  }
+#slider .swiper-pagination-bullet-active {
+  @apply bg-primary;
+}
+
+#slider .swiper-pagination {
+  @apply bottom-8 w-fit right-8 left-auto gap-6 flex;
 }

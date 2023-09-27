@@ -48,24 +48,6 @@ export default function Slider() {
           </div>
         ))}
       </div>
-      {/* <div className="hidden md:flex absolute bottom-8 right-8 gap-8">
-        {Array(4)
-          .fill(0)
-          .map((_, i) => (
-            <button
-              key={"slider-button-" + i + "-key"}
-              onClick={() => {
-                setCurrent(i);
-              }}
-              className={cn(
-                "bg-primary h-8 w-8 rounded-full grid place-items-center opacity-50",
-                current === i && "opacity-100"
-              )}
-            >
-              <div className="w-4 h-4 rounded-full bg-white"></div>
-            </button>
-          ))}
-      </div> */}
     </div>
   );
 }

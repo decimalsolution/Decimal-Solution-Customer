@@ -3,12 +3,14 @@
 import { SendHorizonal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
-// import "./slider-client.css";
+import "./slider-client.css";
+import { useState, useEffect } from "react";
+import Slider from "./slider";
 
 const headings = [
   "Web and Mobile App Development",
@@ -24,32 +26,45 @@ export default function SliderClient() {
       return '<span class="' + className + '">' + "</span>";
     },
   };
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <Slider />;
+  }
+
   return (
     <div className="max-h-[650px] h-max w-full overflow-hidden aspect-video xl-aspect-[1920/700]  2xl:aspect-[1920/700] ">
       <Swiper
         navigation
+        id="slider"
         style={{
           width: "100%",
           height: "100%",
         }}
         className=""
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         pagination={pagination}
         slidesPerView={1}
         autoplay={{
           delay: 5000,
+          disableOnInteraction: false,
         }}
       >
         {/* <SwiperSlide key={index} className="py-4"> */}
         <div className="h-full w-[calc(5*100vw)] flex animate-home-carousel">
-          {new Array(5).fill(0).map((_, i) => (
+          {new Array(4).fill(0).map((_, i) => (
             <SwiperSlide
               className="w-screen  aspect-video relative"
               key={"slider-" + i + "-key"}
             >
               <Image
                 src={`/Slider Images/Slider-${(i % 4) + 1}.png`}
-                alt={`Slider images ${(i % 4) + 1}`}
+                alt={`Slider images ${i + 1}`}
                 fill
                 priority={true}
                 className="object-cover object-center absolute inset-0"

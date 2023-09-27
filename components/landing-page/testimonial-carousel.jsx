@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import styles from "./testimonail-carousel.module.css";
+import "./testimonial-carousel.css";
 
 export default function TestimonialCarousel({ testimonials }) {
   const pagination = {
@@ -19,7 +19,7 @@ export default function TestimonialCarousel({ testimonials }) {
     <div className="h-[500px] w-full">
       <Swiper
         navigation
-        className={styles.testimonialCarousel}
+        id="testimonial-carousel"
         modules={[Pagination]}
         pagination={pagination}
         slidesPerView={1}
