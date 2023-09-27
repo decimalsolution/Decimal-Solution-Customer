@@ -10,6 +10,8 @@ export default function ServiceCard({
   showButton,
   showBackground,
   link,
+  buttonText,
+  externalLink,
 }) {
   return (
     <div
@@ -30,14 +32,18 @@ export default function ServiceCard({
           {description}
         </p>
         {showButton && (
-          <Link href={link} rel="noopener noreferrer" target="_blank">
+          <Link
+            href={link}
+            rel="noopener noreferrer"
+            target={externalLink ? "_blank" : "_self"}
+          >
             <button
               className={cn(
                 "text-base md:text-lg xl:text-xl text-white  bg-primary px-4 md:px-8 lg:px-12 xl:px-16  py-2 md:py-3 lg:py-4 rounded-md md:rounded-lg lg:rounded-xl",
                 reverse ? "self-end" : "self-start"
               )}
             >
-              View Demo
+              {buttonText ? buttonText : "View Demo"}
             </button>
           </Link>
         )}
