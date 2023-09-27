@@ -1,10 +1,7 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { SendHorizonal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 
 const headings = [
   "Web and Mobile App Development",
@@ -14,33 +11,9 @@ const headings = [
 ];
 
 export default function Slider() {
-  const [current, setCurrent] = useState(0);
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    let interval;
-    if (sliderRef) {
-      interval = setInterval(() => {
-        setCurrent((prev) => {
-          if (prev === 3) {
-            return 0;
-          } else {
-            return prev + 1;
-          }
-        });
-      }, 1000);
-    } else {
-    }
-
-    clearInterval(interval);
-  }, [sliderRef]);
-
   return (
     <div className="relative max-h-[650px] h-full w-full overflow-hidden aspect-video xl-aspect-[1920/700]  2xl:aspect-[1920/700] ">
-      <div
-        className="h-full w-[calc(5*100vw)] flex animate-home-carousel"
-        ref={sliderRef}
-      >
+      <div className="h-full w-[calc(5*100vw)] flex animate-home-carousel">
         {new Array(5).fill(0).map((_, i) => (
           <div
             className="w-screen  aspect-video relative"
@@ -75,7 +48,7 @@ export default function Slider() {
           </div>
         ))}
       </div>
-      <div className="hidden md:flex absolute bottom-8 right-8 gap-8">
+      {/* <div className="hidden md:flex absolute bottom-8 right-8 gap-8">
         {Array(4)
           .fill(0)
           .map((_, i) => (
@@ -92,7 +65,7 @@ export default function Slider() {
               <div className="w-4 h-4 rounded-full bg-white"></div>
             </button>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 }

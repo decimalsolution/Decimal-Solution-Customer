@@ -10,8 +10,6 @@ export default async function Services() {
 
   const services = data.data;
 
-  console.log(services);
-
   const getLink = (service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {

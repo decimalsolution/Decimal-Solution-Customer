@@ -52,7 +52,6 @@ export default function OurServicesContent({ services }) {
               <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
                 {item.shortDescription}
               </p>
-              {console.log(getLink(item))}
               <NextLink href={getLink(item)}>
                 <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
                   <Link strokeWidth={3} className="w-1/2 h-1/2" />

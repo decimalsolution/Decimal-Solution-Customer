@@ -88,7 +88,6 @@ export default async function AboutUs() {
 
   const team = data.data;
 
-
   return (
     <div className="flex flex-col items-center">
       <PageIntroduction title={"About Us"} image={"/about-us.png"} />
@@ -165,7 +164,7 @@ export default async function AboutUs() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 bg-gray-100 w-full px-36 py-24">
         {stats.map((stat, index) => (
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-between gap-4">
             <CircularProgress progress={stat.progress} />
             <p className="text-center text-lg xl:text-2xl font-medium">
               {stat.title}

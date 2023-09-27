@@ -31,8 +31,6 @@ export default function OurProjectsContent({ projects, services }) {
     }
   }, [selected, projects]);
 
-  console.log(filteredProjects);
-
   return (
     <>
       <div className="flex items-center justify-center  gap-2 sm:gap-4 flex-wrap">

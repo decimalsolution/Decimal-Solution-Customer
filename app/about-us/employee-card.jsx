@@ -2,7 +2,7 @@ import { Facebook, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function EmployeeCard({ member }) {
+export default function cEmployeeCard({ member }) {
   return (
     <div className="flex flex-col items-stretch justify-center  gap-4 ">
       <Image
