@@ -11,10 +11,9 @@ export default function InfoHeader({ contactInfo }) {
             <Link href={`tel:${contactInfo.primaryContact}`}>
               <span>{contactInfo.primaryContact}</span>
             </Link>
-            ,
-            {contactInfo.whatsapp ? (
+            {contactInfo.otherContacts?.[0]?.length ? (
               <Link href={`https://wa.me/${contactInfo.whatsapp}`}>
-                <span>{contactInfo.whatsapp}</span>
+                <span>, {contactInfo.otherContact[0]}</span>
               </Link>
             ) : null}
           </p>

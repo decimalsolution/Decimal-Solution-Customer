@@ -9,42 +9,78 @@ import { useState } from "react";
 
 const data = [
   {
-    title: "Website Development",
+    title: (
+      <>
+        Website
+        <br />
+        Development
+      </>
+    ),
     icon: "/icons/website-development.svg",
     href: "/services/website-development",
     description:
       "We are offering a huge variety of services from web development to web hosting.",
   },
   {
-    title: "Mobile App Development",
+    title: (
+      <>
+        Mobile App
+        <br />
+        Development
+      </>
+    ),
     icon: "/icons/mobile-app-development.svg",
     href: "/services/mobile-app-development",
     description:
       "Create robust solution for each industry across a vast use base.",
   },
   {
-    title: "Graphics Designing",
+    title: (
+      <>
+        Graphics
+        <br />
+        Designing
+      </>
+    ),
     icon: "/icons/graphics-designing.svg",
     href: "/services/graphics-designing",
     description:
       "We offer responsive design services for websites of every technology & framework.",
   },
   {
-    title: "Digital Marketing",
+    title: (
+      <>
+        Digital
+        <br />
+        Marketing
+      </>
+    ),
     icon: "/icons/digital-marketing.svg",
     href: "/services/digital-marketing",
     description:
       "We provide channels to attract engage and convert customers online",
   },
   {
-    title: "ERP & Business Solutions",
+    title: (
+      <>
+        ERP & Business
+        <br />
+        Solutions
+      </>
+    ),
     icon: "/icons/erp.svg",
     href: "/services/erp",
     description:
       "We tailor the enterprise applications & business solutions according to your needs.",
   },
   {
-    title: "AR/VR Games",
+    title: (
+      <>
+        AR/VR
+        <br />
+        Games
+      </>
+    ),
     icon: "/icons/ar-vr.svg",
     href: "/services/ar-vr",
     description:
@@ -90,7 +126,7 @@ export function ServiceModal({ className, href }) {
                 alt={item.title}
                 className="grayscale brightness-200 opacity-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500 "
               />
-              <h3 className="text-lg text-center font-semibold text-gray-300 group-hover:text-primary transition-all duration-500 ">
+              <h3 className="text-lg text-center font-medium tracking-wide text-gray-400 group-hover:text-primary transition-all duration-500 ">
                 {item.title}
               </h3>
             </Link>
