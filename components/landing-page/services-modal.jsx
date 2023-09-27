@@ -109,7 +109,7 @@ export function ServiceModal({ className, href }) {
         </Link>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] ">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 p-4">
           {data.map((item, index) => (
             <Link
               href={item.href}
@@ -121,8 +121,8 @@ export function ServiceModal({ className, href }) {
             >
               <Image
                 src={item.icon}
-                width={75}
-                height={75}
+                width={85}
+                height={85}
                 alt={item.title}
                 className="grayscale brightness-200 opacity-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500 "
               />

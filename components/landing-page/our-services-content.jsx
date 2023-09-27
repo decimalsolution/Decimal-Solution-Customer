@@ -6,8 +6,28 @@ import "swiper/css";
 import Image from "next/image";
 import Carousel from "../generic/carousel";
 import { Link } from "lucide-react";
+import { useCallback } from "react";
+import NextLink from "next/link";
 
 export default function OurServicesContent({ services }) {
+  const getLink = useCallback((service) => {
+    const title = service.title.toLowerCase();
+    if (title.includes("web")) {
+      return "services/website-development";
+    } else if (title.includes("digital")) {
+      return "services/digital-marketing";
+    } else if (title.includes("mobile")) {
+      return "services/mobile-app-development";
+    } else if (title.includes("graphic")) {
+      return "services/graphics-designing";
+    } else if (title.includes("erp")) {
+      return "services/erp";
+    } else if (title.includes("ar")) {
+      return "services/ar-vr";
+    } else {
+      return "services/website-development";
+    }
+  }, []);
   return (
     <Carousel>
       {services.map((item, i) => (
@@ -32,9 +52,12 @@ export default function OurServicesContent({ services }) {
               <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
                 {item.shortDescription}
               </p>
-              <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
-                <Link strokeWidth={3} className="w-1/2 h-1/2" />
-              </div>
+              {console.log(getLink(item))}
+              <NextLink href={getLink(item)}>
+                <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
+                  <Link strokeWidth={3} className="w-1/2 h-1/2" />
+                </div>
+              </NextLink>
             </div>
           </div>
         </SwiperSlide>
