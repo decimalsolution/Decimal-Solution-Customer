@@ -16,7 +16,12 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const data = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/contactUs"
+    "https://backend.decimalsolution.com/api/v1/web/contactUs",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const response = await data.json();

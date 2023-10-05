@@ -2,7 +2,12 @@ import OurServicesContent from "./our-services-content";
 
 export default async function OurServices() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/services  "
+    "https://backend.decimalsolution.com/api/v1/web/services",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();
@@ -20,8 +25,7 @@ export default async function OurServices() {
         </div>
       </div>
 
-    <OurServicesContent services={services} />
-    
+      <OurServicesContent services={services} />
     </div>
   );
 }

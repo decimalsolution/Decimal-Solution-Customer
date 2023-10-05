@@ -2,7 +2,12 @@ import AvailableJobs from "./available-jobs";
 
 export default async function Careers() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/jobs"
+    "https://backend.decimalsolution.com/api/v1/web/jobs",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();

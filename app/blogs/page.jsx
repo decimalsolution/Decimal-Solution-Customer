@@ -6,7 +6,12 @@ import BlogView from "./blog-view";
 
 export default async function Blogs() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/blogs"
+    "https://backend.decimalsolution.com/api/v1/web/blogs",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   if (!res.ok) throw new Error("Something went wrong");

@@ -14,7 +14,12 @@ export default async function SpecificBlog({ params }) {
   const blogId = params.blog;
 
   const res = await fetch(
-    `https://backend.decimalsolution.com/api/v1/web/blogs/${blogId}`
+    `https://backend.decimalsolution.com/api/v1/web/blogs/${blogId}`,
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   if (!res.ok) throw new Error("Something went wrong");

@@ -4,7 +4,12 @@ import PortfolioContent from "./content";
 
 export default async function Portfolio() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/groupedprojects"
+    "https://backend.decimalsolution.com/api/v1/web/groupedprojects",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();

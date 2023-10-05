@@ -4,10 +4,20 @@ import OurProjectsContent from "./our-projects-content";
 export default async function OurProjects() {
   const [res1, res2] = await Promise.all([
     await fetch(
-      "https://backend.decimalsolution.com/api/v1/web/homeScreenProjects/all"
+      "https://backend.decimalsolution.com/api/v1/web/homeScreenProjects/all",
+      {
+        next: {
+          revalidate: 300,
+        },
+      }
     ),
     await fetch(
-      "https://backend.decimalsolution.com/api/v1/web/activeservices"
+      "https://backend.decimalsolution.com/api/v1/web/activeservices",
+      {
+        next: {
+          revalidate: 300,
+        },
+      }
     ),
   ]);
 

@@ -3,7 +3,12 @@ import TestimonialCarousel from "./testimonial-carousel";
 
 export default async function ClientTestimonials() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/testimonial"
+    "https://backend.decimalsolution.com/api/v1/web/testimonial",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();

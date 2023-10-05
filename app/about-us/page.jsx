@@ -81,7 +81,12 @@ const stats = [
 
 export default async function AboutUs() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/teamMembers"
+    "https://backend.decimalsolution.com/api/v1/web/teamMembers",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();

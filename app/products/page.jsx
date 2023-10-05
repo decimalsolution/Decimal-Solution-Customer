@@ -3,7 +3,12 @@ import ServiceCard from "@/components/generic/service-card";
 
 export default async function Products() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/products"
+    "https://backend.decimalsolution.com/api/v1/web/products",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();

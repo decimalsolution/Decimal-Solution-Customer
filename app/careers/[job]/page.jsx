@@ -4,7 +4,12 @@ export default async function SpecificJob({ params }) {
   const job = params.job;
 
   const res = await fetch(
-    `https://backend.decimalsolution.com/api/v1/web/jobs/${job}`
+    `https://backend.decimalsolution.com/api/v1/web/jobs/${job}`,
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
   );
 
   const data = await res.json();
