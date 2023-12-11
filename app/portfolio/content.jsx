@@ -76,7 +76,7 @@ export default function PortfolioContent({
                       {item.shortDescription}
                     </p>
                     <NextLink
-                      href={"/"}
+                      href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

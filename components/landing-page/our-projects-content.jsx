@@ -58,7 +58,6 @@ export default function OurProjectsContent({ projects, services }) {
                 <Image
                   src={item.coverImage}
                   alt={item.title}
-                  fill
                   className="object-cover"
                 />
               </div>
