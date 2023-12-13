@@ -1,12 +1,12 @@
 "use client";
 
-import ServiceModal from "@/components/landing-page/service-modal";
 import clsx from "clsx";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileNav from "./mobile-nav";
+import { ServicesModal } from "@/components/landing-page/services-modal";
 
 const navigationLinks = [
   {
@@ -16,7 +16,7 @@ const navigationLinks = [
   {
     name: "Services",
     href: "/services",
-    Custom: ServiceModal,
+    Custom: ServicesModal,
   },
   {
     name: "Portfolio",

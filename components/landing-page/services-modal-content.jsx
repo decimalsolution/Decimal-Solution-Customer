@@ -1,17 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-export default async function ServicesModalContent() {
-  const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/services",
-    {
-      next: {
-        revalidate: 300,
-      },
-    }
-  );
-  const data = await res.json();
-  const services = data.data;
-
+export default function ServicesModalContent({ services }) {
   const getLink = (service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {
@@ -32,8 +23,8 @@ export default async function ServicesModalContent() {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-12 p-4 w-52 h-52">
-      {/* {services.map((item, index) => (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-12 p-4">
+      {services.map((item, index) => (
         <Link
           href={getLink(item)}
           onClick={(e) => {
@@ -53,7 +44,7 @@ export default async function ServicesModalContent() {
             {item.title}
           </h3>
         </Link>
-      ))} */}
+      ))}
     </div>
   );
 }

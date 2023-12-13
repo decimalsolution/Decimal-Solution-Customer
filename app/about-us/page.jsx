@@ -129,7 +129,7 @@ export default async function AboutUs() {
 
       <div className="py-36 px-8 xs:px-12 md:px-24 flex flex-col items-center w-full gap-16">
         <div>
-          <p className="landing-page-subheading">Our Team</p>
+          <p className="landing-page-subheading text-center">Our Team</p>
           <h2 className="landing-page-heading">We are a Team of Experts</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-8">
