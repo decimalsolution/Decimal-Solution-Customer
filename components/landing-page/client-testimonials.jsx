@@ -18,7 +18,9 @@ export default async function ClientTestimonials() {
   return (
     <div className="lg:h-[900px] px-4 py-8 bg-[url('/testimonial-bg.png')] bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center gap-8">
       <div>
-        <p className={cn("landing-page-subheading", "!normal-case")}>
+        <p
+          className={cn("landing-page-subheading", "!normal-case text-center")}
+        >
           Testimonials
         </p>
         <h2 className="landing-page-heading">Client Testimonials</h2>

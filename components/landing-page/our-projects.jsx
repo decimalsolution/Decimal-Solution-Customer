@@ -32,7 +32,7 @@ export default async function OurProjects() {
     <div className="flex flex-col items-center justify-center gap-4 sm:gap-8 lg:gap-16 flex-wrap py-8 lg:py-12">
       <div className="flex flex-col items-center">
         <div>
-          <p className="landing-page-subheading">Our Projects</p>
+          <p className="landing-page-subheading text-center">Our Projects</p>
           <h2 className="landing-page-heading">Some Latest Client Projects</h2>
         </div>
       </div>

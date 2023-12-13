@@ -15,6 +15,9 @@ export default function ToolsAndTechnologies() {
     "/Tools And Technologies/java.png",
     "/Tools And Technologies/material.png",
     "/Tools And Technologies/mantine.png",
+    "/Tools And Technologies/figma.png",
+    "/Tools And Technologies/illustrator.png",
+    "/Tools And Technologies/photoshop.png",
   ];
 
   return (
@@ -33,7 +36,9 @@ export default function ToolsAndTechnologies() {
       </div>
 
       <div className="w-full h-full overflow-hidden relative before:content-[''] before:absolute before:left-0 before:block before:h-full before:w-40 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:top-0 after:right-0 after:block after:h-full after:w-40 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
-        <div className="flex h-32 gap-32 w-[calc(372px*24)] animate-our-technologies">
+        <div
+          className={`flex h-32 gap-32 w-[calc(372px*30)] animate-our-technologies`}
+        >
           {data.map((item, index) => (
             <div
               key={"tools-and-technologies-" + index + "-key"}

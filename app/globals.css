@@ -80,7 +80,7 @@
 }
 
 .landing-page-subheading {
-  @apply text-base md:text-[17px] lg:text-lg xl:text-xl 2xl:text-[26px] text-primary before:content-['<'] before:inline-block mb-1 before:mr-1  after:content-['>'] after:inline-block after:ml-1 uppercase;
+  @apply text-base md:text-[17px] lg:text-lg xl:text-xl 2xl:text-[26px] text-primary before:content-['<'] before:inline-block mb-1 before:mr-1  after:content-['>'] after:inline-block after:ml-1;
 }
 
 .landing-page-paragraph {

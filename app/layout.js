@@ -2,6 +2,7 @@ import MainNav from "@/components/generic/header/main-nav";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/generic/footer";
+import { AOSInit } from "./aos";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <AOSInit />
       <body className={poppins.className}>
         <MainNav contactInfo={contactInfo} />
         {children}

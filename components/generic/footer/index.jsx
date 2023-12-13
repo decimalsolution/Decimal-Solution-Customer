@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,7 +36,7 @@ const navigationLinks = [
 
 export default function Footer({ contactInfo }) {
   return (
-    <div className="flex flex-col items-center text-white pb-8 pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-28 2xl:pt-32 bg-[url('/footer-bg.png')] bg-cover gap-8">
+    <div className="flex flex-col items-center text-white pb-8 pt-12  bg-[url('/footer-bg.png')] bg-cover gap-8">
       <div className=" flex items-center justify-center gap-2 md:gap-4 lg:gap-8 flex-wrap ">
         {navigationLinks.map((link, i) => (
           <Link
@@ -56,39 +56,28 @@ export default function Footer({ contactInfo }) {
         Contact Us
       </h2>
 
-      <Link
-        href={`mailto:${contactInfo.primaryEmail}`}
-        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
-      >
-        {contactInfo.primaryEmail}
-      </Link>
-
       <div className="flex items-center justify-center gap-8">
-        <Link
+        <a
+          href={`mailto:${contactInfo.primaryEmail}`}
+          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
+        >
+          {contactInfo.primaryEmail}
+        </a>
+        <a
           href={`tel:${contactInfo.primaryContact}`}
           className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
         >
           {contactInfo.primaryContact}
-        </Link>
-
-        {contactInfo.whatsapp ? (
-          <Link
-            href={`https://wa.me/${contactInfo.whatsapp}`}
-            className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
-          >
-            {contactInfo.whatsapp}
-          </Link>
-        ) : null}
+        </a>
       </div>
-
-      <Link
+      <a
         href={contactInfo.googleMapLink}
         target="_blank"
         rel="noopener noreferrer"
         className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium transition-colors"
       >
         {contactInfo.primaryAddress}
-      </Link>
+      </a>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
         <Link
@@ -127,6 +116,17 @@ export default function Footer({ contactInfo }) {
               strokeWidth={0}
             />
           </div>
+        </Link>
+
+        <Link
+          href={contactInfo.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Youtube
+            className="text-white w-10 h-10 xl:w-12 xl:h-12"
+            strokeWidth={1.25}
+          />
         </Link>
       </div>
 

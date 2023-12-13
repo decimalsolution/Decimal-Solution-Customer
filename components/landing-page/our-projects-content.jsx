@@ -58,7 +58,8 @@ export default function OurProjectsContent({ projects, services }) {
                 <Image
                   src={item.coverImage}
                   alt={item.title}
-                  className="object-cover"
+                  fill
+                  className="object-cover h-full w-full"
                 />
               </div>
               <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">

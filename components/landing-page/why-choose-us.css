@@ -11,7 +11,7 @@
 */
 
 .card {
-  @apply xl:absolute p-8 rounded-lg xl:shadow-xl -top-4 bg-white z-10;
+  @apply xl:absolute p-8 rounded-lg xl:shadow-xl -top-4 bg-white z-10 border;
 }
 
 .card-1 {
