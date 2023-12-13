@@ -35,13 +35,10 @@ export default function InfoHeader({ contactInfo }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-primary grid place-items-center rounded-lg">
-            <Facebook
-              className="text-primary"
-              fill="currentColor"
-              strokeWidth={0}
-            />
-          </div>
+          <img
+            src="/Social Icons/purple/facebook.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+          />
         </Link>
         <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
 
@@ -50,9 +47,9 @@ export default function InfoHeader({ contactInfo }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Instagram
-            className="text-primary w-10 h-10 xl:w-9 xl:h-9"
-            strokeWidth={1.5}
+          <img
+            src="/Social Icons/purple/instagram-2.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
           />
         </Link>
         <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
@@ -62,14 +59,35 @@ export default function InfoHeader({ contactInfo }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className=" w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-primary grid place-items-center rounded-lg">
-            <Linkedin
-              className="text-primary"
-              fill="currentColor"
-              strokeWidth={0}
-            />
-          </div>
+          <img
+            src="/Social Icons/purple/linkedin.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+          />
         </Link>
+        <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
+
+        <Link
+          href={contactInfo.linkedIn}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/Social Icons/purple/youtube.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+          />
+        </Link>
+        {/* <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
+
+        <Link
+          href={contactInfo.linkedIn}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/Social Icons/purple/twitter.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+          />
+        </Link> */}
         <Link href="/contact-us">
           <button className="h-12 w-40 lg:w-48  xl:h-16 2xl:h-20 xl:w-64 2xl:w-80 text-white bg-primary xl:text-xl 2xl:text-2xl font-500">
             Contact Us

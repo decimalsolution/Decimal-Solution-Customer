@@ -5,57 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import EmployeeCard from "./employee-card";
 
-const team = [
-  {
-    name: "Adam John",
-    image: "/team/image-1.png",
-    designation: "CEO",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://www.twitter.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Janka Indrajith",
-    image: "/team/image-2.png",
-    designation: "COO",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://www.twitter.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "John Kabras",
-    image: "/team/image-3.png",
-    designation: "Senior Android Developer",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://www.twitter.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Tara Smith",
-    image: "/team/image-4.png",
-    designation: "Lead Graphic Designer",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://www.twitter.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Philips Shene Moris",
-    image: "/team/image-5.png",
-    designation: "Senior Web Developer",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://www.twitter.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Memphis Kayle",
-    image: "/team/image-6.png",
-    designation: "Marketing Manager",
-    facebook: "https://www.facebook.com/",
-    twitter: "https://www.twitter.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
-];
-
 const stats = [
   {
     title: "Mobile App Development",
@@ -117,13 +66,13 @@ export default async function AboutUs() {
             />
           </div>
           <p>
-            Mileson Adam John, <span className="text-primary">CEO</span>
+            Dr. Tehseen Riaz Abbasi, <span className="text-primary">CEO</span>
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 mt-24 max-w-7xl w-full gap-8 lg:gap-16">
-          <div className="flex flex-col items-center ">
-            <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative">
+          <div className="flex flex-col items-center">
+            <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative ">
               <Image
                 src="/icons/account-search.png"
                 alt="About Us 1"
@@ -137,13 +86,13 @@ export default async function AboutUs() {
             </h3>
             <p className="text-base lg:text-lg xl:text-2xl text-center mt-2 lg:mt-8 !leading-loose">
               We are a team of software development and testing enthusiasts,
-              working tirelessly on software quality assurance. The last 2 years
+              working tirelessly on software quality assurance. The last 7 years
               were the time we founded, developed, grew, and amazed. And we are
               still growing by working with some major clients from all over the
               world.
             </p>
           </div>
-          <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center">
             <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative">
               <Image
                 src="/icons/diamond.png"

@@ -1,6 +1,6 @@
 "use client";
 
-import { ServiceModal } from "@/components/landing-page/services-modal";
+import ServiceModal from "@/components/landing-page/service-modal";
 import clsx from "clsx";
 import { Menu } from "lucide-react";
 import Image from "next/image";
@@ -64,7 +64,8 @@ export default function NavigationHeader() {
               key={index}
               className={clsx(
                 "navbar-link",
-                NavLink.href === pathname && "text-primary"
+                NavLink.href.toLowerCase() === pathname.toLowerCase() &&
+                  "!text-primary"
               )}
             />
           ) : (
@@ -73,7 +74,8 @@ export default function NavigationHeader() {
               key={index}
               className={clsx(
                 "navbar-link",
-                NavLink.href === pathname && "text-primary"
+                NavLink.href.toLowerCase() === pathname.toLowerCase() &&
+                  "!text-primary"
               )}
             >
               {NavLink.name}

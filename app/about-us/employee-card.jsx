@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Mail, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +20,11 @@ export default function EmployeeCard({ member }) {
         <p className="text-base lg:text-lg xl:text-xl ">
           {member.teamMemberTitle}
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-2 items-center">
+          <Mail size={20} strokeWidth={1.5} />
+          <p className="text-base">{member.teamMemberEmail}</p>
+        </div>
+        {/* <div className="flex gap-4">
           {member.teamMemberFacebookLink && (
             <Link href={member.teamMemberFacebookLink} target="_blank">
               <div className="w-6 h-6 bg-gray-300 rounded-full grid place-items-center hover:bg-[#3b5998] transition-all duration-300">
@@ -54,7 +58,7 @@ export default function EmployeeCard({ member }) {
               </div>
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default async function Careers() {
 
           <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] !leading-loose">
             If you are passionate about providing solutions to IT needs then
-            Decimal Solutions is a perfect place for you to work. We believe in
+            Decimal Solution is a perfect place for you to work. We believe in
             serving our customers with the best by using the right tools. If you
             have it in you to contribute to the digital world; submit your
             resume today and we'll get back to you.
@@ -32,7 +32,7 @@ export default async function Careers() {
             Why Work with Us?
           </h3>
           <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[25px] !leading-loose">
-            Decimal Solutions provide a challenging yet innovative platform for
+            Decimal Solution provide a challenging yet innovative platform for
             all the enthusiasts looking to leave a mark in the digital world. We
             provide a comfortable and friendly working environment,
             market-competitive salaries, and continuous opportunities for growth

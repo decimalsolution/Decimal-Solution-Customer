@@ -85,13 +85,10 @@ export default function Footer({ contactInfo }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
-            <Facebook
-              className="text-white"
-              fill="currentColor"
-              strokeWidth={0}
-            />
-          </div>
+          <img
+            src="/Social Icons/white/facebook.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+          />
         </Link>
 
         <Link
@@ -99,9 +96,9 @@ export default function Footer({ contactInfo }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Instagram
-            className="text-white w-10 h-10 xl:w-9 xl:h-9"
-            strokeWidth={1.5}
+          <img
+            src="/Social Icons/white/instagram-2.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
           />
         </Link>
         <Link
@@ -109,23 +106,20 @@ export default function Footer({ contactInfo }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className=" w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9 border-2 border-white grid place-items-center rounded-lg">
-            <Linkedin
-              className="text-white"
-              fill="currentColor"
-              strokeWidth={0}
-            />
-          </div>
+          <img
+            src="/Social Icons/white/linkedin.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+          />
         </Link>
 
         <Link
-          href={contactInfo.facebook}
+          href={contactInfo.youtube}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Youtube
-            className="text-white w-10 h-10 xl:w-12 xl:h-12"
-            strokeWidth={1.25}
+          <img
+            src="/Social Icons/white/youtube.png"
+            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
           />
         </Link>
       </div>
@@ -133,7 +127,7 @@ export default function Footer({ contactInfo }) {
       <div className="w-full h-[1px] bg-white/50 mx-32"></div>
 
       <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium">
-        CopyRight © 2023 Decimal Solutions. All Rights Reserved.{" "}
+        CopyRight © 2023 Decimal Solution. All Rights Reserved.{" "}
       </p>
     </div>
   );
