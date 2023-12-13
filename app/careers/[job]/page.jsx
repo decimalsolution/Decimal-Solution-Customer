@@ -93,7 +93,7 @@ export default async function SpecificJob({ params }) {
         </div>
         <div>
           <p className="text-base lg:text-lg xl:text-[28px]  font-semibold text-black mb-4">
-            Laravel Developer Requirements:
+            Job Requirements:
           </p>
           <p className="text-base lg:text-lg xl:text-2xl font-light !leading-relaxed">
             {jobListing.jobRequirements}
@@ -101,7 +101,7 @@ export default async function SpecificJob({ params }) {
         </div>
         <div>
           <p className="text-base lg:text-lg xl:text-[28px]  font-semibold text-black mb-4">
-            Responsibilities:
+            Job Responsibilities:
           </p>
           <p className="text-base lg:text-lg xl:text-2xl font-light !leading-relaxed">
             {jobListing.jobResponsibilities}
