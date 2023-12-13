@@ -8,25 +8,25 @@ export const getData = (type) => {
           {
             title: "Website Development",
             description:
-              "To give your business a progressive outlook, we create a website precisely tailored to your needs. Our highly qualified and creative team employs the latest technologies like MongoDB, Express, React, and Node (MERN Stack) to give your website visitors a phenomenal experience. The websites developed are fully responsive and customizable for Desktop, Mobile, and Tablet. We take care of everything from website designing to development, so you just sit back and enjoy engaging visits to your website.",
+              "Improving your online presence through the development of custom websites that represent your company. Our talented developers build beautifully designed, user-friendly websites while ensuring peak speed and responsiveness for a perfect online experience.",
             image: "/website-development/image-1.png",
           },
           {
             title: "CRM Based Solutions",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Solutions for managing customer relationships that have been designed to improve interactions, simplify processes, and increase overall company efficiency while building deep and enduring client connections.",
             image: "/website-development/image-2.png",
           },
           {
             title: "Health Based Solutions",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Complete and innovative ideas that improve patient outcomes, improve medical processes, and improve healthcare operations for a more effectively, stronger healthcare environment.",
             image: "/website-development/image-3.png",
           },
           {
             title: "E-Commerce Solutions",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Use our comprehensive e-commerce solutions to completely change your online business. We provide specific solutions to improve the customer's purchasing experience and improve your online business, ranging from user-friendly interfaces to secure payment methods.",
             image: "/website-development/image-4.png",
           },
         ],
@@ -39,25 +39,25 @@ export const getData = (type) => {
           {
             title: "Android App Development",
             description:
-              "Our team works on bringing your brand to people’s pockets, by making high-performance mobile apps for your business. To bring glory to mobile app development, our experts employ React Native framework. We can create customizable mobile apps for you that works perfectly on multiple platforms including Android and iOS. You will get a secure, responsive, stable, and user-friendly mobile app to boost your business.",
+              "Creating state-of-the-art mobile applications for Android with smooth operation, user-friendly UI, and creative features that respond to a wide range of user requirements.",
             image: "/mobile-app-development/image-1.png",
           },
           {
             title: "iOS Development",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Customized apps for iOS can enhance your visibility on the internet. Using the most recent iOS technology to provide lag-free and simple experiences, our skilled developers maximize performance on all Apple devices.",
             image: "/mobile-app-development/image-2.png",
           },
           {
             title: "Native Application Development",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "We create dependable, high-performing apps that are suited to certain platforms by fully using native technology, ensuring the best possible user experiences and functionalities.",
             image: "/mobile-app-development/image-3.png",
           },
           {
             title: "Mobile App Development",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Using personalized mobile applications, your ideas may become reality. Our talented developers guarantee creative, approachable solutions that satisfy a range of requirements and provide a flawless mobile experience.",
             image: "/mobile-app-development/image-4.png",
           },
         ],
@@ -70,25 +70,25 @@ export const getData = (type) => {
           {
             title: "Social Media Marketing",
             description:
-              "Promoting your brand is an important milestone if you want to achieve your commercial objectives. To increase visibility and customer engagement on your website, our digital marketing strategists develop a comprehensive strategy after monitoring and evaluating customer interaction. These strategies make sure to increase the revenue generated from your website and increase your online presence, leaving a digital footprint on search engines and social media platforms.",
+              "Boost the online visibility of your company with clever and engaging social media marketing. Our customized solutions promote brand visibility, audience engagement, and company expansion across a variety of media.",
             image: "/digital-marketing/image-1.png",
           },
           {
             title: "SEO Services",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Enhancing your online visibility and ranking with our strategic search engine optimization solutions. We optimize your digital presence for increased discoverability and organic traffic growth.",
             image: "/digital-marketing/image-2.png",
           },
           {
             title: "Social Advertising Campaign",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Increase brand awareness and interaction on social media by running focused ads. Our campaigns provide significant outcomes, growing your audience and optimizing return on investment across media.",
             image: "/digital-marketing/image-3.png",
           },
           {
             title: "Pay Per Click Advertising",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Increasing your internet presence and precisely directing targeted traffic. With our PPC campaigns, you may increase the impact of your digital marketing while maintaining a reasonable cost.",
             image: "/digital-marketing/image-4.png",
           },
         ],
@@ -101,25 +101,19 @@ export const getData = (type) => {
           {
             title: "UI/UX Designing",
             description:
-              "To communicate the story behind your brand/product to your customers in visuals; our graphic designing team uses the perfect color combinations, images, artistic designs, typography, and animations. Our experts create a customized and professional art, just for your business, that helps draw more attention and make a lasting impression on your customers.",
+              "Using our skilled design team, we can elevate digital experiences. We create visually appealing and user-focused interfaces which ensure smooth and enjoyable interactions for maximum user pleasure.",
             image: "/graphic-designing/image-1.png",
-          },
-          {
-            title: "Logo Design",
-            description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
-            image: "/graphic-designing/image-2.png",
           },
           {
             title: "Corporate Branding",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting,  Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Our comprehensive approach include developing unified graphic identities that capture the essence of your company. We concentrate on building a memorable and significant brand presence across a range of channels, from designing unique logos to developing a unified brand language. To make sure your business identity sticks out in the competitive marketplace, our design specialists place a high priority on aesthetics, usefulness, and brand resonance.",
             image: "/graphic-designing/image-3.png",
           },
           {
             title: "Web Designing",
             description:
-              "To communicate the story behind your brand/product to your customers in visuals; our graphic designing team uses the perfect color combinations, images, artistic designs, typography, and animations. Our experts create a customized and professional art, just for your business, that helps draw more attention and make a lasting impression on your customers.",
+              "Converting ideas into aesthetically beautiful websites. Our skilled developers create user-focused interfaces which ensure your audience will have a smooth and interesting online experience.",
             image: "/graphic-designing/image-4.png",
           },
         ],
@@ -132,25 +126,25 @@ export const getData = (type) => {
           {
             title: "VUFORIA AR",
             description:
-              "Merging the real and virtual to make your business stand out among others is what our AR/VR development team does. The animations created through these technologies give your website a unique look and engage more customers. Our developers create AR and VR apps for iPad, iPhone, Android, and Windows. By combining technology and creativity, we create unique spaces and experiences for you and your business.",
+              "Unlocking the potential of augmented reality with Vuforia, a cutting-edge platform that empowers developers to create immersive and interactive AR experiences for various applications and industries.",
             image: "/ar-vr/image-1.png",
           },
           {
             title: "AR Foundation",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting, Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "A versatile development framework that harnesses the power of augmented reality, enabling seamless creation of AR experiences across different platforms and devices for immersive and engaging applications.",
             image: "/ar-vr/image-2.png",
           },
           {
             title: "Google AR Core, Easy AR",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting, Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "By utilizing innovative augmented reality technology, these platforms enable developers to produce smooth and captivating augmented reality experiences, paving the way for interactive apps across a range of platforms.",
             image: "/ar-vr/image-3.png",
           },
           {
             title: "Location Marker Based Augmentation",
             description:
-              "Merging the real and virtual to make your business stand out among others is what our AR/VR development team does. The animations created through these technologies give your website a unique look and engage more customers. Our developers create AR and VR apps for iPad, iPhone, Android, and Windows. By combining technology and creativity, we create unique spaces and experiences for you and your business.",
+              "Enhancing augmented reality experiences by utilizing location markers, providing context-aware and interactive content overlays in real-world environments for a dynamic and engaging user experience.",
             image: "/ar-vr/image-4.png",
           },
         ],
@@ -163,19 +157,19 @@ export const getData = (type) => {
           {
             title: "Custom Business Solutions",
             description:
-              "Enterprise resource planning (ERP) software is increasingly becoming essential for managing business needs. Our experienced and enthusiastic team is all set to provide the best ERP solutions to efficiently manage departments like Finance, HR, Supply Chain, Procurement, Manufacturing, Inventory, Marketing, etc. It will make it easy for you to manage your day-to-day business activities, providing enough room for more productivity.",
+              "Software for enterprise resource planning, or ERP, is becoming more and more necessary for handling corporate requirements. We are prepared to offer the best ERP systems to effectively manage departments like as finance, HR, supply chain, procurement, manufacturing, inventory, marketing, etc. Thanks to the experience and enthusiasm of our staff. It will simplify the management of your daily company operations and free up space for increased productivity",
             image: "/erp/image-1.png",
           },
           {
             title: "Real Estate Softwares",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting, Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Providing real estate agents cutting-edge digital solutions for sales, property administration, and efficient operations to boost productivity and customer satisfaction in the sector.",
             image: "/erp/image-2.png",
           },
           {
             title: "Accounting Softwares",
             description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled it to make a tysape specimen book. It has survived not only a five centuries, but also the leap into electronic typesetting, Lorem Ipsum has jwfghi been the industry's standard dummy text ever since the 1500s, when an unknown printerca took a galley of type and scrambled",
+              "Financial management may be made more efficient by using reliable and user-friendly accounting software. Our solutions provide accurate, efficient, and secure financial processes while meeting a wide range of corporate demands.",
             image: "/erp/image-3.png",
           },
         ],
