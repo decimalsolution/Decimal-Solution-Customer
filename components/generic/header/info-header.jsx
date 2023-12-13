@@ -67,7 +67,7 @@ export default function InfoHeader({ contactInfo }) {
         <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
 
         <Link
-          href={contactInfo.linkedIn}
+          href={contactInfo.youtube}
           target="_blank"
           rel="noopener noreferrer"
         >
