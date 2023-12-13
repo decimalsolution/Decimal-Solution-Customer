@@ -19,7 +19,7 @@ export default async function SpecificJob({ params }) {
     <div>
       <div className="flex flex-col items-stretch px-8 sm:px-12 md:px-20 lg:px-28 xl:px-32 2xl:px-36 py-24 gap-16">
         <div className="mx-auto">
-          <p className="landing-page-subheading !mb-4">Usquare Solutions</p>
+          <p className="landing-page-subheading !mb-4">Decimal Solution</p>
           <h2 className="landing-page-heading">{jobListing.title}</h2>
         </div>
         <div>
