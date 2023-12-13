@@ -53,7 +53,12 @@ export default function PortfolioContent({
 
       {filteredGroups.map((group, index) => (
         <div className="w-full flex flex-col items-center mb-16">
-          <p className={cn("landing-page-subheading", "!mb-8 w-full px-24")}>
+          <p
+            className={cn(
+              "landing-page-subheading",
+              "!mb-8 w-full px-24 text-center"
+            )}
+          >
             {group.category}
           </p>
           <Carousel>
@@ -93,7 +98,7 @@ export default function PortfolioContent({
       ))}
 
       <div>
-        <p className="landing-page-subheading ">Our Projects</p>
+        <p className="landing-page-subheading text-center">Our Projects</p>
         <h2 className="landing-page-heading">Some Latest Client Projects</h2>
       </div>
 
