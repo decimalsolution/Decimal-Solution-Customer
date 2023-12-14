@@ -37,7 +37,7 @@ export default function PortfolioContent({
       <div className="flex items-center justify-center gap-4 flex-wrap mb-16">
         {categories.map((category, index) => (
           <button
-            key={"our-projects-buttons-" + index + "-key"}
+            key={"our-projects-buttons-" + index + "-key" + category}
             className={cn(
               "text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
               selected === category && "bg-primary text-white"
@@ -52,7 +52,10 @@ export default function PortfolioContent({
       </div>
 
       {filteredGroups.map((group, index) => (
-        <div className="w-full flex flex-col items-center mb-16">
+        <div
+          className="w-full flex flex-col items-center mb-16"
+          key={"our-projects-group-" + index + "-key" + group.category}
+        >
           <p
             className={cn(
               "landing-page-subheading",
@@ -63,14 +66,14 @@ export default function PortfolioContent({
           </p>
           <Carousel>
             {group.projects.map((item, i) => (
-              <SwiperSlide key={"our-projects-" + i + "-key"}>
+              <SwiperSlide key={"our-projects-" + i + "-key" + item.title}>
                 <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
                   <div>
                     <Image
                       src={item.coverImage}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                   <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
@@ -104,7 +107,7 @@ export default function PortfolioContent({
 
       {recentProjects?.map((project, index) => (
         <ServiceCard
-          key={"our-projects-card-" + index + "-key"}
+          key={"our-projects-card-" + index + "-key" + project.title}
           title={project.title}
           description={project.description}
           image={project.coverImage}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -8,17 +8,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 export default function Carousel({ children, ...props }) {
   const [swiperRef, setSwiperRef] = useState(null);
 
-  const goNext = () => {
+  const goNext = useCallback(() => {
     if (swiperRef !== null) {
       swiperRef.slideNext();
     }
-  };
+  }, [swiperRef]);
 
-  const goPrev = () => {
+  const goPrev = useCallback(() => {
     if (swiperRef !== null) {
       swiperRef.slidePrev();
     }
-  };
+  }, [swiperRef]);
+
   return (
     <div className="h-[200px] sm:h-[240px] md:h-[260px] lg:h-[300px] xl:h-[340px] 2xl:h-[380px] w-full max-w-[1750px] relative px-8">
       <button
@@ -36,7 +37,6 @@ export default function Carousel({ children, ...props }) {
           600: {
             slidesPerView: 2,
           },
-
           1000: {
             slidesPerView: 3,
           },
