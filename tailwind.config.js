@@ -100,7 +100,7 @@ module.exports = {
             transform: "translateX(0)",
           },
           "100%": {
-            transform: "translateX(calc(12*-372px))",
+            transform: "translateX(calc(15*-372px))",
           },
         },
         slider: {
