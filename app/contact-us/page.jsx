@@ -3,8 +3,21 @@ import CustomTextArea from "@/components/generic/custom-textarea";
 import PageIntroduction from "@/components/generic/page-introduction";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ContactUs() {
+export default async function ContactUs() {
+  const data = await fetch(
+    "https://backend.decimalsolution.com/api/v1/web/contactUs",
+    {
+      next: {
+        revalidate: 300,
+      },
+    }
+  );
+
+  const response = await data.json();
+  const contactInfo = response.data[0];
+
   return (
     <div>
       <PageIntroduction title="Contact Us" image={"/contact-us.png"} />
@@ -22,7 +35,7 @@ export default function ContactUs() {
             </h3>
             <p className=" md:text-lg lg:text-xl xl:text-[25px]">
               {" "}
-              +92 300 7171197, +92 335 4749732
+              {contactInfo.primaryContact}{" "}
             </p>
           </div>
           <div className="border-l-4 border-primary pl-8">
@@ -30,7 +43,7 @@ export default function ContactUs() {
               Email:
             </h3>
             <p className=" md:text-lg lg:text-xl xl:text-[25px]">
-              info@decimalsolution.com
+              {contactInfo.primaryEmail}
             </p>
           </div>
           <div className="border-l-4 border-primary pl-8">
@@ -38,30 +51,52 @@ export default function ContactUs() {
               Office Address:
             </h3>
             <p className=" md:text-lg lg:text-xl xl:text-[25px]">
-              Office No# 17, 2rd Floor, Zaki Centre, I-8 Markaz Islamabad, 44000
+              {contactInfo.primaryAddress}
             </p>
           </div>
-          <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
-            <div className="w-9 h-9 xl:w-8 2xl:w-12 xl:h-8 2xl:h-12  border-2 border-primary grid place-items-center rounded-lg p-2">
-              <Facebook
-                className="text-primary w-full h-full"
-                fill="currentColor"
-                strokeWidth={0}
+          <div className="flex items-center justify-center sm:justify-start gap-4 xl:gap-6 2xl:gap-8">
+            <a
+              href={contactInfo.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/Social Icons/purple/facebook.png"
+                className="w-7 h-7 sm:w-9 sm:h-9 lg:h-11 lg:w-11"
               />
-            </div>
+            </a>
 
-            <Instagram
-              className="text-primary w-10 h-10 xl:w-14 xl:h-14"
-              strokeWidth={1}
-            />
-
-            <div className=" w-9 h-9 xl:w-8 2xl:w-12 xl:h-8 2xl:h-12 border-2 border-primary grid place-items-center rounded-lg p-2">
-              <Linkedin
-                className="text-primary w-full h-full"
-                fill="currentColor"
-                strokeWidth={0}
+            <a
+              href={contactInfo.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/Social Icons/purple/instagram-2.png"
+                className="w-7 h-7 sm:w-9 sm:h-9 lg:h-11 lg:w-11"
               />
-            </div>
+            </a>
+            <a
+              href={contactInfo.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/Social Icons/purple/linkedin.png"
+                className="w-7 h-7 sm:w-9 sm:h-9 lg:h-11 lg:w-11"
+              />
+            </a>
+
+            <a
+              href={contactInfo.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/Social Icons/purple/youtube.png"
+                className="w-7 h-7 sm:w-9 sm:h-9 lg:h-11 lg:w-11"
+              />
+            </a>
           </div>
         </div>
         <div className="flex-1 flex flex-col gap-4 px-16 lg:px-8 lg:gap-8 p-4 xl:pr-36 py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-24">
