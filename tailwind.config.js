@@ -119,7 +119,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "home-carousel": "slider 20s linear infinite",
-        "our-technologies": "our-technologies 20s linear infinite",
+        "our-technologies": "our-technologies 30s linear infinite",
       },
     },
   },
