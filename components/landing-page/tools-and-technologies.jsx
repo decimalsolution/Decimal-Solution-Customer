@@ -8,19 +8,25 @@ export default function ToolsAndTechnologies() {
     "/Tools And Technologies/vuejs.png",
     "/Tools And Technologies/angular.png",
     "/Tools And Technologies/nodejs.png",
+    "/Tools And Technologies/csharp.png",
+    "/Tools And Technologies/java.png",
+    "/Tools And Technologies/python.png",
     "/Tools And Technologies/django.png",
     "/Tools And Technologies/express.png",
     "/Tools And Technologies/mongodb.png",
     "/Tools And Technologies/mysql.png",
     "/Tools And Technologies/planetscale.png",
     "/Tools And Technologies/postgre.png",
-    "/Tools And Technologies/python.png",
-    "/Tools And Technologies/java.png",
     "/Tools And Technologies/material.png",
     "/Tools And Technologies/mantine.png",
     "/Tools And Technologies/figma.png",
     "/Tools And Technologies/illustrator.png",
     "/Tools And Technologies/photoshop.png",
+    "/Tools And Technologies/blender.png",
+    "/Tools And Technologies/unity.png",
+    "/Tools And Technologies/godot.png",
+    "/Tools And Technologies/cypress.png",
+    "/Tools And Technologies/mocha.png",
   ];
 
   return (
@@ -40,7 +46,7 @@ export default function ToolsAndTechnologies() {
 
       <div className="w-full h-full overflow-hidden relative before:content-[''] before:absolute before:left-0 before:block before:h-full before:w-40 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:top-0 after:right-0 after:block after:h-full after:w-40 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
         <div
-          className={`flex h-32 gap-32 w-[calc(372px*36)] animate-our-technologies`}
+          className={`flex h-32 gap-32 w-[calc(372px*48)] animate-our-technologies`}
         >
           {data.map((item, index) => (
             <div
