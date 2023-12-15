@@ -1,6 +1,12 @@
 import PageIntroduction from "@/components/generic/page-introduction";
 import ServiceCard from "@/components/generic/service-card";
 
+export const metadata = {
+  title: "Products",
+  description:
+    "Discover innovation at its finest on Decimal Solutions' Products Page. Explore our cutting-edge solutions in Web and Mobile Development, ERP, AR/VR, Game Development, Graphics Designing, and Digital Marketing - tailored for success in the digital realm.",
+};
+
 export default async function Products() {
   const res = await fetch(
     "https://backend.decimalsolution.com/api/v1/web/products",

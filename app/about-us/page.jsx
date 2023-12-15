@@ -5,6 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import EmployeeCard from "./employee-card";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Discover the essence of Decimal Solutions on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Learn about our journey, values, and commitment to shaping a digital future.",
+};
+
 const stats = [
   {
     title: "Mobile App Development",

@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import BlogView from "./blog-view";
 
+export const metadata = {
+  title: "Blogs",
+  description:
+    "Dive into the world of insights and expertise on Decimal Solutions' Blogs Page. Explore thought-provoking content covering Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Stay informed, inspired, and ahead in the ever-evolving tech landscape.",
+};
+
 export default async function Blogs() {
   const res = await fetch(
     "https://backend.decimalsolution.com/api/v1/web/blogs",

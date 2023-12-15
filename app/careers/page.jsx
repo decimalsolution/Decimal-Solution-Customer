@@ -1,5 +1,11 @@
 import AvailableJobs from "./available-jobs";
 
+export const metadata = {
+  title: "Careers",
+  description:
+    "Join the innovation journey at Decimal Solutions. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Elevate your career with us and be a part of cutting-edge solutions.",
+};
+
 export default async function Careers() {
   const res = await fetch(
     "https://backend.decimalsolution.com/api/v1/web/jobs",

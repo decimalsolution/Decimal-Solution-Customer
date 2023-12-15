@@ -2,6 +2,12 @@ import PageIntroduction from "@/components/generic/page-introduction";
 
 import PortfolioContent from "./content";
 
+export const metadata = {
+  title: "Portfolio",
+  description:
+    "Dive into the world of insights and expertise on Decimal Solutions' Blogs Page. Explore thought-provoking content covering Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Stay informed, inspired, and ahead in the ever-evolving tech landscape.",
+};
+
 export default async function Portfolio() {
   const res = await fetch(
     "https://backend.decimalsolution.com/api/v1/web/groupedprojects",

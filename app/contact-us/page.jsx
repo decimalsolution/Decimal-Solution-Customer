@@ -5,6 +5,12 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Connect with Decimal Solutions - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Reach out for a seamless collaboration and elevate your digital presence",
+};
+
 export default async function ContactUs() {
   const data = await fetch(
     "https://backend.decimalsolution.com/api/v1/web/contactUs",
