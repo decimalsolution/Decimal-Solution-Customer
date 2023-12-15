@@ -32,6 +32,10 @@ const navigationLinks = [
     name: "Blogs",
     href: "/blogs",
   },
+  {
+    name: "Contact Us",
+    href: "/contact-us",
+  },
 ];
 
 export default function Footer({ contactInfo }) {
@@ -41,7 +45,7 @@ export default function Footer({ contactInfo }) {
         {navigationLinks.map((link, i) => (
           <Link
             className={cn(
-              "text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-all",
+              "text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-all hover:text-white/75",
               i !== navigationLinks.length - 1 &&
                 "border-r border-white pr-2 md:pr-4 lg:pr-8"
             )}
@@ -52,32 +56,30 @@ export default function Footer({ contactInfo }) {
         ))}
       </div>
 
-      <h2 className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-center">
-        Contact Us
-      </h2>
-
-      <div className="flex items-center justify-center gap-8">
+      <div className="flex items-center justify-center gap-8 my-4">
         <a
           href={`mailto:${contactInfo.primaryEmail}`}
           className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
         >
           {contactInfo.primaryEmail}
         </a>
+        <div className="w-[1px] h-8 bg-white"></div>
         <a
           href={`tel:${contactInfo.primaryContact}`}
           className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
         >
           {contactInfo.primaryContact}
         </a>
+        <div className="w-[1px] h-8 bg-white"></div>
+        <a
+          href={contactInfo.googleMapLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium transition-colors"
+        >
+          I-8 Markaz, Islamabad, Pakistan
+        </a>
       </div>
-      <a
-        href={contactInfo.googleMapLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium transition-colors"
-      >
-        {contactInfo.primaryAddress}
-      </a>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
         <Link
