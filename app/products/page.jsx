@@ -30,6 +30,7 @@ export default async function Products() {
             showButton
             reverse={index % 2 !== 0}
             link={product.link}
+            externalLink
           />
         ))}
       </div>
