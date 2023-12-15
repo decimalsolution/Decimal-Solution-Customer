@@ -3,14 +3,17 @@ import Image from "next/image";
 
 export default function ToolsAndTechnologies() {
   const data = [
-    "/Tools And Technologies/mongodb.png",
-    "/Tools And Technologies/express.png",
     "/Tools And Technologies/react.png",
-    "/Tools And Technologies/nodejs.png",
     "/Tools And Technologies/nextjs.png",
-    "/Tools And Technologies/angular.png",
     "/Tools And Technologies/vuejs.png",
+    "/Tools And Technologies/angular.png",
+    "/Tools And Technologies/nodejs.png",
     "/Tools And Technologies/django.png",
+    "/Tools And Technologies/express.png",
+    "/Tools And Technologies/mongodb.png",
+    "/Tools And Technologies/mysql.png",
+    "/Tools And Technologies/planetscale.png",
+    "/Tools And Technologies/postgre.png",
     "/Tools And Technologies/python.png",
     "/Tools And Technologies/java.png",
     "/Tools And Technologies/material.png",
@@ -37,7 +40,7 @@ export default function ToolsAndTechnologies() {
 
       <div className="w-full h-full overflow-hidden relative before:content-[''] before:absolute before:left-0 before:block before:h-full before:w-40 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:top-0 after:right-0 after:block after:h-full after:w-40 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
         <div
-          className={`flex h-32 gap-32 w-[calc(372px*30)] animate-our-technologies`}
+          className={`flex h-32 gap-32 w-[calc(372px*36)] animate-our-technologies`}
         >
           {data.map((item, index) => (
             <div
