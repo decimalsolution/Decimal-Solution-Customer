@@ -115,6 +115,7 @@ export default function PortfolioContent({
           showButton
           reverse={index % 2 !== 0}
           link={project.link}
+          externalLink
         />
       ))}
     </div>

@@ -44,7 +44,7 @@ export default function OurServicesContent({ services }) {
                 alt={item.title}
                 width={130}
                 height={130}
-                className="object-cover"
+                className=" h-[100px] w-[100px] md:h-[130px] md:w-[130px]  object-cover"
               />
             </div>
             <h3 className="text-lg 2xl:text-3xl font-semibold">{item.title}</h3>

@@ -41,6 +41,7 @@ export default function Carousel({ children, ...props }) {
             slidesPerView: 3,
           },
         }}
+        // slidesPerView={"auto"}
         {...props}
       >
         {children}
