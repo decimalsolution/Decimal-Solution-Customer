@@ -27,17 +27,18 @@ export default function TestimonialCarousel({ testimonials }) {
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className="py-4">
             <div className="flex flex-col items-center">
-              <div className="relative border-8 border-primary rounded-lg">
-                <div className="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] relative">
+              <div className="relative rounded-lg border-8 border-primary">
+                <div className="relative h-[150px] w-[150px] lg:h-[200px] lg:w-[200px]">
                   <Image
                     src={testimonial.image}
                     alt="testimonial"
                     fill
                     className="object-cover object-center"
+                    loading="lazy"
                   />
                 </div>
-                <div className="absolute -top-4 lg:-top-6 -left-4 lg:-left-6 w-8 h-8 lg:w-12 lg:h-12 bg-primary rounded-full grid place-items-center">
-                  <div className="w-3 h-3 lg:w-5 lg:h-5 relative">
+                <div className="absolute -left-4 -top-4 grid h-8 w-8 place-items-center rounded-full bg-primary lg:-left-6 lg:-top-6 lg:h-12 lg:w-12">
+                  <div className="relative h-3 w-3 lg:h-5 lg:w-5">
                     <Image
                       src="/icons/inverted-commas.png"
                       alt="inverted-commas"
@@ -48,14 +49,14 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
               </div>
 
-              <h5 className="text-lg 2xl:text-2xl font-semibold mt-4 lg:mt-8">
+              <h5 className="mt-4 text-lg font-semibold lg:mt-8 2xl:text-2xl">
                 {testimonial.name}
               </h5>
-              <p className="text-center tet-base lg:text-xl text-primary font-medium lg:mt-2">
+              <p className="tet-base text-center font-medium text-primary lg:mt-2 lg:text-xl">
                 {testimonial.designation}
               </p>
 
-              <p className="text-center text-base md:text-lg lg:text-xl 2xl:text-2xl  mt-2 md:mt-4 lg:mt-8 max-w-7xl leading-relaxed">
+              <p className="mt-2 max-w-7xl text-center text-base leading-relaxed  md:mt-4 md:text-lg lg:mt-8 lg:text-xl 2xl:text-2xl">
                 {testimonial.testimonial}
               </p>
             </div>
