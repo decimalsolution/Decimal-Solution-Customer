@@ -16,7 +16,7 @@ export default async function OurServices() {
   const services = data.data;
 
   return (
-    <div className="bg-no-repeatC flex flex-col items-center gap-8 bg-[url('/our-services-bg.png')] bg-cover py-8 lg:py-12 xl:py-16 2xl:py-20">
+    <div className="bg-no-repeatC flex flex-col items-center gap-8 bg-[url('/our-services-bg.webp')] bg-cover py-8 lg:py-12 xl:py-16 2xl:py-20">
       <div className="flex flex-col items-center">
         <div>
           <p className="landing-page-subheading text-center">Our Services</p>
