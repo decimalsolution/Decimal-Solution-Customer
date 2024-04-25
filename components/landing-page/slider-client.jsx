@@ -66,14 +66,14 @@ export default function SliderClient() {
                 src={`/Slider Images/Slider-${(i % 4) + 1}.webp`}
                 alt={`Slider images ${i + 1}`}
                 fill
-                priority={true}
+                priority={i === 0 ? true : false}
                 className="absolute inset-0 object-cover object-center"
               />
               <Image
                 src="/slider-overlay.png"
                 alt="Slider Overlay"
                 fill
-                priority={true}
+                priority={i === 0 ? true : false}
                 className="absolute inset-0"
               />
 
