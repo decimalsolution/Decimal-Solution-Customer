@@ -9,12 +9,13 @@ export const metadata = {
 
 export default async function Products() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/products",
+    `${process.env.BASE_URL}/products`,
+
     {
       next: {
         revalidate: 300,
       },
-    }
+    },
   );
 
   const data = await res.json();

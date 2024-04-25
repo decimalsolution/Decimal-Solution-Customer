@@ -8,14 +8,11 @@ export const metadata = {
 };
 
 export default async function Services() {
-  const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/services",
-    {
-      next: {
-        revalidate: 300,
-      },
-    }
-  );
+  const res = await fetch(`${process.env.BASE_URL}/services`, {
+    next: {
+      revalidate: 300,
+    },
+  });
 
   const data = await res.json();
 

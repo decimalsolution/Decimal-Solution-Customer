@@ -13,14 +13,11 @@ import BlogView from "../blog-view";
 export default async function SpecificBlog({ params }) {
   const blogId = params.blog;
 
-  const res = await fetch(
-    `https://backend.decimalsolution.com/api/v1/web/blogs/${blogId}`,
-    {
-      next: {
-        revalidate: 300,
-      },
-    }
-  );
+  const res = await fetch(`${process.env.BASE_URL}/blogs/${blogId}`, {
+    next: {
+      revalidate: 300,
+    },
+  });
 
   if (!res.ok) throw new Error("Something went wrong");
 
@@ -35,9 +32,9 @@ export default async function SpecificBlog({ params }) {
       <PageIntroduction title={blog.blogTitle} image={blog.blogImage} />
       <div className="px-36 py-16">
         <div className="flex items-center justify-between border-b border-gray-300 pb-4">
-          <div className="flex gap-4 items-center">
+          <div className="flex items-center gap-4">
             <h2 className="landing-page-heading">{blog.blogTitle} </h2>
-            <p className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 ">
+            <p className="text-sm text-gray-400 md:text-base lg:text-lg xl:text-xl 2xl:text-2xl ">
               (
               {new Date(blog.createdAt).toLocaleDateString("en-GB", {
                 day: "2-digit",
@@ -58,10 +55,10 @@ export default async function SpecificBlog({ params }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#3b5998] transition-all duration-300">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#3b5998]">
                 <Facebook
                   strokeWidth={0}
-                  className="text-white fill-white w-3/4 h-3/4"
+                  className="h-3/4 w-3/4 fill-white text-white"
                 />
               </div>
             </Link>
@@ -75,10 +72,10 @@ export default async function SpecificBlog({ params }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#00acee] transition-all duration-300">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#00acee]">
                 <Twitter
                   strokeWidth={0}
-                  className="text-white fill-white w-3/4 h-3/4"
+                  className="h-3/4 w-3/4 fill-white text-white"
                 />
               </div>
             </Link>
@@ -92,28 +89,28 @@ export default async function SpecificBlog({ params }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-10 h-10 bg-gray-300 rounded-full grid place-items-center hover:bg-[#0072b1] transition-all duration-300">
-                <Linkedin strokeWidth={2} className="text-white w-3/4 h-3/4" />
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#0072b1]">
+                <Linkedin strokeWidth={2} className="h-3/4 w-3/4 text-white" />
               </div>
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-4 text-base md:text-lg lg:text-xl xl:text-2xl !leading-loose my-8">
+        <div className="my-8 flex flex-col gap-4 text-base !leading-loose md:text-lg lg:text-xl xl:text-2xl">
           {blog.blogData}
         </div>
 
-        <div className="grid-cols-1 md:grid-cols-2 grid 2xl:grid-cols-3 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16 2xl:grid-cols-3">
           {blogs?.map((blog, index) => (
             <BlogView key={"blog-" + index} blog={blog} />
           ))}
         </div>
 
         <Link
-          className="text-primary text-3xl uppercase font-medium hover:underline my-16 block"
+          className="my-16 block text-3xl font-medium uppercase text-primary hover:underline"
           href={"/blogs"}
         >
-          <div className="flex gap-4 items-center">
-            <ChevronLeft className="text-primary w-10 h-10" />
+          <div className="flex items-center gap-4">
+            <ChevronLeft className="h-10 w-10 text-primary" />
             <p>Go Back</p>
           </div>
         </Link>

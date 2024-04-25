@@ -4,12 +4,13 @@ export default async function SpecificJob({ params }) {
   const job = params.job;
 
   const res = await fetch(
-    `https://backend.decimalsolution.com/api/v1/web/jobs/${job}`,
+    `${process.env.BASE_URL}/jobs/${job}`,
+
     {
       next: {
         revalidate: 300,
       },
-    }
+    },
   );
 
   const data = await res.json();
@@ -17,7 +18,7 @@ export default async function SpecificJob({ params }) {
 
   return (
     <div>
-      <div className="flex flex-col items-stretch px-8 sm:px-12 md:px-20 lg:px-28 xl:px-32 2xl:px-36 py-24 gap-16">
+      <div className="flex flex-col items-stretch gap-16 px-8 py-24 sm:px-12 md:px-20 lg:px-28 xl:px-32 2xl:px-36">
         <div className="mx-auto">
           <p className="landing-page-subheading !mb-4 text-center">
             Decimal Solution
@@ -27,37 +28,37 @@ export default async function SpecificJob({ params }) {
           </h2>
         </div>
         <div>
-          <div className="flex flex-col gap-8 lg:gap-4 lg:flex-row justify-between items-start">
+          <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:gap-4">
             <div className="flex flex-col gap-4">
-              <p className="text-base lg:text-lg xl:text-[28px] font-medium text-black">
+              <p className="text-base font-medium text-black lg:text-lg xl:text-[28px]">
                 Minimum Qualification:{" "}
-                <span className="font-light text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                <span className="text-base font-light lg:text-lg xl:text-xl 2xl:text-2xl">
                   {jobListing.minimumQualifications}
                 </span>
               </p>
-              <p className="text-base lg:text-lg xl:text-[28px] font-medium text-black">
+              <p className="text-base font-medium text-black lg:text-lg xl:text-[28px]">
                 Experience Level:{" "}
-                <span className="font-light text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                <span className="text-base font-light lg:text-lg xl:text-xl 2xl:text-2xl">
                   {jobListing.jobLevel}
                 </span>
               </p>
-              <p className="text-base lg:text-lg xl:text-[28px] font-medium text-black">
+              <p className="text-base font-medium text-black lg:text-lg xl:text-[28px]">
                 Experience Length:{" "}
-                <span className="font-light text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                <span className="text-base font-light lg:text-lg xl:text-xl 2xl:text-2xl">
                   {jobListing.minimumExperience}
                 </span>
               </p>
-              <p className="text-base lg:text-lg xl:text-[28px] font-medium text-black">
+              <p className="text-base font-medium text-black lg:text-lg xl:text-[28px]">
                 Location:{" "}
-                <span className="font-light text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                <span className="text-base font-light lg:text-lg xl:text-xl 2xl:text-2xl">
                   {jobListing.location}
                 </span>
               </p>
-              <p className="text-base lg:text-lg xl:text-[28px] font-medium text-black">
+              <p className="text-base font-medium text-black lg:text-lg xl:text-[28px]">
                 Application Deadline:{" "}
-                <span className="font-light text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                <span className="text-base font-light lg:text-lg xl:text-xl 2xl:text-2xl">
                   {new Date(
-                    jobListing.jobApplicationDeadline
+                    jobListing.jobApplicationDeadline,
                   ).toLocaleDateString("en-GB", {
                     day: "numeric",
                     month: "long",
@@ -65,9 +66,9 @@ export default async function SpecificJob({ params }) {
                   })}
                 </span>
               </p>
-              <p className="text-base lg:text-lg xl:text-[28px] font-medium text-black">
+              <p className="text-base font-medium text-black lg:text-lg xl:text-[28px]">
                 Salary Range:{" "}
-                <span className="font-light text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                <span className="text-base font-light lg:text-lg xl:text-xl 2xl:text-2xl">
                   {jobListing.minimumJobSalary.toLocaleString("en-PK", {
                     style: "currency",
                     currency: "PKR",
@@ -81,33 +82,33 @@ export default async function SpecificJob({ params }) {
               </p>
             </div>
             <Link href={`/careers/${params.job}/apply-for-job`}>
-              <button className="text-sm md:text-base lg:text-lg xl:text-xl bg-primary px-4 md:px-8 lg:px-16 py-2 md:py-3 lg:py-4 text-white rounded-full">
+              <button className="rounded-full bg-primary px-4 py-2 text-sm text-white md:px-8 md:py-3 md:text-base lg:px-16 lg:py-4 lg:text-lg xl:text-xl">
                 Apply Now
               </button>
             </Link>
           </div>
         </div>
         <div>
-          <p className="text-base lg:text-lg xl:text-[28px]  font-semibold text-black mb-4">
+          <p className="mb-4 text-base font-semibold  text-black lg:text-lg xl:text-[28px]">
             Job Description:
           </p>
-          <p className="text-base lg:text-lg xl:text-2xl font-light !leading-relaxed">
+          <p className="text-base font-light !leading-relaxed lg:text-lg xl:text-2xl">
             {jobListing.description}
           </p>
         </div>
         <div>
-          <p className="text-base lg:text-lg xl:text-[28px]  font-semibold text-black mb-4">
+          <p className="mb-4 text-base font-semibold  text-black lg:text-lg xl:text-[28px]">
             Job Requirements:
           </p>
-          <p className="text-base lg:text-lg xl:text-2xl font-light !leading-relaxed">
+          <p className="text-base font-light !leading-relaxed lg:text-lg xl:text-2xl">
             {jobListing.jobRequirements}
           </p>
         </div>
         <div>
-          <p className="text-base lg:text-lg xl:text-[28px]  font-semibold text-black mb-4">
+          <p className="mb-4 text-base font-semibold  text-black lg:text-lg xl:text-[28px]">
             Job Responsibilities:
           </p>
-          <p className="text-base lg:text-lg xl:text-2xl font-light !leading-relaxed">
+          <p className="text-base font-light !leading-relaxed lg:text-lg xl:text-2xl">
             {jobListing.jobResponsibilities}
           </p>
         </div>

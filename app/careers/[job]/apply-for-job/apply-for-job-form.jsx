@@ -49,7 +49,7 @@ export default function ApplyForJobForm({ job }) {
       },
       {
         message: "Invalid Resume. Only PDF files are allowed",
-      }
+      },
     ),
   });
 
@@ -92,14 +92,15 @@ export default function ApplyForJobForm({ job }) {
       };
 
       const res = await fetch(
-        "https://backend.decimalsolution.com/api/v1/web/jobApplications",
+        `${process.env.BASE_URL}/jobApplications`,
+
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(submissionData),
-        }
+        },
       );
 
       const data = await res.json();
@@ -117,20 +118,20 @@ export default function ApplyForJobForm({ job }) {
 
   if (error) {
     return (
-      <div className="flex flex-col items-center justify-center gap-4 my-16">
+      <div className="my-16 flex flex-col items-center justify-center gap-4">
         <div className="flex items-center gap-4">
-          <XCircle className=" w-6 md:w-8 lg:w-12 h-full text-primary" />
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold">
+          <XCircle className=" h-full w-6 text-primary md:w-8 lg:w-12" />
+          <p className="text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Error Occured
           </p>
         </div>
-        <p className="text-sm md:text-base lg:text-lg xl:text-xl text-center">
+        <p className="text-center text-sm md:text-base lg:text-lg xl:text-xl">
           Please try again later. Sorry for the inconvenience caused.
         </p>
 
         <Link
           href={"/careers/${job._id}/apply-for-job"}
-          className="text-sm md:text-base lg:text-lg xl:text-xl bg-primary px-4 md:px-8 lg:px-16 py-2 md:py-3 lg:py-4 text-white rounded-full"
+          className="rounded-full bg-primary px-4 py-2 text-sm text-white md:px-8 md:py-3 md:text-base lg:px-16 lg:py-4 lg:text-lg xl:text-xl"
         >
           Retry Now
         </Link>
@@ -140,16 +141,16 @@ export default function ApplyForJobForm({ job }) {
 
   if (success) {
     return (
-      <div className="flex flex-col items-center justify-center gap-4 my-16">
+      <div className="my-16 flex flex-col items-center justify-center gap-4">
         <div className="flex items-center gap-4">
-          <Check className=" w-6 md:w-8 lg:w-12 h-full text-primary" />
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold">
+          <Check className=" h-full w-6 text-primary md:w-8 lg:w-12" />
+          <p className="text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Application Submitted
           </p>
         </div>
         <Link
           href="/"
-          className="text-sm md:text-base lg:text-lg xl:text-xl bg-primary px-4 md:px-8 lg:px-16 py-2 md:py-3 lg:py-4 text-white rounded-full"
+          className="rounded-full bg-primary px-4 py-2 text-sm text-white md:px-8 md:py-3 md:text-base lg:px-16 lg:py-4 lg:text-lg xl:text-xl"
         >
           Go Back to Home
         </Link>
@@ -166,7 +167,7 @@ export default function ApplyForJobForm({ job }) {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="relative">
           {!loading ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               <TextInputFormControlled
                 placeholder={"Full Name"}
                 control={form.control}
@@ -235,7 +236,7 @@ export default function ApplyForJobForm({ job }) {
                 placeholder={"Comments"}
                 control={form.control}
                 name={"comments"}
-                className={"lg:col-span-2 h-48"}
+                className={"h-48 lg:col-span-2"}
               />
 
               <DropZone
@@ -245,14 +246,14 @@ export default function ApplyForJobForm({ job }) {
                 onChange={(file) => {
                   form.setValue("resume", file);
                 }}
-                className={"lg:col-span-2 h-[300px]"}
+                className={"h-[300px] lg:col-span-2"}
                 error={form.formState.errors.resume}
               />
 
               <div className="lg:col-span-2">
                 <button
                   type="submit"
-                  className="text-sm md:text-base lg:text-lg xl:text-xl bg-primary px-4 md:px-8 lg:px-16 py-2 md:py-3 lg:py-4 text-white rounded-full self-center lg:self-end "
+                  className="self-center rounded-full bg-primary px-4 py-2 text-sm text-white md:px-8 md:py-3 md:text-base lg:self-end lg:px-16 lg:py-4 lg:text-lg xl:text-xl "
                 >
                   Apply Now
                 </button>
@@ -265,7 +266,7 @@ export default function ApplyForJobForm({ job }) {
             >
               <svg
                 aria-hidden="true"
-                className="w-20 h-20 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                className="mr-2 h-20 w-20 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

@@ -2,12 +2,13 @@ import OurServicesContent from "./our-services-content";
 
 export default async function OurServices() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/services",
+    `${process.env.BASE_URL}/services`,
+
     {
       next: {
         revalidate: 300,
       },
-    }
+    },
   );
 
   const data = await res.json();
@@ -15,7 +16,7 @@ export default async function OurServices() {
   const services = data.data;
 
   return (
-    <div className="flex flex-col items-center gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20 bg-[url('/our-services-bg.png')] bg-cover bg-no-repeatC">
+    <div className="bg-no-repeatC flex flex-col items-center gap-8 bg-[url('/our-services-bg.png')] bg-cover py-8 lg:py-12 xl:py-16 2xl:py-20">
       <div className="flex flex-col items-center">
         <div>
           <p className="landing-page-subheading text-center">Our Services</p>
