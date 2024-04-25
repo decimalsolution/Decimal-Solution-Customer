@@ -44,6 +44,8 @@ export default function OurServicesContent({ services }) {
                 alt={item.title}
                 width={130}
                 height={130}
+                priority={true}
+                loading="eager"
                 className=" h-[100px] w-[100px] object-cover md:h-[130px]  md:w-[130px]"
               />
             </div>

@@ -52,6 +52,8 @@ export default function NavigationHeader() {
             alt="Decimal Solution Logo"
             fill
             quality={100}
+            priority={true}
+            loading="eager"
           />
         </Link>
       </div>
