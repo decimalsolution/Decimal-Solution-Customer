@@ -44,11 +44,11 @@ export default function NavigationHeader() {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-stretch justify-between py-2 lg:py-0 relative ">
-      <div className="w-28 xl:w-40 2xl:w-48 relative aspect-[194/109]">
+    <div className="relative flex items-stretch justify-between py-2 lg:py-0 ">
+      <div className="relative aspect-[194/109] w-28 xl:w-40 2xl:w-48">
         <Link href={"/"}>
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Decimal Solution Logo"
             fill
             quality={100}
@@ -56,7 +56,7 @@ export default function NavigationHeader() {
         </Link>
       </div>
 
-      <nav className="hidden lg:flex items-center justify-between gap-8 xl:gap-10 2xl:gap-14">
+      <nav className="hidden items-center justify-between gap-8 lg:flex xl:gap-10 2xl:gap-14">
         {navigationLinks.map((NavLink, index) =>
           NavLink.Custom ? (
             <NavLink.Custom
@@ -65,7 +65,7 @@ export default function NavigationHeader() {
               className={clsx(
                 "navbar-link",
                 NavLink.href.toLowerCase() === pathname.toLowerCase() &&
-                  "!text-primary"
+                  "!text-primary",
               )}
             />
           ) : (
@@ -75,12 +75,12 @@ export default function NavigationHeader() {
               className={clsx(
                 "navbar-link",
                 NavLink.href.toLowerCase() === pathname.toLowerCase() &&
-                  "!text-primary"
+                  "!text-primary",
               )}
             >
               {NavLink.name}
             </Link>
-          )
+          ),
         )}
       </nav>
       <MobileNav links={navigationLinks} />
