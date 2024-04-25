@@ -30,9 +30,9 @@ export default function ToolsAndTechnologies() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-16 py-24">
-      <div className="block lg:grid grid-cols-3 px-4 2xl:px-24">
-        <div className="col-start-2 col-span-2">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-16 py-24">
+      <div className="block grid-cols-3 px-4 lg:grid 2xl:px-24">
+        <div className="col-span-2 col-start-2">
           <p className={cn("landing-page-subheading", "!normal-case")}>
             Tools and Technologies
           </p>
@@ -44,27 +44,28 @@ export default function ToolsAndTechnologies() {
         </div>
       </div>
 
-      <div className="w-full h-full overflow-hidden relative before:content-[''] before:absolute before:left-0 before:block before:h-full before:w-40 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:top-0 after:right-0 after:block after:h-full after:w-40 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
+      <div className="relative h-full w-full overflow-hidden before:absolute before:left-0 before:z-10 before:block before:h-full before:w-40 before:bg-gradient-to-r before:from-white before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:block after:h-full after:w-40 after:bg-gradient-to-l after:from-white after:to-transparent after:content-['']">
         <div
-          className={`flex h-32 gap-32 w-[calc(372px*48)] animate-our-technologies`}
+          className={`flex h-32 w-[calc(372px*48)] animate-our-technologies gap-32`}
         >
           {data.map((item, index) => (
             <div
               key={"tools-and-technologies-" + index + "-key"}
-              className="h-full w-[372px] relative"
+              className="relative h-full w-[372px]"
             >
               <Image
                 src={item}
                 alt="Tools and Technologies"
                 fill
                 className="object-contain"
+                loading={"lazy"}
               />
             </div>
           ))}
           {data.map((item, index) => (
             <div
               key={"tools-and-technologies-" + index + "-key-duplicate"}
-              className="h-full w-[372px] relative"
+              className="relative h-full w-[372px]"
             >
               <Image
                 src={item}
