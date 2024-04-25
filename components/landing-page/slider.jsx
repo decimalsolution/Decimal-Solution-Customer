@@ -22,7 +22,6 @@ export default function Slider() {
               src={`/Slider Images/Slider-${(i % 4) + 1}.png`}
               alt={`Slider images ${(i % 4) + 1}`}
               fill
-              priority={true}
               loading="eager"
               className="absolute inset-0 object-cover object-center"
             />
@@ -30,7 +29,6 @@ export default function Slider() {
               src="/slider-overlay.png"
               alt="Slider Overlay"
               fill
-              priority={true}
               loading="eager"
               className="absolute inset-0"
             />

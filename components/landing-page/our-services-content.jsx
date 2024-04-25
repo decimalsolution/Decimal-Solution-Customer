@@ -10,6 +10,8 @@ import { useCallback } from "react";
 import NextLink from "next/link";
 
 export default function OurServicesContent({ services }) {
+  console.log("SERVICEs; ", services);
+
   const getLink = useCallback((service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {
@@ -44,9 +46,9 @@ export default function OurServicesContent({ services }) {
                 alt={item.title}
                 width={130}
                 height={130}
-                priority={true}
                 loading="eager"
                 className=" h-[100px] w-[100px] object-cover md:h-[130px]  md:w-[130px]"
+                priority={i === 0 ? true : false}
               />
             </div>
             <h3 className="text-lg font-semibold 2xl:text-3xl">{item.title}</h3>
