@@ -13,7 +13,7 @@ export default async function ClientTestimonials() {
   const testimonials = data.data;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 bg-[url('/testimonial-bg.png')] bg-cover bg-center bg-no-repeat px-4 py-8 lg:h-[900px]">
+    <div className="flex flex-col items-center justify-center gap-8 bg-[url('/testimonial-bg.webp')] bg-cover bg-center bg-no-repeat px-4 py-8 lg:h-[900px]">
       <div>
         <p
           className={cn("landing-page-subheading", "text-center !normal-case")}

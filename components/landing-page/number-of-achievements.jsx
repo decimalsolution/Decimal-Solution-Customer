@@ -29,7 +29,7 @@ const data = [
 
 export default function NumberOfAchievements() {
   return (
-    <div className="relative  flex flex-col items-center gap-16 bg-[url('/our-achievements-bg.jpg')] bg-cover bg-center p-12 lg:p-16">
+    <div className="relative  flex flex-col items-center gap-16 bg-[url('/our-achievements-bg.webp')] bg-cover bg-center p-12 lg:p-16">
       <div className="absolute inset-0 bg-primary/80"></div>
       <div className="z-10 flex flex-col items-center">
         <div>

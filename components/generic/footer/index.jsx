@@ -1,8 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { date } from "zod";
 
 const navigationLinks = [
   {
@@ -41,7 +38,7 @@ const navigationLinks = [
 
 export default function Footer({ contactInfo }) {
   return (
-    <div className="flex flex-col items-center gap-8 bg-[url('/footer-bg.png')] bg-cover  pb-8 pt-12 text-white">
+    <div className="flex flex-col items-center gap-8 bg-[url('/footer-bg.webp')] bg-cover  pb-8 pt-12 text-white">
       <div className=" flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-8 ">
         {navigationLinks.map((link, i) => (
           <Link

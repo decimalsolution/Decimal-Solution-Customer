@@ -39,7 +39,7 @@ export default async function Services() {
 
   return (
     <div className="flex flex-col gap-20">
-      <PageIntroduction title="Our Services" image={"/our-services.jpg"} />
+      <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
       <div className="flex flex-col gap-8">
         {services.map((product, index) => (
