@@ -26,20 +26,21 @@ export default function OurProjectsContent({ projects, services }) {
       return projects;
     } else {
       return projects.filter(
-        (item) => item.category?.title?.toLowerCase() === selected.toLowerCase()
+        (item) =>
+          item.category?.title?.toLowerCase() === selected.toLowerCase(),
       );
     }
   }, [selected, projects]);
 
   return (
     <>
-      <div className="flex items-center justify-center  gap-2 sm:gap-4 flex-wrap">
+      <div className="flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
         {services.map((service, index) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
             className={cn(
-              "text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-4 py-2 border rounded-lg hover:bg-primary hover:text-white transition-all duration-200",
-              selected === service.title && "bg-primary text-white"
+              "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-lg xl:text-xl",
+              selected === service.title && "bg-primary text-white",
             )}
             onClick={() => {
               setSelected(service.title);
@@ -53,25 +54,30 @@ export default function OurProjectsContent({ projects, services }) {
       <Carousel>
         {filteredProjects.map((item, i) => (
           <SwiperSlide key={"our-projects-" + i + "-key"}>
-            <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group ">
+            <div className="group relative flex h-full w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border-[3px] border-primary ">
               <div>
                 <Image
                   src={item.coverImage}
                   alt={item.title}
                   fill
-                  className="object-cover h-full w-full"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
-                <h4 className="text-center text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-primary/90 p-8 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                <h4 className="text-center text-lg font-bold uppercase text-white md:text-xl lg:text-2xl xl:text-3xl">
                   {item.title}
                 </h4>
-                <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl line-clamp-6">
+                <p className="md:text-md line-clamp-6 text-center text-sm text-white lg:text-lg xl:text-xl">
                   {item.shortDescription}
                 </p>
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
-                    <Link strokeWidth={3} className="w-1/2 h-1/2" />
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.title}
+                >
+                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
+                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
                   </div>
                 </a>
               </div>

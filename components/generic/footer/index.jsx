@@ -91,6 +91,7 @@ export default function Footer({ contactInfo }) {
           <img
             src="/Social Icons/white/facebook.png"
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Facebook"
           />
         </Link>
 
@@ -102,6 +103,7 @@ export default function Footer({ contactInfo }) {
           <img
             src="/Social Icons/white/instagram-2.png"
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Instagram"
           />
         </Link>
         <Link
@@ -112,6 +114,7 @@ export default function Footer({ contactInfo }) {
           <img
             src="/Social Icons/white/linkedin.png"
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="LinkedIn"
           />
         </Link>
 
@@ -123,6 +126,7 @@ export default function Footer({ contactInfo }) {
           <img
             src="/Social Icons/white/youtube.png"
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Youtube"
           />
         </Link>
       </div>

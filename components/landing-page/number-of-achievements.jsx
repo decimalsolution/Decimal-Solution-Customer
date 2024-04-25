@@ -29,14 +29,14 @@ const data = [
 
 export default function NumberOfAchievements() {
   return (
-    <div className="p-12  lg:p-16 flex flex-col items-center gap-16 relative bg-[url('/our-achievements-bg.jpg')] bg-cover bg-center">
+    <div className="relative  flex flex-col items-center gap-16 bg-[url('/our-achievements-bg.jpg')] bg-cover bg-center p-12 lg:p-16">
       <div className="absolute inset-0 bg-primary/80"></div>
-      <div className="flex flex-col items-center z-10">
+      <div className="z-10 flex flex-col items-center">
         <div>
           <p
             className={cn(
               "landing-page-subheading",
-              "!text-white !normal-case text-center !mb-4"
+              "!mb-4 text-center !normal-case !text-white",
             )}
           >
             Some Facts
@@ -47,21 +47,21 @@ export default function NumberOfAchievements() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-16 max-w-[1600px] w-full">
+      <div className="grid w-full max-w-[1600px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 xl:grid-cols-4">
         {data.map((item, i) => (
           <div
             data-aos="flip-down"
             data-aos-once="true"
-            className="w-full h-full flex flex-col items-center justify-center aspect-square relative before:absolute before:block before:content-[' '] before:top-0 before:left-0 before:right-0 before:h-2/5 before:border before:border-b-0 before:border-white after:absolute after:block after:content-[''] after:bottom-0 after:left-0 after:right-0 after:h-2/5 after:border after:border-white after:border-t-0"
+            className="before:content-[' '] relative flex aspect-square h-full w-full flex-col items-center justify-center before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-2/5 before:border before:border-b-0 before:border-white after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-2/5 after:border after:border-t-0 after:border-white after:content-['']"
           >
-            <div className="w-[75px] h-[75px] relative mb-4">
-              <Image src={item.icon} fill />
+            <div className="relative mb-4 h-[75px] w-[75px]">
+              <Image src={item.icon} fill alt={item?.title} />
             </div>
-            <h3 className="font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-white">
+            <h3 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl 2xl:text-7xl">
               <CountUp end={parseInt(item.amount)} duration={3} delay={1} />
               {/* {item.amount} */}
             </h3>
-            <p className="text-xl lg:text-2xl 2xl:text-3xl text-white text-center">
+            <p className="text-center text-xl text-white lg:text-2xl 2xl:text-3xl">
               {item.title}
             </p>
           </div>
