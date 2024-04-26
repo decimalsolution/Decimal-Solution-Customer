@@ -15,7 +15,7 @@ import Slider from "./slider";
 const headings = [
   "Web and Mobile Application Development",
   "Customized CRM Solutions",
-  "Creative Design for Interactive User Experiences",
+  "Creative Design for Interactive User Experience",
   "Your One-Stop Shop for Software Solutions   ",
 ];
 
