@@ -47,7 +47,7 @@ export default function OurServicesContent({ services }) {
                 width={130}
                 height={130}
                 loading="eager"
-                className=" h-[100px] w-[100px] object-cover md:h-[130px]  md:w-[130px]"
+                className=" h-[100px] w-[100px] object-contain md:h-[130px]  md:w-[130px]"
                 priority={i === 0 ? true : false}
               />
             </div>
