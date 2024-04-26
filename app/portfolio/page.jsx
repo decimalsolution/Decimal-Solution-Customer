@@ -9,11 +9,14 @@ export const metadata = {
 };
 
 export default async function Portfolio() {
-  const res = await fetch(`${process.env.BASE_URL}/groupedprojects`, {
-    next: {
-      revalidate: 300,
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/groupedprojects`,
+    {
+      next: {
+        revalidate: 300,
+      },
     },
-  });
+  );
 
   const data = await res.json();
 

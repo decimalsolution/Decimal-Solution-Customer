@@ -13,11 +13,14 @@ import BlogView from "../blog-view";
 export default async function SpecificBlog({ params }) {
   const blogId = params.blog;
 
-  const res = await fetch(`${process.env.BASE_URL}/blogs/${blogId}`, {
-    next: {
-      revalidate: 300,
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${blogId}`,
+    {
+      next: {
+        revalidate: 300,
+      },
     },
-  });
+  );
 
   if (!res.ok) throw new Error("Something went wrong");
 

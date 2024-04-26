@@ -92,7 +92,7 @@ export default function ApplyForJobForm({ job }) {
       };
 
       const res = await fetch(
-        `${process.env.BASE_URL}/jobApplications`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/jobApplications`,
 
         {
           method: "POST",

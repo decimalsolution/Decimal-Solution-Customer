@@ -3,7 +3,7 @@ import TestimonialCarousel from "./testimonial-carousel";
 import Image from "next/image";
 
 export default async function ClientTestimonials() {
-  const res = await fetch(`${process.env.BASE_URL}/testimonial`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/testimonial`, {
     next: {
       revalidate: 300,
     },

@@ -4,7 +4,7 @@ export default async function SpecificJob({ params }) {
   const job = params.job;
 
   const res = await fetch(
-    `${process.env.BASE_URL}/jobs/${job}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/jobs/${job}`,
 
     {
       next: {

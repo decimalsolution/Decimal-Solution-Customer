@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function Services() {
-  const res = await fetch(`${process.env.BASE_URL}/services`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
     next: {
       revalidate: 300,
     },

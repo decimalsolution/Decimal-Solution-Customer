@@ -4,7 +4,7 @@ import OurProjectsContent from "./our-projects-content";
 export default async function OurProjects() {
   const [res1, res2] = await Promise.all([
     await fetch(
-      `${process.env.BASE_URL}/homeScreenProjects/all`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/homeScreenProjects/all`,
 
       {
         next: {
@@ -12,7 +12,7 @@ export default async function OurProjects() {
         },
       },
     ),
-    await fetch(`${process.env.BASE_URL}/activeservices`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/activeservices`, {
       next: {
         revalidate: 300,
       },

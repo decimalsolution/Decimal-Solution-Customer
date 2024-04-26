@@ -12,7 +12,7 @@ export const metadata = {
 
 export default async function Blogs() {
   const res = await fetch(
-    `${process.env.BASE_URL}/blogs`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/blogs`,
 
     {
       next: {

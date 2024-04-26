@@ -3,7 +3,7 @@ import OurServicesContent from "./our-services-content";
 
 export default async function OurServices() {
   const res = await fetch(
-    `${process.env.BASE_URL}/services`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/services`,
 
     {
       next: {

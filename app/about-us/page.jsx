@@ -35,7 +35,7 @@ const stats = [
 ];
 
 export default async function AboutUs() {
-  const res = await fetch(`${process.env.BASE_URL}/teamMembers`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/teamMembers`, {
     next: {
       revalidate: 300,
     },

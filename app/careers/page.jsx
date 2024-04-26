@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function Careers() {
-  const res = await fetch(`${process.env.BASE_URL}/jobs`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/jobs`, {
     next: {
       revalidate: 300,
     },

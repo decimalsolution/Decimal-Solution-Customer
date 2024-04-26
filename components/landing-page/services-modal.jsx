@@ -13,7 +13,7 @@ export function ServicesModal({ className, href, children }) {
   useEffect(() => {
     if (open) {
       setLoading(true);
-      fetch(`${process.env.BASE_URL}/services`)
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`)
         .then((res) => res.json())
         .then((data) => {
           setServices(data.data);
@@ -55,7 +55,7 @@ export function ServicesModal({ className, href, children }) {
           </div>
         ) : error ? (
           <div className="flex h-96 items-center justify-center ">
-            <h1 className="text-2xl text-red-500">{error}</h1>
+            <h1 className="text-2xl text-red-500">Failed to fetch services</h1>
           </div>
         ) : (
           <ServicesModalContent services={services} />

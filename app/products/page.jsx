@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function Products() {
   const res = await fetch(
-    `${process.env.BASE_URL}/products`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/products`,
 
     {
       next: {

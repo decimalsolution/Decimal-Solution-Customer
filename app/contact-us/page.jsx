@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default async function ContactUs() {
-  const data = await fetch(`${process.env.BASE_URL}/contactUs`, {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/contactUs`, {
     next: {
       revalidate: 300,
     },
