@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import TestimonialCarousel from "./testimonial-carousel";
+import Image from "next/image";
 
 export default async function ClientTestimonials() {
   const res = await fetch(`${process.env.BASE_URL}/testimonial`, {
@@ -13,8 +14,15 @@ export default async function ClientTestimonials() {
   const testimonials = data.data;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 bg-[url('/testimonial-bg.webp')] bg-cover bg-center bg-no-repeat px-4 py-8 lg:h-[900px]">
-      <div>
+    <div className="relative flex flex-col items-center justify-center gap-8 px-4 py-8 lg:h-[900px]">
+      <Image
+        src={"/testimonial-bg.webp"}
+        alt=""
+        loading={"lazy"}
+        fill
+        className="absolute inset-0 z-[-1] object-cover"
+      />
+      <div className="z-10">
         <p
           className={cn("landing-page-subheading", "text-center !normal-case")}
         >

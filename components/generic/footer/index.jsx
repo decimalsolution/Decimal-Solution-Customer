@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 
 const navigationLinks = [
@@ -38,7 +39,14 @@ const navigationLinks = [
 
 export default function Footer({ contactInfo }) {
   return (
-    <div className="flex flex-col items-center gap-8 bg-[url('/footer-bg.webp')] bg-cover  pb-8 pt-12 text-white">
+    <div className="relative flex flex-col items-center gap-8 pb-8 pt-12 text-white">
+      <Image
+        src={"/footer-bg.webp"}
+        alt=""
+        fill
+        loading="lazy"
+        className="absolute inset-0 z-[-1] object-cover object-center"
+      />
       <div className=" flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-8 ">
         {navigationLinks.map((link, i) => (
           <Link
