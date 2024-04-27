@@ -10,6 +10,8 @@ import { useCallback } from "react";
 import NextLink from "next/link";
 
 export default function OurServicesContent({ services }) {
+  console.log("SERVICEs; ", services);
+
   const getLink = useCallback((service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {
@@ -32,9 +34,9 @@ export default function OurServicesContent({ services }) {
     <Carousel>
       {services.map((item, i) => (
         <SwiperSlide key={i}>
-          <div className="w-full h-full flex flex-col items-center justify-center border-[3px] border-primary rounded-3xl relative overflow-hidden gap-8 group">
-            <div className="absolute w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 2xl:w-32 2xl:h-32 bg-primary rounded-full -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-left-5 lg:-top-5 xl:-top-6 xl:-left-6 2xl:-top-8 2xl:-left-7 grid place-items-center">
-              <p className="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold mt-2 lg:mt-3">
+          <div className="group relative flex h-full w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border-[3px] border-primary">
+            <div className="absolute -left-2 -top-2 grid h-14 w-14 place-items-center rounded-full bg-primary sm:-left-3 sm:-top-3 sm:h-16 sm:w-16 md:-left-4 md:-top-4 md:h-20 md:w-20 lg:-left-5 lg:-top-5 lg:h-24 lg:w-24 xl:-left-6 xl:-top-6 xl:h-28 xl:w-28 2xl:-left-7 2xl:-top-8 2xl:h-32 2xl:w-32">
+              <p className="mt-2 text-xl font-semibold text-white md:text-2xl lg:mt-3 lg:text-3xl xl:text-4xl">
                 0{i + 1}
               </p>
             </div>
@@ -44,17 +46,19 @@ export default function OurServicesContent({ services }) {
                 alt={item.title}
                 width={130}
                 height={130}
-                className=" h-[100px] w-[100px] md:h-[130px] md:w-[130px]  object-cover"
+                loading="eager"
+                className=" h-[100px] w-[100px] object-contain md:h-[130px]  md:w-[130px]"
+                priority={i === 0 ? true : false}
               />
             </div>
-            <h3 className="text-lg 2xl:text-3xl font-semibold">{item.title}</h3>
-            <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 duration-500 transition-all flex flex-col items-center justify-center gap-4 p-8">
-              <p className="text-center text-white text-sm md:text-md lg:text-lg xl:text-xl">
+            <h3 className="text-lg font-semibold 2xl:text-3xl">{item.title}</h3>
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-primary/90 p-8 opacity-0 transition-all duration-500 group-hover:opacity-100">
+              <p className="md:text-md text-center text-sm text-white lg:text-lg xl:text-xl">
                 {item.shortDescription}
               </p>
-              <NextLink href={getLink(item)}>
-                <div className="w-10 h-10 2xl:w-16 2xl:h-16 bg-white grid place-items-center rounded-full text-primary">
-                  <Link strokeWidth={3} className="w-1/2 h-1/2" />
+              <NextLink href={getLink(item)} aria-label={item.title}>
+                <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
+                  <Link strokeWidth={3} className="h-1/2 w-1/2" />
                 </div>
               </NextLink>
             </div>

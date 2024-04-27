@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +17,7 @@ const navigationLinks = [
   },
   {
     name: "Our Products",
-    href: "/our-products",
+    href: "/products",
   },
   {
     name: "Careers",
@@ -40,14 +39,21 @@ const navigationLinks = [
 
 export default function Footer({ contactInfo }) {
   return (
-    <div className="flex flex-col items-center text-white pb-8 pt-12  bg-[url('/footer-bg.png')] bg-cover gap-8">
-      <div className=" flex items-center justify-center gap-2 md:gap-4 lg:gap-8 flex-wrap ">
+    <div className="relative flex flex-col items-center gap-8 pb-8 pt-12 text-white">
+      <Image
+        src={"/footer-bg.webp"}
+        alt=""
+        fill
+        loading="lazy"
+        className="absolute inset-0 z-[-1] object-cover object-center"
+      />
+      <div className=" flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-8 ">
         {navigationLinks.map((link, i) => (
           <Link
             className={cn(
-              "text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-all hover:text-white/75",
+              "text-base font-medium text-white transition-all hover:text-white/75 md:text-lg lg:text-xl xl:text-2xl",
               i !== navigationLinks.length - 1 &&
-                "border-r border-white pr-2 md:pr-4 lg:pr-8"
+                "border-r border-white pr-2 md:pr-4 lg:pr-8",
             )}
             href={link.href}
           >
@@ -56,28 +62,28 @@ export default function Footer({ contactInfo }) {
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-8 my-4">
+      <div className="my-4 flex items-center justify-center gap-8">
         <a
           href={`mailto:${contactInfo.primaryEmail}`}
-          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
+          className="text-base font-medium text-white transition-colors md:text-lg lg:text-xl xl:text-2xl"
         >
           {contactInfo.primaryEmail}
         </a>
-        <div className="w-[1px] h-8 bg-white"></div>
+        <div className="h-8 w-[1px] bg-white"></div>
         <a
           href={`tel:${contactInfo.primaryContact}`}
-          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl font-medium transition-colors"
+          className="text-base font-medium text-white transition-colors md:text-lg lg:text-xl xl:text-2xl"
         >
           {contactInfo.primaryContact}
         </a>
-        <div className="w-[1px] h-8 bg-white"></div>
+        <div className="h-8 w-[1px] bg-white"></div>
         <a
           href={contactInfo.googleMapLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white text-base md:text-lg lg:text-xl xl:text-2xl text-center font-medium transition-colors"
+          className="text-center text-base font-medium text-white transition-colors md:text-lg lg:text-xl xl:text-2xl"
         >
-          I-8 Markaz, Islamabad, Pakistan
+          I-8/4, Islamabad, Pakistan
         </a>
       </div>
 
@@ -89,7 +95,8 @@ export default function Footer({ contactInfo }) {
         >
           <img
             src="/Social Icons/white/facebook.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Facebook"
           />
         </Link>
 
@@ -100,7 +107,8 @@ export default function Footer({ contactInfo }) {
         >
           <img
             src="/Social Icons/white/instagram-2.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Instagram"
           />
         </Link>
         <Link
@@ -110,7 +118,8 @@ export default function Footer({ contactInfo }) {
         >
           <img
             src="/Social Icons/white/linkedin.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="LinkedIn"
           />
         </Link>
 
@@ -121,15 +130,17 @@ export default function Footer({ contactInfo }) {
         >
           <img
             src="/Social Icons/white/youtube.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Youtube"
           />
         </Link>
       </div>
 
-      <div className="w-full h-[1px] bg-white/50 mx-32"></div>
+      <div className="mx-32 h-[1px] w-full bg-white/50"></div>
 
-      <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium">
-        CopyRight © 2023 Decimal Solution. All Rights Reserved.{" "}
+      <p className="text-center text-xs font-medium text-white sm:text-sm md:text-base lg:text-lg">
+        CopyRight © {new Date().getFullYear()} Decimal Solution. All Rights
+        Reserved.{" "}
       </p>
     </div>
   );

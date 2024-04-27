@@ -11,30 +11,30 @@ const headings = [
 ];
 export default function Slider() {
   return (
-    <div className="relative max-h-[650px] h-full w-full overflow-hidden aspect-video xl-aspect-[1920/700]  2xl:aspect-[1920/700] ">
-      <div className="h-full w-[calc(5*100vw)] flex animate-home-carousel">
+    <div className="xl-aspect-[1920/700] relative aspect-video h-full max-h-[650px] w-full overflow-hidden  2xl:aspect-[1920/700] ">
+      <div className="flex h-full w-[calc(5*100vw)] animate-home-carousel">
         {new Array(5).fill(0).map((_, i) => (
           <div
-            className="w-screen  aspect-video relative"
+            className="relative  aspect-video w-screen"
             key={"slider-" + i + "-key"}
           >
             <Image
               src={`/Slider Images/Slider-${(i % 4) + 1}.png`}
               alt={`Slider images ${(i % 4) + 1}`}
               fill
-              priority={true}
-              className="object-cover object-center absolute inset-0"
+              loading="eager"
+              className="absolute inset-0 object-cover object-center"
             />
             <Image
               src="/slider-overlay.png"
               alt="Slider Overlay"
               fill
-              priority={true}
+              loading="eager"
               className="absolute inset-0"
             />
 
-            <div className="absolute inset-0 flex flex-col justify-center items-start mx-4 md:mx-8 lg:mx-12 xl:mx-16 2xl:mx-20">
-              <h1 className="text-md sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white max-w-[150px] md:max-w-xs lg:max-w-md xl:max-w-xl leading-none">
+            <div className="absolute inset-0 mx-4 flex flex-col items-start justify-center md:mx-8 lg:mx-12 xl:mx-16 2xl:mx-20">
+              <h1 className="text-md max-w-[150px] font-bold leading-none text-white sm:text-2xl md:max-w-xs md:text-3xl lg:max-w-md lg:text-4xl xl:max-w-xl xl:text-5xl 2xl:text-6xl">
                 {headings[i]}
               </h1>
               {/* <Link href="/contact-us">

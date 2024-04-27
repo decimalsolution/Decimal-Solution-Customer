@@ -8,14 +8,11 @@ export const metadata = {
 };
 
 export default async function Services() {
-  const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/services",
-    {
-      next: {
-        revalidate: 300,
-      },
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
+    next: {
+      revalidate: 300,
+    },
+  });
 
   const data = await res.json();
 
@@ -42,7 +39,7 @@ export default async function Services() {
 
   return (
     <div className="flex flex-col gap-20">
-      <PageIntroduction title="Our Services" image={"/our-services.jpg"} />
+      <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
       <div className="flex flex-col gap-8">
         {services.map((product, index) => (

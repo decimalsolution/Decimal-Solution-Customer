@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function InfoHeader({ contactInfo }) {
   return (
-    <div className="flex flex-col items-center gap-4 xl:flex-row xl:items-stretch justify-between">
-      <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-        <div className="flex items-center mr-4">
+    <div className="flex flex-col items-center justify-between gap-4 xl:flex-row xl:items-stretch">
+      <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+        <div className="mr-4 flex items-center">
           <Phone className="text-primary" fill="currentColor" strokeWidth={0} />
-          <p className="ml-2 text-base md:text-lg 2xl:text-xl text-gray-700">
+          <p className="ml-2 text-base text-gray-700 md:text-lg 2xl:text-xl">
             <Link href={`tel:${contactInfo.primaryContact}`}>
               <span>{contactInfo.primaryContact}</span>
             </Link>
@@ -18,9 +18,9 @@ export default function InfoHeader({ contactInfo }) {
             ) : null}
           </p>
         </div>
-        <div className="flex items-center mr-4">
+        <div className="mr-4 flex items-center">
           <Mail className="text-primary" />
-          <p className="ml-2 text-base md:text-lg 2xl:text-xl text-gray-700">
+          <p className="ml-2 text-base text-gray-700 md:text-lg 2xl:text-xl">
             <Link href={`mailto:${contactInfo.primaryEmail}`}>
               {contactInfo.primaryEmail}
             </Link>
@@ -29,7 +29,7 @@ export default function InfoHeader({ contactInfo }) {
       </div>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
-        <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
+        <div className="hidden h-full w-[1px] bg-gray-400 xl:block"></div>
         <Link
           href={contactInfo.facebook}
           target="_blank"
@@ -37,10 +37,11 @@ export default function InfoHeader({ contactInfo }) {
         >
           <img
             src="/Social Icons/purple/facebook.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="facebook"
           />
         </Link>
-        <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
+        <div className="hidden h-full w-[1px] bg-gray-400 xl:block"></div>
 
         <Link
           href={contactInfo.instagram}
@@ -49,10 +50,11 @@ export default function InfoHeader({ contactInfo }) {
         >
           <img
             src="/Social Icons/purple/instagram-2.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Instagram"
           />
         </Link>
-        <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
+        <div className="hidden h-full w-[1px] bg-gray-400 xl:block"></div>
 
         <Link
           href={contactInfo.linkedIn}
@@ -61,10 +63,11 @@ export default function InfoHeader({ contactInfo }) {
         >
           <img
             src="/Social Icons/purple/linkedin.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="LinkedIn"
           />
         </Link>
-        <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
+        <div className="hidden h-full w-[1px] bg-gray-400 xl:block"></div>
 
         <Link
           href={contactInfo.youtube}
@@ -73,7 +76,8 @@ export default function InfoHeader({ contactInfo }) {
         >
           <img
             src="/Social Icons/purple/youtube.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
+            className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+            alt="Youtube"
           />
         </Link>
         {/* <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
@@ -89,7 +93,7 @@ export default function InfoHeader({ contactInfo }) {
           />
         </Link> */}
         <Link href="/contact-us">
-          <button className="h-12 w-40 lg:w-48  xl:h-16 2xl:h-20 xl:w-64 2xl:w-80 text-white bg-primary xl:text-xl 2xl:text-2xl font-500">
+          <button className="font-500 h-12 w-40  bg-primary text-white lg:w-48 xl:h-16 xl:w-64 xl:text-xl 2xl:h-20 2xl:w-80 2xl:text-2xl">
             Contact Us
           </button>
         </Link>

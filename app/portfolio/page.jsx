@@ -10,12 +10,12 @@ export const metadata = {
 
 export default async function Portfolio() {
   const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/groupedprojects",
+    `${process.env.NEXT_PUBLIC_BASE_URL}/groupedprojects`,
     {
       next: {
         revalidate: 300,
       },
-    }
+    },
   );
 
   const data = await res.json();

@@ -35,14 +35,11 @@ const stats = [
 ];
 
 export default async function AboutUs() {
-  const res = await fetch(
-    "https://backend.decimalsolution.com/api/v1/web/teamMembers",
-    {
-      next: {
-        revalidate: 300,
-      },
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/teamMembers`, {
+    next: {
+      revalidate: 300,
+    },
+  });
 
   const data = await res.json();
 
@@ -52,14 +49,14 @@ export default async function AboutUs() {
     <div className="flex flex-col items-center">
       <PageIntroduction title={"About Us"} image={"/about-us.png"} />
 
-      <div className="py-36 px-24 flex flex-col items-center">
-        <h2 className="text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] font-semibold uppercase text-center mb-2 lg:mb-8">
+      <div className="flex flex-col items-center px-24 py-36">
+        <h2 className="mb-2 text-center text-xl font-semibold uppercase lg:mb-8 lg:text-2xl xl:text-3xl 2xl:text-[40px]">
           Our Mission
         </h2>
 
-        <div className="text-base lg:text-lg xl:text-2xl text-center max-w-7xl flex flex-col items-center gap-8 justify-center">
+        <div className="flex max-w-7xl flex-col items-center justify-center gap-8 text-center text-base lg:text-lg xl:text-2xl">
           <div className="relative">
-            <img src="/icons/quote.png" className="absolute -top-20 -left-16" />
+            <img src="/icons/quote.png" className="absolute -left-16 -top-20" />
             <p>
               Our mission is to provide all sorts of IT solutions and services
               to clients under one umbrella. We aim to provide quality products
@@ -76,21 +73,21 @@ export default async function AboutUs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 max-w-7xl w-full gap-8 lg:gap-16">
+        <div className="mt-24 grid w-full max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16">
           <div className="flex flex-col items-center">
-            <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative ">
+            <div className="relative grid h-24 w-24 place-items-center rounded-full lg:h-[150px] lg:w-[150px] ">
               <Image
                 src="/icons/account-search.png"
                 alt="About Us 1"
                 quality={100}
                 fill
-                className="w-full h-full"
+                className="h-full w-full"
               />
             </div>
-            <h3 className="text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] font-semibold uppercase text-center mt-8">
+            <h3 className="mt-8 text-center text-xl font-semibold uppercase lg:text-2xl xl:text-3xl 2xl:text-[40px]">
               Who We Are
             </h3>
-            <p className="text-base lg:text-lg xl:text-2xl text-center mt-2 lg:mt-8 !leading-loose">
+            <p className="mt-2 text-center text-base !leading-loose lg:mt-8 lg:text-lg xl:text-2xl">
               We are a team of software development and testing enthusiasts,
               working tirelessly on software quality assurance. The last 7 years
               were the time we founded, developed, grew, and amazed. And we are
@@ -99,19 +96,19 @@ export default async function AboutUs() {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="w-24 h-24 lg:w-[150px] lg:h-[150px] rounded-full grid place-items-center relative">
+            <div className="relative grid h-24 w-24 place-items-center rounded-full lg:h-[150px] lg:w-[150px]">
               <Image
                 src="/icons/diamond.png"
                 alt="About Us 1"
                 quality={100}
                 fill
-                className="w-full h-full"
+                className="h-full w-full"
               />
             </div>
-            <h3 className="text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] font-semibold uppercase text-center mt-8">
+            <h3 className="mt-8 text-center text-xl font-semibold uppercase lg:text-2xl xl:text-3xl 2xl:text-[40px]">
               What We Do
             </h3>
-            <p className="text-base lg:text-lg xl:text-2xl text-center mt-2 lg:mt-8 !leading-loose">
+            <p className="mt-2 text-center text-base !leading-loose lg:mt-8 lg:text-lg xl:text-2xl">
               We help set up and maintain a digital presence of your brand or
               product. Our creative team makes sure that you have the most
               updated and innovative technology at your hands to boost your
@@ -122,23 +119,23 @@ export default async function AboutUs() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 bg-gray-100 w-full px-36 py-24">
+      <div className="grid w-full grid-cols-1 gap-4 bg-gray-100 px-36 py-24 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {stats.map((stat, index) => (
           <div className="flex flex-col items-center justify-between gap-4">
             <CircularProgress progress={stat.progress} />
-            <p className="text-center text-lg xl:text-2xl font-medium">
+            <p className="text-center text-lg font-medium xl:text-2xl">
               {stat.title}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="py-36 px-8 xs:px-12 md:px-24 flex flex-col items-center w-full gap-16">
+      <div className="flex w-full flex-col items-center gap-16 px-8 py-36 xs:px-12 md:px-24">
         <div>
           <p className="landing-page-subheading text-center">Our Team</p>
           <h2 className="landing-page-heading">We are a Team of Experts</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-8">
+        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((member, index) => (
             <EmployeeCard member={member} key={"employee-card-" + index} />
           ))}
