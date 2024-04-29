@@ -62,21 +62,21 @@ export default function Footer({ contactInfo }) {
         ))}
       </div>
 
-      <div className="my-4 flex items-center justify-center gap-8">
+      <div className="my-4 flex flex-col items-center justify-center gap-8 sm:flex-row">
         <a
           href={`mailto:${contactInfo.primaryEmail}`}
           className="text-base font-medium text-white transition-colors md:text-lg lg:text-xl xl:text-2xl"
         >
           {contactInfo.primaryEmail}
         </a>
-        <div className="h-8 w-[1px] bg-white"></div>
+        <div className="hidden h-8 w-[1px] bg-white sm:block"></div>
         <a
           href={`tel:${contactInfo.primaryContact}`}
           className="text-base font-medium text-white transition-colors md:text-lg lg:text-xl xl:text-2xl"
         >
           {contactInfo.primaryContact}
         </a>
-        <div className="h-8 w-[1px] bg-white"></div>
+        <div className="hidden h-8 w-[1px] bg-white sm:block"></div>
         <a
           href={contactInfo.googleMapLink}
           target="_blank"
