@@ -58,7 +58,7 @@ export function ServicesModal({ className, href, children }) {
             <h1 className="text-2xl text-red-500">Failed to fetch services</h1>
           </div>
         ) : (
-          <ServicesModalContent services={services} />
+          <ServicesModalContent services={services} setOpen={setOpen} />
         )}
       </DialogContent>
     </Dialog>
