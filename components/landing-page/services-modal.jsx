@@ -42,7 +42,6 @@ export function ServicesModal({ className, href, children }) {
           className={className}
           onClick={() => {
             setOpen(true);
-            console.log("clicked");
           }}
         >
           Services

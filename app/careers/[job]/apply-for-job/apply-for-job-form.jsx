@@ -109,7 +109,6 @@ export default function ApplyForJobForm({ job }) {
         setSuccess(true);
       }
     } catch (e) {
-      console.log(e);
       setError(e);
     } finally {
       setLoading(false);

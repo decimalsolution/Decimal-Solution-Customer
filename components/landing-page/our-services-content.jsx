@@ -10,8 +10,6 @@ import { useCallback } from "react";
 import NextLink from "next/link";
 
 export default function OurServicesContent({ services }) {
-  console.log("SERVICEs; ", services);
-
   const getLink = useCallback((service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {
