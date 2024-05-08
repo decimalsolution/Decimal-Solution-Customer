@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/components/generic/footer";
 import { AOSInit } from "./aos";
 import HowCanWeHelpYou from "./how-can-we-help-you";
+import GoogleTag from "./google-tag";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,6 +32,9 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <AOSInit />
       <body className={poppins.className}>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <MainNav contactInfo={contactInfo} />
         {children}
         <Footer contactInfo={contactInfo} />
